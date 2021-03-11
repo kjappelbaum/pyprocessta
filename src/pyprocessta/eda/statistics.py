@@ -2,6 +2,7 @@ import pandas as pd
 from statsmodels.tsa.stattools import adfuller
 from statsmodels.tsa.stattools import kpss
 from statsmodels.tsa.stattools import grangercausalitytests
+import numpy as np
 
 
 def check_stationarity(
@@ -30,16 +31,33 @@ def check_stationarity(
     # null hypothesis for ADF is non-sationarity for KPSS null hypothesis is stationarity
     conclusion = (kpss_results[1] > threshold) & (adf_results[1] < threshold)
     results = {
-        "adf": {"statistic": adf_results[0], "p_value": adf_results[1]},
-        "kpss": {"statistic": kpss_results[0], "p_value": kpss_results[1]},
-        "staionary": conclusion,
+        "adf": {
+            "statistic": adf_results[0],
+            "p_value": adf_results[1],
+            "stationary": adf_results[1] < threshold,
+        },
+        "kpss": {
+            "statistic": kpss_results[0],
+            "p_value": kpss_results[1],
+            "stationary": kpss_results[1] > threshold,
+        },
+        "stationary": conclusion,
     }
 
     return results
 
 
-def check_granger_causality(series: pd.Series) -> dict:
-    ...
+def check_granger_causality(
+    x: pd.Series, y: pd.Series, max_lag: int = 20, add_constant: bool = True
+) -> dict:
+    test_result = grangercausalitytests(
+        np.hstack([x.values, y.values]),
+        max_lag=max_lag,
+        add_constant=add_constant,
+        verbose=False,
+    )
+
+    return test_result
 
 
 def computer_granger_causality_matrix(df: pd.DataFrame) -> pd.DataFrame:

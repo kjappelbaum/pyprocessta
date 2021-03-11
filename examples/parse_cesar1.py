@@ -5,6 +5,7 @@ from typing import Tuple, Union
 import openpyxl
 import datetime
 from dateutil.parser import parse
+import os
 
 
 def get_stepchange_times(excel_path):
@@ -27,7 +28,10 @@ def load_process_data(
     filepath: Union[str, bytes, os.PathLike]
 ) -> Tuple[pd.DataFrame, pd.DataFrame]:
     df_measurements = pd.read_excel(
-        filepath, sheet_name="Process Data", skiprows=[0, 1, 2, 3, 5, 6]
+        filepath,
+        sheet_name="Process Data",
+        skiprows=[0, 1, 2, 3, 5, 6],
+        engine="openpyxl",
     )
     times = get_stepchange_times(filepath)
 
@@ -58,7 +62,9 @@ def load_process_data(
 
     except Exception:
         # One of the later days
-        df_gas = pd.read_excel(filepath, sheet_name="GasMET2", skiprows=[1])
+        df_gas = pd.read_excel(
+            filepath, sheet_name="GasMET2", skiprows=[1], engine="openpyxl"
+        )
         df_gas["Datetime"] = pd.to_datetime(df_gas["Time"].astype(str).values)
 
     df_gas = df_gas.set_index(df_gas["Datetime"])

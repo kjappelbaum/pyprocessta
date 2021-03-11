@@ -283,7 +283,7 @@ python-versions = "*"
 name = "et-xmlfile"
 version = "1.0.1"
 description = "An implementation of lxml.xmlfile for the standard library"
-category = "main"
+category = "dev"
 optional = false
 python-versions = "*"
 
@@ -473,7 +473,7 @@ test = ["pytest (>=3.6.0)", "pytest-cov", "mock"]
 name = "jdcal"
 version = "1.4.1"
 description = "Julian dates from proleptic Gregorian and Julian calendars."
-category = "main"
+category = "dev"
 optional = false
 python-versions = "*"
 
@@ -926,7 +926,7 @@ signedtoken = ["cryptography", "pyjwt (>=1.0.0)"]
 name = "openpyxl"
 version = "3.0.6"
 description = "A Python library to read/write Excel 2010 xlsx/xlsm files"
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=3.6,"
 
@@ -1362,6 +1362,20 @@ python-versions = ">=3.6"
 numpy = ">=1.14.5"
 
 [[package]]
+name = "seaborn"
+version = "0.11.1"
+description = "seaborn: statistical data visualization"
+category = "dev"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+matplotlib = ">=2.2"
+numpy = ">=1.15"
+pandas = ">=0.23"
+scipy = ">=1.0"
+
+[[package]]
 name = "send2trash"
 version = "1.5.0"
 description = "Send file to trash natively under Mac OS X, Windows and Linux."
@@ -1790,7 +1804,7 @@ causlimpact = []
 [metadata]
 lock-version = "1.1"
 python-versions = ">=3.8,<3.9.0"
-content-hash = "8646bf0a6f2d59cb42abffcc0caa7d6b56d31202f0fc0f0402751e242dce1060"
+content-hash = "ae005dde20d38a143ddd798e49222a2d44c1b706bd9450770c905d2b7f3d74be"
 
 [metadata.files]
 absl-py = [
@@ -2686,6 +2700,10 @@ scipy = [
     {file = "scipy-1.5.0-cp38-cp38-win32.whl", hash = "sha256:2e99f50d0061c385f8f46c5a99bb07ad013ec2dcf95ccba3be4e081594e7ab19"},
     {file = "scipy-1.5.0-cp38-cp38-win_amd64.whl", hash = "sha256:2aec0f81a29440e0c000222ac0447748a840d328b5698dd900ece4113bca5cde"},
     {file = "scipy-1.5.0.tar.gz", hash = "sha256:4ff72877d19b295ee7f7727615ea8238f2d59159df0bdd98f91754be4a2767f0"},
+]
+seaborn = [
+    {file = "seaborn-0.11.1-py3-none-any.whl", hash = "sha256:4e1cce9489449a1c6ff3c567f2113cdb41122f727e27a984950d004a88ef3c5c"},
+    {file = "seaborn-0.11.1.tar.gz", hash = "sha256:44e78eaed937c5a87fc7a892c329a7cc091060b67ebd1d0d306b446a74ba01ad"},
 ]
 send2trash = [
     {file = "Send2Trash-1.5.0-py3-none-any.whl", hash = "sha256:f1691922577b6fa12821234aeb57599d887c4900b9ca537948d2dac34aea888b"},
