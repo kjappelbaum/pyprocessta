@@ -9,6 +9,7 @@ import pandas as pd
 from typing import Union
 import numpy as np
 from copy import deepcopy
+import statsmodels
 
 
 def detrend_stochastic(
@@ -28,16 +29,13 @@ def detrend_stochastic(
     return new_data
 
 
-def _detrend_series(series, start, end):
-    trend = np.arange(
-        len(series) * (series.iloc[end] - series.iloc[start]) / (end - start)
-    )
-    clean_data = series - trend
-    return clean_data
+def _detrend_series(series):
+    clean_data = statsmodels.tsa.tsatools.detrend(series.values, order=1, axis=0)
+    return pd.Series(clean_data, index=series.index)
 
 
 def detrend_linear_deterministc(
-    data: Union[pd.Series, pd.DataFrame], start: int = 0, end: int = -1
+    data: Union[pd.Series, pd.DataFrame]
 ) -> Union[pd.Series, pd.DataFrame]:
     """Removes a deterministic linear trend from a series. 
     Note that we assume that the data is sampled on a regular grid and 
@@ -50,22 +48,16 @@ def detrend_linear_deterministc(
     Args:
         data (Union[pd.Series, pd.DataFrame]): Data to detrend. In case of 
             dataframes we detrend every column separately.
-        start (int, optional): Number of first observation that should be used for the trend estimation. 
-            Defaults to 0.
-        end (int, optional): Number of last observation that should be used for the trend estimation. 
-            Defaults to -1.
 
     Returns:
         Union[pd.Series, pd.DataFrame]: Detrended data
     """
     data_ = deepcopy(data)
-    if end == -1:
-        end == len(data_) - 1
 
     if isinstance(data_, pd.DataFrame):
         for column in data_:
-            data_[column] = _detrend_series(data_[column], start, end)
+            data_[column] = _detrend_series(data_[column])
         return data_
     else:
-        return _detrend_series(data_, start, end)
+        return _detrend_series(data)
 
