@@ -52,6 +52,18 @@ def check_stationarity(
 def check_granger_causality(
     x: pd.Series, y: pd.Series, max_lag: int = 20, add_constant: bool = True
 ) -> dict:
+    """Check if series x is Granger causal for series y
+
+    Args:
+        x (pd.Series): Time series.
+        y (pd.Series): Time series.
+        max_lag (int, optional): Maximum lag to use for the causality checks.       
+            Defaults to 20.
+        add_constant (bool, optional): [description]. Defaults to True.
+
+    Returns:
+        dict: results dictionary
+    """
     results = {}
     test_result = grangercausalitytests(
         np.hstack([x.values.reshape(-1, 1), y.values.reshape(-1, 1)]),
