@@ -15,4 +15,4 @@ pyprocessta is a suite of tools that aims to help chemical engineers with the an
 pip install pyprocessta
 ```
 
-## Acknowledgment
+## Acknowledgments

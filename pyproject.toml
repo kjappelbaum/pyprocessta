@@ -8,10 +8,9 @@ authors = ["Kevin M. Jablonka <kevin.jablonka@epfl.ch>"]
 python = ">=3.8,<3.9.0"
 pandas = "1.1.0"
 matplotlib = "^3.0.0"
-u8darts = {extras = ["all"], version = "^0.6.1"}
+tensorflow = {version = "^2.4.1", extras = ["causalimpact"]}
+tfcausalimpact = {version = "^0.0.3", extras = ["causalimpact"]}
 
-[tool.poetry.extras]
-causlimpact = ["tfcausalimpact"]
 
 [tool.poetry.dev-dependencies]
 pytest = "^6.2.2"
