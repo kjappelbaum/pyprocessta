@@ -21,12 +21,12 @@ from causalimpact import CausalImpact
 from ..eda.statistics import check_granger_causality
 
 
-def _select_unrelated_x(df, x_columns, intervention_column):
+def _select_unrelated_x(df, x_columns, intervention_column, p_value_threshold):
     unrelated_x = []
 
     for x_column in x_columns:
         granger_result = check_granger_causality(df[x_column], df[intervention_column])
-        if granger_result["max"] > 0.05:
+        if granger_result["max"] > p_value_threshold:
             unrelated_x.append(x_column)
 
     return unrelated_x
@@ -39,6 +39,7 @@ def run_causal_impact_analysis(
     y_column: str,
     start: List,
     end: List,
+    p_value_threshold: float = 0.05,
 ) -> object:
     """Run the causal impact analysis.
     Here, we use all the x that are not related
@@ -56,14 +57,18 @@ def run_causal_impact_analysis(
         start (List): Two elements defining the pre-intervention
             interval
         end (List): Two elements defining the post-intervention
-            interval
+            interval    
+        p_value_threshold (float): H0 that x does not Granger cause 
+            y is rejected when p smaller this threshold. Defaults to 0.05.
 
     Returns:
         object: causalimpact object
     """
     # First, we need to remove all the columns from X that are somehow related to our intervention variable
     # this avoids that we bias the estimation of our causal effect by data leakage
-    x_columns = _select_unrelated_x(df, x_columns, intervention_column)
+    x_columns = _select_unrelated_x(
+        df, x_columns, intervention_column, p_value_threshold
+    )
     new_data = df[[y_column] + x_columns]
 
     # now we can run the causal impact analysis
