@@ -53,7 +53,9 @@ def check_granger_causality(
     x: pd.Series, y: pd.Series, max_lag: int = 20, add_constant: bool = True
 ) -> dict:
     """Check if series x is Granger causal for series y
-
+    We reject the null hypothesis that x does *not* Granger cause y 
+    if the pvalues are below a desired size of the test.
+    
     Args:
         x (pd.Series): Time series.
         y (pd.Series): Time series.
