@@ -57,8 +57,8 @@ def run_causal_impact_analysis(
         start (List): Two elements defining the pre-intervention
             interval
         end (List): Two elements defining the post-intervention
-            interval    
-        p_value_threshold (float): H0 that x does not Granger cause 
+            interval
+        p_value_threshold (float): H0 that x does not Granger cause
             y is rejected when p smaller this threshold. Defaults to 0.05.
 
     Returns:
