@@ -1,8 +1,11 @@
+# -*- coding: utf-8 -*-
 """Sometimes, different kinds of measurements are sampled at different intervals. This module provides utilities to combine such data.
 We will always operate on pandas dataframes with datatime indexing
 """
-import pandas as pd
 from typing import Union
+
+import pandas as pd
+
 from .resample import _interpolate
 
 
@@ -11,14 +14,14 @@ def align_two_dfs(
 ) -> pd.DataFrame:
     """Alignes to dataframes with datatimeindex
     Resamples both dataframes on the dataframe with the lowest frequency timestep.
-    The first timepoint in the new dataframe will be the later one of the first 
+    The first timepoint in the new dataframe will be the later one of the first
     observations of the dataframes.
 
     Args:
-        df_a (pd.DataFrame): Dataframe 
+        df_a (pd.DataFrame): Dataframe
         df_b (pd.DataFrame): Dataframe
-        interpolation (Union[str, int], optional): Interpolation method. 
-            If you provide an integer, spline interpolation of that order will be used. 
+        interpolation (Union[str, int], optional): Interpolation method.
+            If you provide an integer, spline interpolation of that order will be used.
             Defaults to "linear".
 
     Returns:

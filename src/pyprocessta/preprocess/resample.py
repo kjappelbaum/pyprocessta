@@ -1,5 +1,9 @@
-import pandas as pd
+# -*- coding: utf-8 -*-
+"""Often, data is not sampled on a regular grid.
+This module provides to regularize such data"""
 from typing import Union
+
+import pandas as pd
 
 
 def _interpolate(resampled, interpolation):
@@ -18,14 +22,13 @@ def resample_regular(
     Args:
         df (pd.DataFrame): input dataframne
         interval (str, optional): Resampling intervall. Defaults to "10min".
-        interpolation (Union[str, int], optional): Interpolation method. 
-            If you provide an integer, spline interpolation of that order will be used. 
+        interpolation (Union[str, int], optional): Interpolation method.
+            If you provide an integer, spline interpolation of that order will be used.
             Defaults to "linear".
 
     Returns:
-        pd.DataFrame: Output data. 
+        pd.DataFrame: Output data.
     """
     resampled = df.resample(interval, origin="start")
     result = _interpolate(resampled, interpolation)
     return result
-

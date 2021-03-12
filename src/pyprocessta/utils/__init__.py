@@ -1,6 +1,8 @@
+# -*- coding: utf-8 -*-
 import pickle
-import pandas as pd
 from typing import Union
+
+import pandas as pd
 
 
 def dump_as_pickle(obj, filename):
@@ -10,8 +12,8 @@ def dump_as_pickle(obj, filename):
 
 def is_regular_grid(series: Union[pd.Series, pd.DatetimeIndex]) -> bool:
     """For many analyses it can be convenient to have
-    the data on a regular grid. This function checks 
-    if this is the case. 
+    the data on a regular grid. This function checks
+    if this is the case.
 
     Args:
         series (pd.Series): pd.Series of datetime

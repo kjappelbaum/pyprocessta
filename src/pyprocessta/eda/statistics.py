@@ -1,10 +1,10 @@
-import pandas as pd
-from statsmodels.tsa.stattools import adfuller
-from statsmodels.tsa.stattools import kpss
-from statsmodels.tsa.stattools import grangercausalitytests
-import numpy as np
-from typing import List
+# -*- coding: utf-8 -*-
 from collections import defaultdict
+from typing import List
+
+import numpy as np
+import pandas as pd
+from statsmodels.tsa.stattools import adfuller, grangercausalitytests, kpss
 
 
 def check_stationarity(
@@ -15,7 +15,7 @@ def check_stationarity(
 
     Args:
         series (pd.Series): Time series data
-        threshold (float, optional): p-value thresholds for the statistical tests. 
+        threshold (float, optional): p-value thresholds for the statistical tests.
             Defaults to 0.05.
         regression (str, optional): If regression="c" then the tests check for stationarity around a constant.
             For "ct" the test check for stationarity around a trend.
@@ -57,7 +57,7 @@ def check_granger_causality(
     Args:
         x (pd.Series): Time series.
         y (pd.Series): Time series.
-        max_lag (int, optional): Maximum lag to use for the causality checks.       
+        max_lag (int, optional): Maximum lag to use for the causality checks.
             Defaults to 20.
         add_constant (bool, optional): [description]. Defaults to True.
 

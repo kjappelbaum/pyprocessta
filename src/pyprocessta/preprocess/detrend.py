@@ -1,14 +1,16 @@
+# -*- coding: utf-8 -*-
 """In some time series there is a trend component that does not interest us, e.g., because we have domain knowledge that this trend is due to another phenomenon like instrument drift. In this case, we might want to remove the trend component for furhter modeling.
 The same is the case for the variance. If the variance increases over time, one might want to remove this effect using a Box-Cox transformation [1]
 
-References: 
+References:
 [1] https://otexts.com/fpp2/transformations.html#mathematical-transformations
 """
 
-import pandas as pd
-from typing import Union
-import numpy as np
 from copy import deepcopy
+from typing import Union
+
+import numpy as np
+import pandas as pd
 import statsmodels
 
 
@@ -16,7 +18,7 @@ def detrend_stochastic(
     data: Union[pd.Series, pd.DataFrame]
 ) -> Union[pd.Series, pd.DataFrame]:
     """Detrends time series data using the difference method y_t - y_{t-1}.
-    This is useful to remove stochastic trends (random walk with trend). 
+    This is useful to remove stochastic trends (random walk with trend).
 
     Args:
         data (Union[pd.Series, pd.DataFrame]): Time series data to detrend
@@ -37,16 +39,16 @@ def _detrend_series(series):
 def detrend_linear_deterministc(
     data: Union[pd.Series, pd.DataFrame]
 ) -> Union[pd.Series, pd.DataFrame]:
-    """Removes a deterministic linear trend from a series. 
-    Note that we assume that the data is sampled on a regular grid and 
-    we estimate the trend as 
+    """Removes a deterministic linear trend from a series.
+    Note that we assume that the data is sampled on a regular grid and
+    we estimate the trend as
 
     np.arange(
         len(series) * (series.iloc[end] - series.iloc[start]) / (end - start)
     )
 
     Args:
-        data (Union[pd.Series, pd.DataFrame]): Data to detrend. In case of 
+        data (Union[pd.Series, pd.DataFrame]): Data to detrend. In case of
             dataframes we detrend every column separately.
 
     Returns:
@@ -60,4 +62,3 @@ def detrend_linear_deterministc(
         return data_
     else:
         return _detrend_series(data)
-

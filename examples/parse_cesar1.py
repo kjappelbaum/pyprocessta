@@ -1,11 +1,12 @@
-import pandas as pd
-import matplotlib.pyplot as plt
+# -*- coding: utf-8 -*-
+import datetime
+import os
 from typing import Tuple, Union
 
+import matplotlib.pyplot as plt
 import openpyxl
-import datetime
+import pandas as pd
 from dateutil.parser import parse
-import os
 
 
 def get_stepchange_times(excel_path):

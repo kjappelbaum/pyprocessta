@@ -1,6 +1,8 @@
-from pyprocessta.eda.statistics import check_stationarity
-import pandas as pd
+# -*- coding: utf-8 -*-
 import numpy as np
+import pandas as pd
+
+from pyprocessta.eda.statistics import check_stationarity
 
 
 def test_check_stationarity():

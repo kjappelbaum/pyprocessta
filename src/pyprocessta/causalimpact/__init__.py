@@ -1,18 +1,23 @@
+# -*- coding: utf-8 -*-
 """
-Causal impact analysis uses machine learning to construct a counterfactual 
+Causal impact analysis uses machine learning to construct a counterfactual
 (what would the results have been without an intervention)
 which can be used to estimate an effect size without the need for a control group
-A good introduction is https://www.youtube.com/watch?v=GTgZfCltMm8
-the original paper is https://storage.googleapis.com/pub-tools-public-publication-data/pdf/41854.pdf.
-The particular implementation we use was described in 
-https://towardsdatascience.com/implementing-causal-impact-on-top-of-tensorflow-probability-c837ea18b126 
+A good introduction is
+https://www.youtube.com/watch?v=GTgZfCltMm8
+the original paper is
+https://storage.googleapis.com/pub-tools-public-publication-data/pdf/41854.pdf.
+The particular implementation we use was described in
+https://towardsdatascience.com/implementing-causal-impact-on-top-of-tensorflow-probability-c837ea18b126
 
-One can use covariates to build the counterfactual but one needs to be careful that 
+One can use covariates to build the counterfactual but one needs to be careful that
 they are not changed by the intervention.
 """
-from causalimpact import CausalImpact
+from typing import List, Union
+
 import pandas as pd
-from typing import Union, List
+from causalimpact import CausalImpact
+
 from ..eda.statistics import check_granger_causality
 
 
@@ -35,22 +40,22 @@ def run_causal_impact_analysis(
     start: List,
     end: List,
 ) -> object:
-    """Run the causal impact analysis. 
-    Here, we use all the x that are not related 
+    """Run the causal impact analysis.
+    Here, we use all the x that are not related
     to the intervention variable.
 
     Args:
         df (pd.DataFrame): Dataframe to run the analysis on
-        x_columns (List[str]): All column names that can 
+        x_columns (List[str]): All column names that can
             potentially be used as covariates for
             the counterfactual model
-        intervention_column (str): Name of the column 
+        intervention_column (str): Name of the column
             on which the intervention has been performed
         y_column (str): Target column on which we want
             to understand the effect of the intervention
-        start (List): Two elements defining the pre-intervention 
+        start (List): Two elements defining the pre-intervention
             interval
-        end (List): Two elements defining the post-intervention 
+        end (List): Two elements defining the post-intervention
             interval
 
     Returns:
