@@ -1,8 +1,10 @@
-from typing import Union
-import pandas as pd
-import numpy as np
-from scipy import stats
+# -*- coding: utf-8 -*-
 from copy import deepcopy
+from typing import Union
+
+import numpy as np
+import pandas as pd
+from scipy import stats
 
 
 def exponential_window_smoothing(
@@ -38,13 +40,13 @@ def _despike_series(series: pd.Series, threshold, window) -> pd.Series:
 def z_score_filter(
     data: Union[pd.Series, pd.DataFrame], threshold: float = 2, window: int = 10
 ) -> Union[pd.Series, pd.DataFrame]:
-    """Replaces spikes (values > threshold * z_score) with the median 
+    """Replaces spikes (values > threshold * z_score) with the median
     of the window values before.
 
     Args:
-        data (Union[pd.Series, pd.DataFrame]): Series to despike 
+        data (Union[pd.Series, pd.DataFrame]): Series to despike
         threshold (float, optional): Threshold on the z-score. Defaults to 2.
-        window (int, option): Window that is used for the median with which 
+        window (int, option): Window that is used for the median with which
             the spike value is replaced. This mean only looks back.
 
     Returns:

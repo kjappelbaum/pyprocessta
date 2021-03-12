@@ -1,6 +1,9 @@
-import pandas as pd
-from pyprocessta.preprocess.align import align_two_dfs
+# -*- coding: utf-8 -*-
+"""Testing the align module"""
 import numpy as np
+import pandas as pd
+
+from pyprocessta.preprocess.align import align_two_dfs
 
 
 def test_align(get_timeseries):

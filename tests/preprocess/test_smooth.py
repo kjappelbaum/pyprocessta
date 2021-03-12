@@ -1,6 +1,10 @@
-import pandas as pd
+# -*- coding: utf-8 -*-
+"""Testing the smooth module"""
 import numpy as np
-from pyprocessta.preprocess.smooth import z_score_filter, exponential_window_smoothing
+import pandas as pd
+
+from pyprocessta.preprocess.smooth import (exponential_window_smoothing,
+                                           z_score_filter)
 
 
 def test_z_score_filter():
@@ -14,4 +18,4 @@ def test_exponential_window_smoothing():
     dates = pd.date_range("1/1/2021", periods=75)
     regular = pd.Series(np.array([1] * 75), index=dates)
     filtered = exponential_window_smoothing(regular, 10)
-    assert len(filtered) == 75 
+    assert len(filtered) == 75

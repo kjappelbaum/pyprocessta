@@ -1,6 +1,8 @@
-from pyprocessta.utils import is_regular_grid
-import pandas as pd
+# -*- coding: utf-8 -*-
 import numpy as np
+import pandas as pd
+
+from pyprocessta.utils import is_regular_grid
 
 
 def test_is_regular_grid():
