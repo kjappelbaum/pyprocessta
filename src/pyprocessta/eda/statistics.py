@@ -3,6 +3,8 @@ from statsmodels.tsa.stattools import adfuller
 from statsmodels.tsa.stattools import kpss
 from statsmodels.tsa.stattools import grangercausalitytests
 import numpy as np
+from typing import List
+from collections import defaultdict
 
 
 def check_stationarity(
@@ -50,15 +52,33 @@ def check_stationarity(
 def check_granger_causality(
     x: pd.Series, y: pd.Series, max_lag: int = 20, add_constant: bool = True
 ) -> dict:
+    results = {}
     test_result = grangercausalitytests(
-        np.hstack([x.values, y.values]),
-        max_lag=max_lag,
-        add_constant=add_constant,
+        np.hstack([x.values.reshape(-1, 1), y.values.reshape(-1, 1)]),
+        maxlag=max_lag,
+        addconst=add_constant,
         verbose=False,
     )
+    results["detail"] = test_result
+    p_values = []
 
-    return test_result
+    for _, v in test_result.items():
+        p_values.append(v[0]["ssr_chi2test"][1])
+
+    results["max_p_value"] = max(p_values)
+    results["lag_w_max_p_value"] = np.argmax(p_values)
+    return results
 
 
-def computer_granger_causality_matrix(df: pd.DataFrame) -> pd.DataFrame:
-    ...
+def computer_granger_causality_matrix(
+    df: pd.DataFrame, xs: List[str], ys: List[str]
+) -> pd.DataFrame:
+    results_matrix = defaultdict(list)
+
+    for x in xs:
+        for y in ys:
+            results_matrix[x].append(
+                check_granger_causality(df[x], df[y])["max_p_value"]
+            )
+
+    return pd.DataFrame.from_dict(results_matrix, orient="index", columns=ys)

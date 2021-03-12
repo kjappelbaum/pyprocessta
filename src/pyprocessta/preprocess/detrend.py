@@ -31,7 +31,7 @@ def detrend_stochastic(
 
 def _detrend_series(series):
     clean_data = statsmodels.tsa.tsatools.detrend(series.values, order=1, axis=0)
-    return pd.Series(clean_data, index=series.index)
+    return pd.Series(clean_data, index=series.index, name=series.name)
 
 
 def detrend_linear_deterministc(
