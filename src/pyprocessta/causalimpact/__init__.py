@@ -21,13 +21,16 @@ from causalimpact import CausalImpact
 from ..eda.statistics import check_granger_causality
 
 
-def _select_unrelated_x(df, x_columns, intervention_column, p_value_threshold):
+def _select_unrelated_x(df, x_columns, intervention_column, p_value_threshold, lag=10):
     unrelated_x = []
 
     for x_column in x_columns:
-        granger_result = check_granger_causality(df[x_column], df[intervention_column])
-        if granger_result["max"] > p_value_threshold:
-            unrelated_x.append(x_column)
+        if x_column != intervention_column:
+            granger_result = check_granger_causality(
+                df[x_column], df[intervention_column], lag
+            )
+            if granger_result["min_p_value"] > p_value_threshold:
+                unrelated_x.append(x_column)
 
     return unrelated_x
 
