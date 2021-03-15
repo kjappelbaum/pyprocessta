@@ -79,8 +79,8 @@ def check_granger_causality(
     for _, v in test_result.items():
         p_values.append(v[0]["ssr_chi2test"][1])
 
-    results["max_p_value"] = max(p_values)
-    results["lag_w_max_p_value"] = np.argmax(p_values)
+    results["min_p_value"] = min(p_values)
+    results["lag_w_min_p_value"] = np.argmin(p_values)
     return results
 
 
@@ -92,7 +92,7 @@ def computer_granger_causality_matrix(
     for x in xs:
         for y in ys:
             results_matrix[x].append(
-                check_granger_causality(df[x], df[y])["max_p_value"]
+                check_granger_causality(df[x], df[y])["min_p_value"]
             )
 
     return pd.DataFrame.from_dict(results_matrix, orient="index", columns=ys)
