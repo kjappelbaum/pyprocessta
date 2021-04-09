@@ -52,7 +52,7 @@ def load_process_data(
     # Let's do something dirty, but Pythonic
     try:
         # one of the first days
-        df_gas = pd.read_excel(filepath, sheet_name="GasMET2")
+        df_gas = pd.read_excel(filepath, sheet_name="GasMET2", engine="openpyxl")
         df_gas["Time"] = [v.split()[-1] for v in df_gas["Time"].astype(str).values]
 
         df_gas["Datetime"] = pd.to_datetime(
@@ -61,8 +61,9 @@ def load_process_data(
 
         df_gas["Datetime"].tz_localize = None
 
-    except Exception:
+    except Exception as e:
         # One of the later days
+        print(e)
         df_gas = pd.read_excel(
             filepath, sheet_name="GasMET2", skiprows=[1], engine="openpyxl"
         )
@@ -88,3 +89,28 @@ def load_process_data(
     df_gas.index.name = None
 
     return df_measurements, df_gas, times
+
+
+def get_timestep_tuples(df, times, i):
+    times = sorted(times, key=lambda d: d["start"])
+    if i == 0:
+        s_0 = df.index[1]
+    else:
+        s_0 = df.index[
+            df.index.get_loc(pd.to_datetime(times[i - 1]["end"]), method="bfill") + 1
+        ]
+
+    s_1 = df.index[
+        df.index.get_loc(pd.to_datetime(times[i]["start"]), method="ffill")
+    ]
+    e_0 = df.index[
+        df.index.get_loc(pd.to_datetime(times[i]["start"]), method="bfill") 
+    ]
+    e_1 = df.index[
+        df.index.get_loc(pd.to_datetime(times[i]["end"]), method="ffill") - 1
+    ]
+
+    pre_intervention_period = [s_0, s_1]
+    intervention_period = [e_0, e_1]
+
+    return pre_intervention_period, intervention_period

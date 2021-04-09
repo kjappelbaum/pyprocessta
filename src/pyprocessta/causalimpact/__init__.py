@@ -14,9 +14,12 @@ One can use covariates to build the counterfactual but one needs to be careful t
 they are not changed by the intervention.
 """
 from typing import List, Union
-
+import numpy as np
+from causalimpact.misc import standardize
 import pandas as pd
 from causalimpact import CausalImpact
+from causalimpact.model import build_bijector, build_inv_gamma_sd_prior
+import tensorflow_probability as tfp
 
 from ..eda.statistics import check_granger_causality
 
@@ -74,7 +77,46 @@ def run_causal_impact_analysis(
     )
     new_data = df[[y_column] + x_columns]
 
+    model = _linear_trend_linear_reg_model(new_data, start, end)
     # now we can run the causal impact analysis
-    ci = CausalImpact(new_data, start, end)
+    ci = CausalImpact(
+        new_data,
+        start,
+        end,
+        # model=model,
+        # model_args={"fit_method": "hmc"}
+        model_args={"standardize": True, "nseasons": 16, "prior_sd": 0.01},
+    )
 
     return ci
+
+
+def _linear_trend_linear_reg_model(df, start, end):
+    df = df.astype(np.float32)
+    normed_data, _ = standardize(df)
+    obs_data = df.loc[start[0] : start[1]].iloc[:, 0]
+    obs_sd = np.sqrt(obs_data.std())
+    sd_prior = build_inv_gamma_sd_prior(0.01)
+    sd_prior = build_bijector(sd_prior)
+    # This is an approximation to simulate the bsts package from R. It's expected that
+    # given a few data points the posterior will converge appropriately given this
+    # distribution, that's why it's divided by 2.
+    obs_prior = build_inv_gamma_sd_prior(obs_sd / 2)
+    obs_prior = build_bijector(obs_prior)
+
+    local = tfp.sts.SemiLocalLinearTrend(
+        observed_time_series=obs_data, level_scale_prior=sd_prior
+    )
+    linear_reg = tfp.sts.SparseLinearRegression(
+        design_matrix=normed_data.loc[start[0] : end[1]]
+        .iloc[:, 1:]
+        .values.reshape(-1, normed_data.shape[1] - 1)
+    )
+
+    model = tfp.sts.Sum(
+        [local, linear_reg],
+        observed_time_series=obs_data,
+        observation_noise_scale_prior=obs_prior,
+    )
+
+    return model
