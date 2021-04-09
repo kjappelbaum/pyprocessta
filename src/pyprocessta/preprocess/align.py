@@ -6,7 +6,7 @@ from typing import Union
 
 import pandas as pd
 
-from .resample import _interpolate
+from .resample import resample_regular
 
 
 def align_two_dfs(
@@ -16,6 +16,9 @@ def align_two_dfs(
     Resamples both dataframes on the dataframe with the lowest frequency timestep.
     The first timepoint in the new dataframe will be the later one of the first
     observations of the dataframes.
+
+    https://stackoverflow.com/questions/47148446/pandas-resample-interpolate-is-producing-nans
+    https://stackoverflow.com/questions/66967998/pandas-interpolation-giving-odd-results
 
     Args:
         df_a (pd.DataFrame): Dataframe
@@ -32,8 +35,8 @@ def align_two_dfs(
 
     index_series_a = pd.Series(df_a.index, df_a.index)
     index_series_b = pd.Series(df_b.index, df_b.index)
-    timestep_a = max(index_series_a.diff().dropna())
-    timestep_b = max(index_series_b.diff().dropna())
+    timestep_a = min(index_series_a.diff().dropna())
+    timestep_b = min(index_series_b.diff().dropna())
 
     if timestep_a > timestep_b:
         resample_step = timestep_a
@@ -42,12 +45,14 @@ def align_two_dfs(
 
     start_time = max([df_a.index[0], df_b.index[0]])
 
-    resampled_a = df_a.resample(resample_step, origin=start_time)
-    resampled_b = df_b.resample(resample_step, origin=start_time)
+    resampled_a = resample_regular(
+        df_a, resample_step, interpolation, start_time=start_time
+    )
 
-    new_df_a = _interpolate(resampled_a, interpolation)
-    new_df_b = _interpolate(resampled_b, interpolation)
+    resampled_b = resample_regular(
+        df_b, resample_step, interpolation, start_time=start_time
+    )
 
-    merged = pd.merge(new_df_a, new_df_b, left_index=True, right_index=True)
+    merged = pd.merge(resampled_a, resampled_b, left_index=True, right_index=True)
 
     return merged

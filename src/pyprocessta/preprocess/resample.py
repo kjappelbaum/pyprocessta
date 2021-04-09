@@ -7,6 +7,7 @@ import pandas as pd
 
 
 def _interpolate(resampled, interpolation):
+
     if isinstance(interpolation, int):
         result = resampled.interpolate("spline", interpolation)
     else:
@@ -15,7 +16,10 @@ def _interpolate(resampled, interpolation):
 
 
 def resample_regular(
-    df: pd.DataFrame, interval: str = "10min", interpolation: Union[str, int] = "linear"
+    df: pd.DataFrame,
+    interval: str = "10min",
+    interpolation: Union[str, int] = "linear",
+    start_time=None,
 ) -> pd.DataFrame:
     """Resamples the dataframe at a desired interval.
 
@@ -29,6 +33,10 @@ def resample_regular(
     Returns:
         pd.DataFrame: Output data.
     """
-    resampled = df.resample(interval, origin="start")
-    result = _interpolate(resampled, interpolation)
+    oidx = df.index
+    start = oidx.min() if start_time is None else start_time
+    nidx = pd.date_range(start, oidx.max(), freq=interval)
+    res = df.reindex(oidx.union(nidx))
+
+    result = _interpolate(res, interpolation).reindex(nidx)
     return result
