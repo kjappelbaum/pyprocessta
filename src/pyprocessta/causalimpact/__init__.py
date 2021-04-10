@@ -14,12 +14,13 @@ One can use covariates to build the counterfactual but one needs to be careful t
 they are not changed by the intervention.
 """
 from typing import List, Union
+
 import numpy as np
-from causalimpact.misc import standardize
 import pandas as pd
-from causalimpact import CausalImpact
-from causalimpact.model import build_bijector, build_inv_gamma_sd_prior
 import tensorflow_probability as tfp
+from causalimpact import CausalImpact
+from causalimpact.misc import standardize
+from causalimpact.model import build_bijector, build_inv_gamma_sd_prior
 
 from ..eda.statistics import check_granger_causality
 

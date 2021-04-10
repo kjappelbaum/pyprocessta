@@ -100,12 +100,8 @@ def get_timestep_tuples(df, times, i):
             df.index.get_loc(pd.to_datetime(times[i - 1]["end"]), method="bfill") + 1
         ]
 
-    s_1 = df.index[
-        df.index.get_loc(pd.to_datetime(times[i]["start"]), method="ffill")
-    ]
-    e_0 = df.index[
-        df.index.get_loc(pd.to_datetime(times[i]["start"]), method="bfill") 
-    ]
+    s_1 = df.index[df.index.get_loc(pd.to_datetime(times[i]["start"]), method="ffill")]
+    e_0 = df.index[df.index.get_loc(pd.to_datetime(times[i]["start"]), method="bfill")]
     e_1 = df.index[
         df.index.get_loc(pd.to_datetime(times[i]["end"]), method="ffill") - 1
     ]

@@ -3,7 +3,7 @@ TARGETS = [
     "Carbon dioxide CO2",
     "2-Amino-2-methylpropanol C4H11NO",
     "Piperazine C4H10N2",
-    "Ammonia NH3"
+    "Ammonia NH3",
 ]
 
 TARGET_CLEAN = ["CO2", "2-Amino-2-methylpropanol", "Piperazine"]
