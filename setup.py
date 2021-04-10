@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from setuptools import setup
+
 import versioneer
 
 package_dir = {"": "src"}
@@ -50,4 +51,3 @@ setup_kwargs = {
 
 
 setup(**setup_kwargs)
-
