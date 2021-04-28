@@ -13,6 +13,7 @@ from typing import Sequence
 import concurrent.futures
 from functools import partial
 from torch.optim.lr_scheduler import CyclicLR
+import numpy as np 
 
 MEAS_COLUMNS = [
     "TI-19",
@@ -41,6 +42,21 @@ MEAS_COLUMNS = [
 ]
 
 df = pd.read_pickle("df_dropped.pkl")
+
+
+def summarize_results(results):
+    values = []
+
+    for df in results:
+        values.append(df.pd_dataframe().values)
+
+    df = df.pd_dataframe()
+    columns = df.columns
+
+    return (
+        pd.DataFrame(np.mean(values, axis=0), columns=columns, index=df.index),
+        pd.DataFrame(np.std(values, axis=0), columns=columns, index=df.index),
+    )
 
 
 def _run_backtest(rep, model, x_test, y_test, start=0.3, stride=2):
@@ -106,6 +122,7 @@ def get_train_test_data(x, y, split_date="2010-01-18 12:59:15"):
     x_train, x_test = x.split_before(pd.Timestamp(split_date))
 
     return (x_train, y_train), (x_test, y_test)
+
 
 
 def run_model(train_tuple):
