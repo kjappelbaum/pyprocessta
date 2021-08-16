@@ -13,7 +13,7 @@ https://towardsdatascience.com/implementing-causal-impact-on-top-of-tensorflow-p
 One can use covariates to build the counterfactual but one needs to be careful that
 they are not changed by the intervention.
 """
-from typing import List, Union
+from typing import List
 
 import numpy as np
 import pandas as pd
@@ -78,14 +78,14 @@ def run_causal_impact_analysis(
     )
     new_data = df[[y_column] + x_columns]
 
-    model = _linear_trend_linear_reg_model(new_data, start, end)
+    # model = _linear_trend_linear_reg_model(new_data, start, end)
+
     # now we can run the causal impact analysis
     ci = CausalImpact(
         new_data,
         start,
         end,
         # model=model,
-        # model_args={"fit_method": "hmc"}
         model_args={"standardize": True, "nseasons": 16, "prior_sd": 0.01},
     )
 

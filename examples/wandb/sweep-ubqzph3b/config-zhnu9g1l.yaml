@@ -1,0 +1,18 @@
+wandb_version: 1
+
+colsample_bytree:
+  value: 0.5220258253838805
+max_depth:
+  value: 70
+min_child_weight:
+  value: 0.09978872073260359
+n_estimators:
+  value: 1428
+num_leaves:
+  value: 5
+reg_alpha:
+  value: 1.3819612183993946
+reg_lambda:
+  value: 1.2596866682783476
+subsample:
+  value: 0.8366828841732525

@@ -3,8 +3,7 @@
 import numpy as np
 import pandas as pd
 
-from pyprocessta.preprocess.smooth import (exponential_window_smoothing,
-                                           z_score_filter)
+from pyprocessta.preprocess.smooth import exponential_window_smoothing, z_score_filter
 
 
 def test_z_score_filter():
