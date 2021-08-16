@@ -58,3 +58,7 @@ if these parameters are set correctly, the script can be called as
 ```bash
 python run_scenarios.py {feature_a} {feature_b} {objective} {baseline}
 ```
+
+
+## 5. Validate model
+For the code we used to create the learning curves see the notebook `validate_model_moving_windows.ipynb`
