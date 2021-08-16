@@ -1,0 +1,52 @@
+wandb_version: 1
+
+_wandb:
+  desc: null
+  value:
+    cli_version: 0.10.28
+    framework: lightgbm
+    is_jupyter_run: true
+    is_kaggle_kernel: false
+    python_version: 3.8.8
+    session_history: code/_session_history.ipynb
+    t:
+      1:
+      - 5
+      - 8
+      2:
+      - 5
+      - 8
+      3:
+      - 2
+      4: 3.8.8
+      5: 0.10.28
+      8:
+      - 1
+      - 5
+colsample_bytree:
+  desc: null
+  value: 0.4953408741878735
+max_depth:
+  desc: null
+  value: 14
+min_child_weight:
+  desc: null
+  value: 0.014187685629057003
+n_estimators:
+  desc: null
+  value: 3008
+num_leaves:
+  desc: null
+  value: 49
+objective:
+  desc: null
+  value: huber
+reg_alpha:
+  desc: null
+  value: 1.079164791241529
+reg_lambda:
+  desc: null
+  value: 1.224974659543984
+subsample:
+  desc: null
+  value: 0.6539105751351513

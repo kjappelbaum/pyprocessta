@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
 from setuptools import setup
 
-import versioneer
-
 package_dir = {"": "src"}
 
 packages = [
@@ -38,9 +36,9 @@ setup_kwargs = {
     "long_description": None,
     "author": "Kevin M. Jablonka",
     "author_email": "kevin.jablonka@epfl.ch",
-    "maintainer": None,
-    "maintainer_email": None,
-    "url": None,
+    "maintainer": "Kevin M. Jablonka",
+    "maintainer_email": "kevin.jablonka@epfl.ch",
+    "url": "https://github.com/kjappelbaum/pyprocessta",
     "package_dir": package_dir,
     "packages": packages,
     "package_data": package_data,
