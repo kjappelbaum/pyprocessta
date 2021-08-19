@@ -2,7 +2,7 @@
 
 > Making the analysis of data from chemical engineering processes boring again!
 
-pyprocessta is a suite of tools that aims to help chemical engineers with the analysis of their time series. Pyprocessta provides tools for the following steps
+`pyprocessta` is a suite of tools that aims to help chemical engineers with the analysis of their time series. `pyprocessta` provides tools for the following steps
 
 - exploratory data analysis
 - data cleaning
@@ -11,13 +11,7 @@ pyprocessta is a suite of tools that aims to help chemical engineers with the an
 
 ## Installation
 
-Latest stable version
-
-```bash
-pip install pyprocessta
-```
-
-development version
+Development version
 
 ```bash
 pip install git+https://github.com/kjappelbaum/pyprocessta.git
