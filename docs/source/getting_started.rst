@@ -108,7 +108,7 @@ The `Temporal convolutional neural network <https://unit8.co/resources/temporal-
 
     x_timeseries, y_timeseries = get_data(my_dataframe, targets=my_targets, features=my_features_
     train_tuple, test_tuple = get_train_test_data(x_timeseries, y_timeseries, split_date="2010-01-18 12:59:15")
-    train_tuple, test_tuple, transformers = transform_data(train_tuple, test_tuple)
+    train_tuple, test_tuples, transformers = transform_data(train_tuple, [test_tuple])
 
     model = run_model(train_tuple)
 
