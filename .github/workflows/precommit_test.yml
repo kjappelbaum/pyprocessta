@@ -7,7 +7,7 @@ on:
     branches: [main]
 
 jobs:
- pre-commit:
+  pre-commit:
     strategy:
       matrix:
         python-version: ["3.8"]
@@ -20,11 +20,8 @@ jobs:
           python-version: ${{ matrix.python-version }}
       - name: Install dependencies
         run: |
-          python -m pip install --upgrade  poetry
-          poetry install .
+          pip install .[testing, causalimpact, pre-commit]
       - name: Run pre-commit
-        run:
-          pre-commit run --all-files || ( git status --short ; git diff ; exit 1 )
+        run: pre-commit run --all-files || ( git status --short ; git diff ; exit 1 )
       - name: Run pytest
-        run:
-          pytest
+        run: pytest

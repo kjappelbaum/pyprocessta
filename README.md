@@ -11,15 +11,19 @@
 
 ## Installation
 
-Development version
+To install the development version on a Unix system (we did not test on a Windows machine) use
 
 ```bash
 pip install git+https://github.com/kjappelbaum/pyprocessta.git
 ```
 
+The installation should be completed within minutes or seconds.
+
+Note that the package currently depends on our fork of the darts package and is not tested on the latest official release of the darts library.
+
 ## Reproducing the analysis in "Deep learning for industrial processes: Forecasting amine emissions from a carbon capture plant"
 
-For the notebooks and scripts we used in this work, see the `paper` directory.
+For the notebooks and scripts we used in this work, see the `paper` directory. This directory also contains a "freeze" of the conda environment we used in our work.
 
 ## Acknowledgments
 

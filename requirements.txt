@@ -1,3 +1,4 @@
 matplotlib
 pandas
 statsmodels
+git+git@github.com:kjappelbaum/darts.git@f15abd973ea72be76921ffcfc83908a2afaed912#darts
