@@ -5,6 +5,8 @@ from typing import Union
 
 import pandas as pd
 
+__all__ = ["resample_regular"]
+
 
 def _interpolate(resampled, interpolation):
 

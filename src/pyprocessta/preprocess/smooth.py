@@ -6,6 +6,8 @@ import numpy as np
 import pandas as pd
 from scipy import stats
 
+__all__ = ["exponential_window_smoothing", "z_score_filter"]
+
 
 def exponential_window_smoothing(
     data: Union[pd.Series, pd.DataFrame], window_size: int, aggregation: str = "mean"
