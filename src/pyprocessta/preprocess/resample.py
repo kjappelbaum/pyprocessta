@@ -11,9 +11,9 @@ __all__ = ["resample_regular"]
 def _interpolate(resampled, interpolation):
 
     if isinstance(interpolation, int):
-        result = resampled.interpolate("spline", interpolation)
+        result = resampled.interpolate(method="spline", order=interpolation)
     else:
-        result = resampled.interpolate("linear")
+        result = resampled.interpolate(method="linear")
     return result
 
 
