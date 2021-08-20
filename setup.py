@@ -29,6 +29,31 @@ extras = {
 with open("requirements.txt") as f:
     requirements = f.read().splitlines()
 
+
+required = []
+dependency_links = []
+
+# Do not add to required lines pointing to Git repositories
+EGG_MARK = "#egg="
+for line in requirements:
+    if (
+        line.startswith("-e git:")
+        or line.startswith("-e git+")
+        or line.startswith("git:")
+        or line.startswith("git+")
+    ):
+        line = line.lstrip("-e ")  # in case that is using "-e"
+        if EGG_MARK in line:
+            package_name = line[line.find(EGG_MARK) + len(EGG_MARK) :]
+            repository = line[: line.find(EGG_MARK)]
+            required.append("%s @ %s" % (package_name, repository))
+            dependency_links.append(line)
+        else:
+            print("Dependency to a git repository should have the format:")
+            print("git+ssh://git@github.com/xxxxx/xxxxxx#egg=package_name")
+    else:
+        required.append(line)
+
 setup_kwargs = {
     "name": "pyprocessta",
     "version": "0.1.0",
@@ -43,7 +68,8 @@ setup_kwargs = {
     "packages": packages,
     "package_data": package_data,
     "extras_require": extras,
-    "install_requires": requirements,
+    "install_requires": required,
+    "dependency_links": dependency_links,
     "python_requires": ">=3.8,<3.9.0",
 }
 

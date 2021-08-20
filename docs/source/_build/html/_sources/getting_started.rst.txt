@@ -13,7 +13,7 @@ The latest version of pyprocessta can be installed from GitHub using
 Preprocessing
 --------------
 
-For basic preprocessing functions the :py:mod:`pyprocessta.preprocess` module can be used.
+For basic preprocessing functions the :py:module:`pyprocessta.preprocess` module can be used.
 
 
 Aligning to dataframes
@@ -90,28 +90,14 @@ To perform this analysis, you can use
 
 .. code-block:: python
 
-    from pyprocessta.eda.statistics import compute_granger_causality_matrix
+    from pyprocessta.eda.statistics import check_stationarity
 
-    causality_matrix = compute_granger_causality_matrix(input_dataframe)
-
-The matrix can, for example, be plotted as heatmap and highlights the maximum "correlation" between two series (up to some maximum lag).
+    test_results = check_stationarity(input_dataseries)
 
 
 Training a TCN model
 ----------------------
 
-The `Temporal convolutional neural network <https://unit8.co/resources/temporal-convolutional-networks-and-forecasting/>`_ implementation uses the darts library. The only change is that we make it possible to also enable dropout for inference.
-
 
 Causal impact analysis
 --------------------------
-
-Causal impact analysis allows to estimate the effect of some intervention in the absence of a control experiment. For doing so, one builds a model of what the behavior of the system would be without the intervention. The approach used in the `original causal impact paper <https://projecteuclid.org/journals/annals-of-applied-statistics/volume-9/issue-1/Inferring-causal-impact-using-Bayesian-structural-time-series-models/10.1214/14-AOAS788.full>`_ uses Bayesian structured time series models which, simply speaking, model time series via two key equation: a state equation that connects a latent, unobserved, state to the observations and once equation that describes the transition between states. The model is then defined by a model for the state and transitions between the states (e.g., local level and seasonality).
-An efficient Python implementation of this is provided by the `tfcausalimpact` package. We provide a wrapper for this
-
-.. code-block:: python
-
-    from pyprocessta.causalimpact import run_causal_impact_analysis
-
-
-In our work, we used the causal impact framework with TCN models with Monte-Carlo dropout uncertainty estimates.

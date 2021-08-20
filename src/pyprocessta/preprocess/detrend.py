@@ -13,6 +13,8 @@ import numpy as np
 import pandas as pd
 import statsmodels
 
+__all__ = ["detrend_stochastic", "detrend_linear_deterministc"]
+
 
 def detrend_stochastic(
     data: Union[pd.Series, pd.DataFrame]

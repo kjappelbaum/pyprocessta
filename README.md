@@ -9,6 +9,8 @@
 - time series modeling
 - causal impact analysis
 
+Note that this package is still in an early, experimental, development phase.
+
 ## Installation
 
 To install the development version on a Unix system (we did not test on a Windows machine) use
