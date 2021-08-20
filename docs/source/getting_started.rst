@@ -102,6 +102,16 @@ Training a TCN model
 
 The `Temporal convolutional neural network <https://unit8.co/resources/temporal-convolutional-networks-and-forecasting/>`_ implementation uses the darts library. The only change is that we make it possible to also enable dropout for inference.
 
+.. code-block:: python
+
+    from pyprocessta.model.tcn import run_model, get_train_test_data, transform_data, get_data
+
+    x_timeseries, y_timeseries = get_data(my_dataframe, targets=my_targets, features=my_features_
+    train_tuple, test_tuple = get_train_test_data(x_timeseries, y_timeseries, split_date="2010-01-18 12:59:15")
+    train_tuple, test_tuple, transformers = transform_data(train_tuple, test_tuple)
+
+    model = run_model(train_tuple)
+
 
 Causal impact analysis
 --------------------------
@@ -113,5 +123,15 @@ An efficient Python implementation of this is provided by the `tfcausalimpact` p
 
     from pyprocessta.causalimpact import run_causal_impact_analysis
 
+    ci = run_causal_impact_analysis(
+        df=data,
+        x_columns=["a", "b", "c"],
+        intervention_column="a",
+        y_column="e",
+        start=[s_0, s_1],
+        end=[e_0, e_1],
+    )
 
-In our work, we used the causal impact framework with TCN models with Monte-Carlo dropout uncertainty estimates.
+Where `ci` is an object.
+
+In our work, we used the causal impact framework with TCN models with Monte-Carlo dropout uncertainty estimates. You can find the code for this in the `paper` directory.
