@@ -21,7 +21,7 @@ jobs:
       - name: Install dependencies
         run: |
           pip install .[testing,causalimpact,pre-commit]
-      - name: Run pre-commit
-        run: pre-commit run --all-files || ( git status --short ; git diff ; exit 1 )
       - name: Run pytest
         run: pytest
+      - name: Run pre-commit
+        run: pre-commit run --all-files || ( git status --short ; git diff ; exit 1 )

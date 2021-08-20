@@ -24,7 +24,8 @@ from causalimpact.model import build_bijector, build_inv_gamma_sd_prior
 
 from ..eda.statistics import check_granger_causality
 
-__all__ = ['run_causal_impact_analysis']
+__all__ = ["run_causal_impact_analysis"]
+
 
 def _select_unrelated_x(df, x_columns, intervention_column, p_value_threshold, lag=10):
     unrelated_x = []

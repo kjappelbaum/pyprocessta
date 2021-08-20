@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 from setuptools import setup
 
+import versioneer
+
 package_dir = {"": "src"}
 
 packages = [
@@ -56,7 +58,8 @@ for line in requirements:
 
 setup_kwargs = {
     "name": "pyprocessta",
-    "version": "0.1.0",
+    "version": versioneer.get_version(),
+    "cmdclass": versioneer.get_cmdclass(),
     "description": "Python library for the analysis of time series data from chemical (engineering) processes",
     "long_description": None,
     "author": "Kevin M. Jablonka",

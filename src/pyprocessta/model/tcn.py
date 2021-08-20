@@ -1,24 +1,18 @@
 # -*- coding: utf-8 -*-
-import concurrent.futures
 from functools import partial
 from typing import Optional, Sequence
 
 import numpy as np
 import pandas as pd
 import torch
-import wandb
 from darts import TimeSeries
 from darts.dataprocessing.transformers import Scaler
 from darts.logging import raise_if_not
 from darts.models import TCNModel
 from darts.utils import _build_tqdm_iterator
 from darts.utils.data.timeseries_dataset import TimeSeriesInferenceDataset
-from definitions import MEASUREMENTS, TARGETS
 from joblib import Parallel, delayed
-from torch.optim.lr_scheduler import CyclicLR
 from torch.utils.data import DataLoader
-
-from pyprocessta.preprocess.resample import resample_regular
 
 from .utils import enable_dropout
 
@@ -47,8 +41,7 @@ MEAS_COLUMNS = [
     "FI-23",
     "delta_t",
 ]
-
-df = pd.read_pickle("df_dropped.pkl")
+TARGETS = ["2-Amino-2-methylpropanol C4H11NO", "Piperazine C4H10N2"]
 
 
 def summarize_results(results):
@@ -98,9 +91,9 @@ def parallelized_inference(model, x, y, repeats=100, start=0.3, stride=1, horizo
     return results
 
 
-def get_data():
-    y = TimeSeries.from_dataframe(df, value_cols=TARGETS)
-    x = TimeSeries.from_dataframe(df, value_cols=MEAS_COLUMNS)
+def get_data(df, targets=TARGETS, features=MEAS_COLUMNS):
+    y = TimeSeries.from_dataframe(df, value_cols=targets)
+    x = TimeSeries.from_dataframe(df, value_cols=features)
     return x, y
 
 
@@ -111,9 +104,6 @@ def transform_data(train_tuple, test_tuples):
 
     x_train = transformer.fit_transform(x_train)
 
-    # with open("x_scaler.pkl", "wb") as handle:
-    #     pickle.dump(transformer, handle)
-
     y_transformer = Scaler(name="YScaler")
     y_train = y_transformer.fit_transform(y_train)
 
@@ -123,9 +113,6 @@ def transform_data(train_tuple, test_tuples):
         x_test = transformer.transform(x_test)
         y_test = y_transformer.transform(y_test)
         transformed_test_tuples.append((x_test, y_test))
-
-    # with open("y_scaler.pkl", "wb") as handle:
-    #     pickle.dump(y_transformer, handle)
 
     return (x_train, y_train), transformed_test_tuples, (transformer, y_transformer)
 
@@ -138,9 +125,6 @@ def get_train_test_data(x, y, split_date="2010-01-18 12:59:15"):
 
 
 def run_model(train_tuple, input_chunk_length=60, output_chunk_length=10):
-
-    # run = wandb.init(project='process_ml', reinit=True, sync_tensorboard=True)
-    # with run:
     x_train, y_train = train_tuple
     model_cov = TCNModelDropout(
         input_chunk_length=input_chunk_length,
