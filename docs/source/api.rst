@@ -1,8 +1,8 @@
 The pyprocessta API reference
-=============================
+------------------------------
 
 Preprocessing
----------------
+===============
 .. automodule:: pyprocessta.preprocess.align
     :members:
     :show-inheritance:
@@ -29,7 +29,7 @@ Preprocessing
     :special-members:
 
 EDA
-----
+====
 
 .. automodule:: pyprocessta.eda.statistics
     :members:
@@ -38,7 +38,7 @@ EDA
 
 
 Causal impact analysis
--------------------------
+========================
 
 .. automodule:: pyprocessta.causalimpact
     :members:
@@ -46,7 +46,7 @@ Causal impact analysis
     :special-members:
 
 TCN
--------------------------
+========================
 
 .. automodule:: pyprocessta.model.tcn
     :members:
@@ -54,7 +54,7 @@ TCN
     :special-members:
 
 Utilities
------------
+==========
 
 .. automodule:: pyprocessta.utils
     :members:

@@ -6,6 +6,8 @@
 Welcome to pyprocessta's documentation!
 =======================================
 
+pyprocessta collects utilities for the analysis for timeseries data as they are collected in industrial processes.
+We used the tools to understand the solvent emissions from a post-combustion carbon capture plant.
 
 .. toctree::
    :maxdepth: 3

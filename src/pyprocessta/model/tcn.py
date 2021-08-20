@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from functools import partial
-from typing import Optional, Sequence
+from typing import List, Optional, Sequence
 
 import numpy as np
 import pandas as pd
@@ -91,13 +91,36 @@ def parallelized_inference(model, x, y, repeats=100, start=0.3, stride=1, horizo
     return results
 
 
-def get_data(df, targets=TARGETS, features=MEAS_COLUMNS):
+def get_data(
+    df: pd.Dataframe, targets: List[str] = TARGETS, features: List[str] = MEAS_COLUMNS
+) -> tuple:
+    """Build x (covariates) and y (targets) time series from dataframe
+
+    Args:
+        df (pd.Dataframe): Must be time-indexed
+        targets (List[str], optional): names of target columns.
+            Defaults to TARGETS.
+        features (List[str], optional): names of covariate columns.
+            Defaults to MEAS_COLUMNS.
+
+    Returns:
+        tuple: [description]
+    """
     y = TimeSeries.from_dataframe(df, value_cols=targets)
     x = TimeSeries.from_dataframe(df, value_cols=features)
     return x, y
 
 
-def transform_data(train_tuple, test_tuples):
+def transform_data(train_tuple: tuple, test_tuples: List[tuple]):
+    """Scale data using minmax scaling
+
+    Args:
+        train_tuple (tuple): tuple of darts time series for training
+        test_tuples (List[tuple]): tuples (x,y) of darts time series for testing
+
+    Returns:
+        tuple: tuple of time series for training, test tuples and transformers
+    """
     x_train, y_train = train_tuple
 
     transformer = Scaler()
@@ -117,14 +140,41 @@ def transform_data(train_tuple, test_tuples):
     return (x_train, y_train), transformed_test_tuples, (transformer, y_transformer)
 
 
-def get_train_test_data(x, y, split_date="2010-01-18 12:59:15"):
+def get_train_test_data(
+    x: TimeSeries, y: TimeSeries, split_date="2010-01-18 12:59:15"
+) -> tuple:
+    """Perform a train/test split at given data
+
+    Args:
+        x (TimeSeries): darts TimeSeries object
+        y (TimeSeries): darts Timeseries object
+        split_date (str, optional): Date at which split is performed.
+            Data before this date is used for training tuple.
+            Data after this date for the testing tuple.
+            Defaults to "2010-01-18 12:59:15".
+
+    Returns:
+        tuple: tuples of x,y for train and test set
+    """
     y_train, y_test = y.split_before(pd.Timestamp(split_date))
     x_train, x_test = x.split_before(pd.Timestamp(split_date))
 
     return (x_train, y_train), (x_test, y_test)
 
 
-def run_model(train_tuple, input_chunk_length=60, output_chunk_length=10):
+def run_model(
+    train_tuple: tuple, input_chunk_length: int = 60, output_chunk_length: int = 10
+) -> TCNModelDropout:
+    """Train a TCN model
+
+    Args:
+        train_tuple (tuple): x, y darts timeseries
+        input_chunk_length (int, optional): Input sequence length. Defaults to 60.
+        output_chunk_length (int, optional): Output sequence length. Defaults to 10.
+
+    Returns:
+        TCNModelDropout: Trained TCN model
+    """
     x_train, y_train = train_tuple
     model_cov = TCNModelDropout(
         input_chunk_length=input_chunk_length,
