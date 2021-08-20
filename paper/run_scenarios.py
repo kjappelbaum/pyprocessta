@@ -11,11 +11,8 @@ import numpy as np
 import pandas as pd
 from darts import TimeSeries
 
-from pyprocessta.model.tcn import (
-    TCNModelDropout,
-    parallelized_inference,
-    summarize_results,
-)
+from pyprocessta.model.tcn import (TCNModelDropout, parallelized_inference,
+                                   summarize_results)
 
 THIS_DIR = os.path.dirname(os.path.realpath(__file__))
 
