@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it using these metadata."
+authors:
+  - family-names: Jablonka
+    given-names: "Kevin Maik"
+    orcid: "https://orcid.org/0000-0003-4894-4660"
+  - family-names: Charalambous
+    given-names: Charithea
+  - family-names: Sanchez Fernandez
+    given-names: Eva
+    orcid: "https://orcid.org/0000-0001-6527-7455"
+  - family-names: Wiechers
+    given-names: Georg
+  - family-names: Moser
+    given-names: Peter
+  - family-names: Monteiro
+    given-names: Juliana
+    orcid: "https://orcid.org/0000-0002-2954-2466"
+  - family-names: Garcia
+    given-names: Susana
+  - family-names: Smit
+    given-names: Berend
+    orcid: "https://orcid.org/0000-0003-4653-8562"
+doi: "10.5281/zenodo.5222270
+license: "MIT"
+repository-code: "https://github.com/kjappelbaum/pyprocessta"
+title: pyprocessta
+version: v0.1.0
