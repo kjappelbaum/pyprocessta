@@ -1,5 +1,5 @@
 matplotlib
-pandas<=1.1
-statsmodels<=0.11
-git+git@github.com:kjappelbaum/darts.git@f15abd973ea72be76921ffcfc83908a2afaed912#darts
-pytorch<=1.8
+pandas
+statsmodels
+u8darts
+torch
