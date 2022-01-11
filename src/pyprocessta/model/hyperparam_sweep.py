@@ -5,6 +5,8 @@ import pandas as pd
 from darts.metrics import mape, mae
 from darts import TimeSeries
 from darts.dataprocessing.transformers import Scaler
+from copy import deepcopy
+import numpy as np
 
 MEAS_COLUMNS = [
     "TI-19",
@@ -40,7 +42,7 @@ MEAS_COLUMNS = [
 TARGETS_clean = ["2-Amino-2-methylpropanol C4H11NO", "Piperazine C4H10N2"]
 
 sweep_config = {
-    "name": "",
+    "metric": {"goal": "minimize", "name": "mae_valid"},
     "method": "bayes",
     "parameters": {
         "num_layers": {"values": [2, 4, 8, 16]},
@@ -51,34 +53,42 @@ sweep_config = {
             "min": 0.1,
             "max": 0.9,
         },
-        "batch_size": [32, 64, 128],
+        "batch_size": {"values": [32, 64, 128]},
         "num_outputs": {"values": [0, 1]},
         "n_epochs": {"values": [100, 200, 300, 400]},
-        "input_chunk_length": {"values": [30, 40, 60, 80, 160]},
+        "input_chunk_length": {"values": [31, 40, 60, 80, 160]},
         "lr": {"min": -5, "max": -1, "distribution": "log_uniform"},
     },
 }
 
-sweep_id = wandb.sweep(sweep_config)
+sweep_id = wandb.sweep(sweep_config, project="pyprocessta")
 
 
-df = pd.read_pickle("../paper/20210624_df_cleaned.pkl")
-Y = TimeSeries.from_dataframe(df, value_cols=TARGETS_clean)
-X = TimeSeries.from_dataframe(df, value_cols=MEAS_COLUMNS)
+df = pd.read_pickle("../../../paper/20210624_df_cleaned.pkl")
+Y = TimeSeries.from_dataframe(df, value_cols=TARGETS_clean).astype(np.float32)
+X = TimeSeries.from_dataframe(df, value_cols=MEAS_COLUMNS).astype(np.float32)
+
+transformer = Scaler()
+X = transformer.fit_transform(X)
+
+y_transformer = Scaler()
+Y = y_transformer.fit_transform(Y)
 
 
 def get_data(num_outputs):
-    x = X
-    y = Y if num_outputs == 2 else Y[TARGETS_clean[0]]
-    train, valid, test = split_data(x, y, 0.5)
+    targets = TARGETS_clean if num_outputs == 1 else [TARGETS_clean[0]]
+    train, valid, test = split_data(X, Y, targets, 0.5)
 
-    return train, valid, test
+    return (train, valid, test)
 
 
-def train_test(config):
-    run = wandb.init(config)
+def train_test():
+    run = wandb.init()
 
+    print("get data")
     train, valid, _ = get_data(run.config.num_outputs)
+
+    print("initialize model")
     model_cov = TCNModel(
         input_chunk_length=run.config.input_chunk_length,
         output_chunk_length=30,
@@ -90,11 +100,14 @@ def train_test(config):
         batch_size=run.config.batch_size,
         n_epochs=run.config.n_epochs,
         log_tensorboard=False,
-        optimizer_kwargs={"lr": run.config.lr},
+        optimizer_kwargs={"lr": run.config.lr},  # run.config.lr},
     )
+
+    print("fit")
 
     model_cov.fit(series=train[1], past_covariates=train[0], verbose=False)
 
+    print("historical forecast train set")
     backtest_train = model_cov.historical_forecasts(
         train[1],
         past_covariates=train[0],
@@ -105,6 +118,7 @@ def train_test(config):
         verbose=False,
     )
 
+    print("historical forecast valid")
     backtest_valid = model_cov.historical_forecasts(
         valid[1],
         past_covariates=valid[0],
@@ -115,14 +129,17 @@ def train_test(config):
         verbose=False,
     )
 
-    mape_valid = mape(valid[TARGETS_clean[0]], backtest_valid["0"])
-    mape_train = mape(train[TARGETS_clean[0]], backtest_train["0"])
+    print("getting scores")
+    mape_valid = mape(valid[1][TARGETS_clean[0]], backtest_valid["0"])
+    mape_train = mape(train[1][TARGETS_clean[0]], backtest_train["0"])
 
-    mae_valid = mae(valid[TARGETS_clean[0]], backtest_valid["0"])
-    mae_train = mae(train[TARGETS_clean[0]], backtest_train["0"])
+    mae_valid = mae(valid[1][TARGETS_clean[0]], backtest_valid["0"])
+    mae_train = mae(train[1][TARGETS_clean[0]], backtest_train["0"])
 
     wandb.log({"mape_valid": mape_valid})
     wandb.log({"mape_train": mape_train})
+
+    print(f"MAPE valid {mape_valid}")
 
     wandb.log({"mae_valid": mae_valid})
     wandb.log({"mae_train": mae_train})
