@@ -61,7 +61,7 @@ sweep_config = {
     },
 }
 
-# sweep_id = wandb.sweep(sweep_config, project="pyprocessta")
+sweep_id = wandb.sweep(sweep_config, project="pyprocessta")
 
 
 df = pd.read_pickle("../../../paper/20210624_df_cleaned.pkl")
@@ -146,4 +146,4 @@ def train_test():
 
 
 if __name__ == "__main__":
-    wandb.agent('kf2cj83k', train_test, project="pyprocessta")
+    wandb.agent(sweep_id, train_test)

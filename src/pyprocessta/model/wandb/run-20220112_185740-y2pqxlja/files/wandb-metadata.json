@@ -1,0 +1,22 @@
+{
+    "os": "macOS-12.1-arm64-arm-64bit",
+    "python": "3.8.11",
+    "heartbeatAt": "2022-01-12T17:57:46.703586",
+    "startedAt": "2022-01-12T17:57:40.662023",
+    "docker": null,
+    "cpu_count": 10,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "hyperparam_sweep.py",
+    "codePath": "src/pyprocessta/model/hyperparam_sweep.py",
+    "git": {
+        "remote": "git@github.com:kjappelbaum/pyprocessta.git",
+        "commit": "6cd416ab9e2e3d37c41280ea89f46fc3ff54f427"
+    },
+    "email": "kevin.jablonka@epfl.ch",
+    "root": "/Users/kevinmaikjablonka/git/kjappelbaum/pyprocessta",
+    "host": "Kevins-MacBook-Pro.local",
+    "username": "kevinmaikjablonka",
+    "executable": "/Users/kevinmaikjablonka/miniconda3/envs/pyprocessta/bin/python"
+}
