@@ -212,3 +212,9 @@ tags
 
 # End of https://www.toptal.com/developers/gitignore/api/vscode,macos,jupyternotebooks,vim,python
 dev_notebooks
+*.pdf
+*.joblib
+*.pth
+*.pkl 
+*.out 
+examples
