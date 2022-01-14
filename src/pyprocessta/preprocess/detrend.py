@@ -9,9 +9,10 @@ References:
 from copy import deepcopy
 from typing import Union
 
-import numpy as np
 import pandas as pd
 import statsmodels
+
+__all__ = ["detrend_stochastic", "detrend_linear_deterministc"]
 
 
 def detrend_stochastic(

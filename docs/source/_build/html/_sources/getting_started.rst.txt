@@ -1,0 +1,103 @@
+Installation
+---------------
+
+We recommend installing pyprocessta in a dedicated `virtual environment <https://docs.python.org/3/tutorial/venv.html>`_ or `conda environment <https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html>`_. Note that we tested the code on Python 3.8.
+
+The latest version of pyprocessta can be installed from GitHub using
+
+.. code-block:: bash
+
+    pip install git+https://github.com/kjappelbaum/pyprocessta.git
+
+
+Preprocessing
+--------------
+
+For basic preprocessing functions the :py:module:`pyprocessta.preprocess` module can be used.
+
+
+Aligning to dataframes
+========================
+
+To align two dataframes, use
+
+.. code-block:: python
+
+    from pyprocessta.preprocess.align import align_two_dfs
+
+    aligned_dataframe = align_two_dfs(dataframe_a, dataframe_b)
+
+
+Filtering and smoothing
+========================
+
+To perform basic filtering operations you can use
+
+.. code-block:: python
+
+    from pyprocessta.preprocess.smooth import z_score_filter, exponential_window_smoothing
+
+    dataframe_no_spikes = z_score_filter(dataframe)
+    dataframe_smoothed = exponential_window_smoothing(dataframe)
+
+
+Detrending
+===========
+
+Often, it can be useful to remove trend components from time series data. One can distinguish stochastic and deterministic trend components, and we provide utilities to remove both
+
+
+.. code-block:: python
+
+    from pyprocessta.detrend import detrend_stochastic, detrend_linear_deterministc
+
+    dataframe_no_linear_trend = detrend_linear_deterministc(input_dataframe)
+    dataframe_no_stochastic_trend = detrend_stochastic(input_dataframe)
+
+
+Resampling
+=============
+
+For many applications it is important to have data sampled on a regular grid. To resample data onto such a grid you can use
+
+.. code-block:: python
+
+    from pyprocessta.resample import resample_regular
+
+    data_resampled = resample_regular(input_dataframe, interval='2min')
+
+EDA
+----
+
+Test for stationarity
+======================
+
+One of the most important tests before modeling time series data is to check for `stationarity <https://people.duke.edu/~rnau/411diff.htm>`_ (since many of the "simple" time series models assume stationarity).
+
+.. code-block:: python
+
+    from pyprocessta.eda.statistics import check_stationarity
+
+    test_results = check_stationarity(input_dataseries)
+
+This will perform the `Augmented-Dickey Fuller <https://en.wikipedia.org/wiki/Augmented_Dickey%E2%80%93Fuller_test>`_ and `Kwiatkowski–Phillips–Schmidt–Shin (KPSS) <https://en.wikipedia.org/wiki/KPSS_test>`_.
+
+Granger causality
+===================
+
+One interesting analysis is to check for "correlations" between different timeseries. In timeseries speak, this means to look for `Granger causality <https://en.wikipedia.org/wiki/Granger_causality>`_.
+To perform this analysis, you can use
+
+.. code-block:: python
+
+    from pyprocessta.eda.statistics import check_stationarity
+
+    test_results = check_stationarity(input_dataseries)
+
+
+Training a TCN model
+----------------------
+
+
+Causal impact analysis
+--------------------------

@@ -8,6 +8,8 @@ import pandas as pd
 
 from .resample import resample_regular
 
+__all__ = ["align_two_dfs"]
+
 
 def align_two_dfs(
     df_a: pd.DataFrame, df_b: pd.DataFrame, interpolation: Union[str, int] = "linear"

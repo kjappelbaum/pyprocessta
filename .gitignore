@@ -24,7 +24,6 @@ ipython_config.py
 # Icon must end with two \r
 Icon
 
-
 # Thumbnails
 ._*
 
@@ -184,7 +183,7 @@ dmypy.json
 ### Vim ###
 # Swap
 [._]*.s[a-v][a-z]
-!*.svg  # comment out if you don't need vector files
+!*.svg # comment out if you don't need vector files
 [._]*.sw[a-p]
 [._]s[a-rt-v][a-z]
 [._]ss[a-gi-z]
@@ -212,9 +211,6 @@ tags
 
 # End of https://www.toptal.com/developers/gitignore/api/vscode,macos,jupyternotebooks,vim,python
 dev_notebooks
-*.pdf
-*.joblib
-*.pth
-*.pkl 
-*.out 
+out
 examples
+src/pyprocessta/model/wandb/
