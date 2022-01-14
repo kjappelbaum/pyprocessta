@@ -10,7 +10,7 @@ from darts.dataprocessing.transformers import Scaler
 from darts.logging import raise_if_not
 from darts.models import TCNModel
 from darts.utils import _build_tqdm_iterator
-from darts.utils.data.timeseries_dataset import TimeSeriesInferenceDataset
+from darts.utils.data.inference_dataset import InferenceDataset
 from joblib import Parallel, delayed
 from torch.utils.data import DataLoader
 
@@ -196,102 +196,26 @@ def run_model(
 
 
 class TCNModelDropout(TCNModel):
-    # the batch arguments are currently not implemented and are just for compatibility of the API
-    def predict_from_dataset(
+    def predict_with_dropout(
         self,
         n: int,
-        input_series_dataset: TimeSeriesInferenceDataset,
+        input_series_dataset: InferenceDataset,
         batch_size: Optional[int] = None,
         verbose: bool = False,
-        n_jobs=1,
-    ) -> Sequence[TimeSeries]:
+        n_jobs: int = 1,
+        roll_size: Optional[int] = None,
+        num_samples: int = 1,
+        num_loader_workers: int = 0,
+    ):
         self.model.eval()
         enable_dropout(self)
-
-        # preprocessing
-        raise_if_not(
-            isinstance(input_series_dataset, TimeSeriesInferenceDataset),
-            "Only TimeSeriesInferenceDataset is accepted as input type",
+        return self.predict_from_dataset(
+            n,
+            input_series_dataset,
+            batch_size,
+            verbose,
+            n_jobs,
+            roll_size,
+            num_samples,
+            num_loader_workers,
         )
-
-        # check that the input sizes match
-        sample = input_series_dataset[0]
-
-        in_dim = sum(map(lambda ts: (ts.width if ts is not None else 0), sample))
-        raise_if_not(
-            in_dim == self.input_dim,
-            "The dimensionality of the series provided for prediction does not match the dimensionality "
-            "of the series this model has been trained on. Provided input dim = {}, "
-            "model input dim = {}".format(in_dim, self.input_dim),
-        )
-
-        # TODO currently we assume all forecasts fit in memory
-        in_tsr_arr = []
-        for target_series, covariate_series in input_series_dataset:
-            raise_if_not(
-                len(target_series) >= self.input_chunk_length,
-                "All input series must have length >= `input_chunk_length` ({}).".format(
-                    self.input_chunk_length
-                ),
-            )
-
-            # TODO: here we could be smart and handle cases where target and covariates do not have same time axis.
-            # TODO: e.g. by taking their latest common timestamp.
-
-            in_tsr_sample = target_series.values(copy=False)[-self.input_chunk_length :]
-            in_tsr_sample = torch.from_numpy(in_tsr_sample).float().to(self.device)
-            if covariate_series is not None:
-                in_cov_tsr = covariate_series.values(copy=False)[
-                    -self.input_chunk_length :
-                ]
-                in_cov_tsr = torch.from_numpy(in_cov_tsr).float().to(self.device)
-                in_tsr_sample = torch.cat([in_tsr_sample, in_cov_tsr], dim=1)
-            in_tsr_sample = in_tsr_sample.view(1, self.input_chunk_length, -1)
-
-            in_tsr_arr.append(in_tsr_sample)
-
-        # concatenate to one tensor of size [len(input_series_dataset), input_chunk_length, 1 + # of covariates)]
-        in_tsr = torch.cat(in_tsr_arr, dim=0)
-
-        # prediction
-        pred_loader = DataLoader(
-            in_tsr,
-            batch_size=batch_size or self.batch_size,
-            shuffle=False,
-            num_workers=0,
-            pin_memory=False,
-            drop_last=False,
-        )
-        predictions = []
-
-        iterator = _build_tqdm_iterator(pred_loader, verbose=verbose)
-
-        with torch.no_grad():
-            for batch in iterator:
-                batch_prediction = []  # (num_batches, n % output_chunk_length)
-                out = self.model(batch)[
-                    :, self.first_prediction_index :, :
-                ]  # (batch_size, output_chunk_length, width)
-                batch_prediction.append(out)
-                while sum(map(lambda t: t.shape[1], batch_prediction)) < n:
-                    roll_size = min(self.output_chunk_length, self.input_chunk_length)
-                    batch = torch.roll(batch, -roll_size, 1)
-                    batch[:, -roll_size:, :] = out[:, :roll_size, :]
-                    # take only last part of the output sequence where needed
-                    out = self.model(batch)[:, self.first_prediction_index :, :]
-                    batch_prediction.append(out)
-
-                batch_prediction = torch.cat(batch_prediction, dim=1)
-                batch_prediction = batch_prediction[:, :n, :]
-                batch_prediction = batch_prediction.cpu().detach().numpy()
-
-                ts_forecasts = Parallel(n_jobs=n_jobs)(
-                    delayed(self._build_forecast_series)(prediction, input_series[0])
-                    for prediction, input_series in zip(
-                        batch_prediction, input_series_dataset
-                    )
-                )
-
-                predictions.extend(ts_forecasts)
-
-        return predictions

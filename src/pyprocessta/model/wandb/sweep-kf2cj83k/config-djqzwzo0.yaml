@@ -1,0 +1,22 @@
+wandb_version: 1
+
+batch_size:
+  value: 32
+dropout:
+  value: 0.102944868153432
+input_chunk_length:
+  value: 60
+kernel_size:
+  value: 4
+lr:
+  value: 0.012461101142964748
+n_epochs:
+  value: 300
+num_filters:
+  value: 16
+num_layers:
+  value: 16
+num_outputs:
+  value: 0
+weight_norm:
+  value: true
