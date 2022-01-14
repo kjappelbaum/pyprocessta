@@ -13,7 +13,7 @@ https://towardsdatascience.com/implementing-causal-impact-on-top-of-tensorflow-p
 One can use covariates to build the counterfactual but one needs to be careful that
 they are not changed by the intervention.
 """
-from typing import List, Union
+from typing import List
 
 import numpy as np
 import pandas as pd

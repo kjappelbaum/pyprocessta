@@ -119,12 +119,21 @@ SCALER = joblib.load("x_scaler_reduced_feature_set")
 DF = pd.read_pickle("20210508_df_cleaned.pkl")
 
 
+def calculate_initialization_percentage(timeseries_length: int, input_sequence_length: int= 63):
+    fraction_of_input = input_sequence_length / timeseries_length
+    print(fraction_of_input)
+    print(timeseries_length * fraction_of_input)
+    return max([fraction_of_input, 0.3])
+
 def run_update(x, target="amine"):
     model_dict = UPDATE_MAPPING[target]
     y = model_dict["scaler"].transform(
         TimeSeries.from_dataframe(DF, value_cols=model_dict["name"])
     )
-    df = parallelized_inference(model_dict["model"], x, y, repeats=2)
+
+    # for short time series, using 0.3 for initialization is not enough, 
+    # hence we calculate what the start keyword argument should be 
+    df = parallelized_inference(model_dict["model"], x, y, repeats=2, start=calculate_initialization_percentage(len(y)))
     means, stds = summarize_results(df)
     return {"means": means, "stds": stds}
 

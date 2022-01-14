@@ -1,23 +1,17 @@
-from os import SCHED_BATCH
 import sys
-
-from numpy.core.numeric import allclose
-
 sys.path.append("../src")
 from parse_cesar1 import get_timestep_tuples
 import pickle
 from pyprocessta.causalimpact import _select_unrelated_x
 from pyprocessta.model.tcn import (
-    transform_data,
     parallelized_inference,
     TCNModelDropout,
 )
-from pyprocessta.model.scaler import Scaler
+from darts.dataprocessing.transformers import Scaler
 from darts import TimeSeries
 import pandas as pd
 from copy import deepcopy
 import time
-import numpy as np
 
 TIMESTR = time.strftime("%Y%m%d-%H%M%S")
 
@@ -43,15 +37,15 @@ MEAS_COLUMNS = [
     #     "PI-30",
     "TI-1213",
     #     "TI-4",
-    "FI-23",
-    "FI-20",
-    "FI-20/FI-23",
+    # "FI-23",
+    # "FI-20",
+    # "FI-20/FI-23",
     #    "TI-22",
     "delta_t",
     "TI-35",
     "delta_t_2",
 ]
-HORIZON = 6
+HORIZON = 2
 
 df = pd.read_pickle("20210508_df_for_causalimpact.pkl")
 
@@ -118,14 +112,14 @@ def run_model(x_trains, y_trains):
         input_chunk_length=30,
         output_chunk_length=HORIZON,
         num_layers=4,
-        num_filters=64,
-        kernel_size=4,
+        num_filters=128,
+        kernel_size=3,
         dropout=0.3,
         weight_norm=True,
         batch_size=32,
         n_epochs=200,
         log_tensorboard=True,
-        # optimizer_kwargs={"lr": 1e-5},
+        #optimizer_kwargs={"lr": 5e-6},
     )
 
     model_cov.fit(series=y_trains, covariates=x_trains, verbose=False)
@@ -167,21 +161,22 @@ def transform_data_new(train_tuple, test_tuples, all_tuple):
 
 
 if __name__ == "__main__":
-    #TARGETS = ["2-Amino-2-methylpropanol C4H11NO", "Piperazine C4H10N2"]
-    TARGETS = ["Carbon dioxide CO2", "Ammonia NH3"]
+    TARGETS = ["2-Amino-2-methylpropanol C4H11NO", "Piperazine C4H10N2"]
+    #TARGETS = ["Carbon dioxide CO2", "Ammonia NH3"]
     for day in range(len(step_changes)):
         cols = deepcopy(MEAS_COLUMNS)
         if step_changes[day][0] in MEAS_COLUMNS:
             for var in step_changes[day]:
                 try:
-                    cols = _select_unrelated_x(df, cols, var, 0.01)
+                    cols = _select_unrelated_x(df, cols, var, 0.01) 
+                    print(TARGETS, day, var, cols)
                     y = TimeSeries.from_dataframe(df[TARGETS])
                     x = TimeSeries.from_dataframe(df[cols])
 
                     x = Scaler().fit_transform(x)
                     y = Scaler().fit_transform(y)
 
-                    x_trains = []
+                    x_trains = [] 
                     y_trains = []
 
                     # for day_ in range(len(step_changes)):
