@@ -24,6 +24,8 @@ from causalimpact.model import build_bijector, build_inv_gamma_sd_prior
 
 from ..eda.statistics import check_granger_causality
 
+__all__ = ["run_causal_impact_analysis"]
+
 
 def _select_unrelated_x(df, x_columns, intervention_column, p_value_threshold, lag=10):
     unrelated_x = []
@@ -78,14 +80,14 @@ def run_causal_impact_analysis(
     )
     new_data = df[[y_column] + x_columns]
 
-    model = _linear_trend_linear_reg_model(new_data, start, end)
+    # model = _linear_trend_linear_reg_model(new_data, start, end)
+
     # now we can run the causal impact analysis
     ci = CausalImpact(
         new_data,
         start,
         end,
         # model=model,
-        # model_args={"fit_method": "hmc"}
         model_args={"standardize": True, "nseasons": 16, "prior_sd": 0.01},
     )
 

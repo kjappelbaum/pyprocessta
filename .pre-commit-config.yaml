@@ -40,7 +40,7 @@ repos:
       - id: black
         language_version: python3
         name: black
-        exclude: ^docs/
+        exclude: ^docs/|_version.py|versioneer.py
         entry: black
         types: [python]
 
@@ -50,7 +50,7 @@ repos:
       - id: isort
         name: isort
         language: system
-        exclude: ^docs/
+        exclude: ^docs/|_version.py|versioneer.py
         types: [python]
         entry: isort
 
@@ -59,6 +59,6 @@ repos:
       - id: pylint
         language: system
         types: [file, python]
-        exclude: ^docs/
+        exclude: ^docs/|_version.py|versioneer.py
         name: pylint
         entry: pylint

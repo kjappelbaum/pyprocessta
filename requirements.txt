@@ -1,3 +1,5 @@
 matplotlib
 pandas
 statsmodels
+u8darts
+torch

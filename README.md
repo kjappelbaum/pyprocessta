@@ -2,26 +2,33 @@
 
 > Making the analysis of data from chemical engineering processes boring again!
 
-pyprocessta is a suite of tools that aims to help chemical engineers with the analysis of their time series. Pyprocessta provides tools for the following steps
+`pyprocessta` is a suite of tools that aims to help chemical engineers with the analysis of their time series. `pyprocessta` provides tools for the following steps
 
 - exploratory data analysis
 - data cleaning
 - time series modeling
 - causal impact analysis
 
+Note that this package is still in an early, experimental, development phase.
+
 ## Installation
 
-Latest stable version
-
-```bash
-pip install pyprocessta
-```
-
-development version
+To install the development version on a Unix system (we did not test on a Windows machine) use
 
 ```bash
 pip install git+https://github.com/kjappelbaum/pyprocessta.git
 ```
+
+The installation should be completed within minutes or seconds.
+
+Note that the package currently depends on our fork of the darts package and is not tested on the latest official release of the darts library.
+
+## Reproducing the analysis in "Deep learning for industrial processes: Forecasting amine emissions from a carbon capture plant"
+
+For the notebooks and scripts we used in this work, see the `paper` directory. This directory also contains a "freeze" of the conda environment we used in our work.
+
+You can use the notebooks in this directory as an example of how to use the library.
+The use of the main functionalities is also described in the documentation.
 
 ## Acknowledgments
 
