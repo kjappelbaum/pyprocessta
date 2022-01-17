@@ -61,7 +61,7 @@ sweep_config = {
     },
 }
 
-# sweep_id = wandb.sweep(sweep_config, project="pyprocessta")
+sweep_id = wandb.sweep(sweep_config, project="pyprocessta")
 
 
 df = pd.read_pickle("../../../paper/20210624_df_cleaned.pkl")
@@ -91,7 +91,7 @@ def train_test():
     print("initialize model")
     model_cov = TCNModel(
         input_chunk_length=run.config.input_chunk_length,
-        output_chunk_length=30,
+        output_chunk_length=5,
         num_layers=run.config.num_layers,
         num_filters=run.config.num_filters,
         kernel_size=run.config.kernel_size,
@@ -146,4 +146,4 @@ def train_test():
 
 
 if __name__ == "__main__":
-    wandb.agent('kf2cj83k', train_test, project="pyprocessta")
+    wandb.agent(sweep_id, train_test, project="pyprocessta")

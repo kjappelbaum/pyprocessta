@@ -92,18 +92,19 @@ def load_process_data(
 
 def get_timestep_tuples(df, times, i):
     times = sorted(times, key=lambda d: d["start"])
+    day = times[i]["start"].day
     if i == 0:
         s_0 = df.index[1]
     else:
-        s_0 = df.index[
-            df.index.get_loc(pd.to_datetime(times[i - 1]["end"]), method="bfill") + 1
-        ]
+        s_0 = df[df.index.day == day].index[0]
 
-    s_1 = df.index[df.index.get_loc(pd.to_datetime(times[i]["start"]), method="ffill")]
-    e_0 = df.index[df.index.get_loc(pd.to_datetime(times[i]["start"]), method="bfill")]
-    e_1 = df.index[
-        df.index.get_loc(pd.to_datetime(times[i]["end"]), method="ffill") - 1
+    end = df[df.index.day == day].index[-1]
+
+    s_1 = df.index[
+        df.index.get_loc(pd.to_datetime(times[i]["start"]), method="nearest")
     ]
+    e_0 = df.index[df.index.get_loc(pd.to_datetime(times[i]["end"]), method="nearest")]
+    e_1 = end
 
     pre_intervention_period = [s_0, s_1]
     intervention_period = [e_0, e_1]

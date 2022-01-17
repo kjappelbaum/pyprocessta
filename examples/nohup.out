@@ -1,0 +1,1061 @@
+[W 2021-12-20 13:41:39.063 LabApp] Config option `kernel_spec_manager_class` not recognized by `LabApp`.
+[W 2021-12-20 13:41:39.065 LabApp] Config option `kernel_spec_manager_class` not recognized by `LabApp`.
+[W 2021-12-20 13:41:39.070 LabApp] Config option `kernel_spec_manager_class` not recognized by `LabApp`.
+[I 2021-12-20 13:41:39.071 ServerApp] jupyterlab | extension was successfully linked.
+[W 2021-12-20 13:41:39.072 NotebookApp] Config option `kernel_spec_manager_class` not recognized by `NotebookApp`.
+[W 2021-12-20 13:41:39.074 NotebookApp] Config option `kernel_spec_manager_class` not recognized by `NotebookApp`.
+[W 2021-12-20 13:41:39.078 NotebookApp] Config option `kernel_spec_manager_class` not recognized by `NotebookApp`.
+[I 2021-12-20 13:41:39.300 ServerApp] nb_conda | extension was found and enabled by nbclassic. Consider moving the extension to Jupyter Server's extension paths.
+[I 2021-12-20 13:41:39.300 ServerApp] nb_conda | extension was successfully linked.
+[I 2021-12-20 13:41:39.300 ServerApp] nbclassic | extension was successfully linked.
+[I 2021-12-20 13:41:39.791 ServerApp] [nb_conda_kernels] enabled, 13 kernels found
+[I 2021-12-20 13:41:39.836 LabApp] JupyterLab extension loaded from /home/kjablonk/anaconda3/envs/timeseries2/lib/python3.8/site-packages/jupyterlab
+[I 2021-12-20 13:41:39.836 LabApp] JupyterLab application directory is /home/kjablonk/anaconda3/envs/timeseries2/share/jupyter/lab
+[I 2021-12-20 13:41:39.838 ServerApp] jupyterlab | extension was successfully loaded.
+[I 2021-12-20 13:41:39.839 ServerApp] [nb_conda] enabled
+[I 2021-12-20 13:41:39.839 ServerApp] nb_conda | extension was successfully loaded.
+[I 2021-12-20 13:41:39.841 ServerApp] nbclassic | extension was successfully loaded.
+[I 2021-12-20 13:41:39.842 ServerApp] Serving notebooks from local directory: /home/kjablonk/documents/timeseries_analysis/pyprocessta/examples
+[I 2021-12-20 13:41:39.842 ServerApp] Jupyter Server 1.4.1 is running at:
+[I 2021-12-20 13:41:39.842 ServerApp] http://lsmopc4:7666/lab?token=f2f10edf3b8113af3934cdfa5d6cfe75f7662edbd216075f
+[I 2021-12-20 13:41:39.842 ServerApp]  or http://127.0.0.1:7666/lab?token=f2f10edf3b8113af3934cdfa5d6cfe75f7662edbd216075f
+[I 2021-12-20 13:41:39.842 ServerApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 2021-12-20 13:41:39.844 ServerApp] 
+    
+    To access the server, open this file in a browser:
+        file:///home/kjablonk/.local/share/jupyter/runtime/jpserver-61913-open.html
+    Or copy and paste one of these URLs:
+        http://lsmopc4:7666/lab?token=f2f10edf3b8113af3934cdfa5d6cfe75f7662edbd216075f
+     or http://127.0.0.1:7666/lab?token=f2f10edf3b8113af3934cdfa5d6cfe75f7662edbd216075f
+[I 2021-12-20 13:41:55.644 ServerApp] 302 GET / (127.0.0.1) 1.14ms
+[I 2021-12-20 13:41:55.662 LabApp] 302 GET /lab? (127.0.0.1) 1.38ms
+[I 2021-12-20 13:42:07.969 ServerApp] 302 POST /login?next=%2Flab%3F (127.0.0.1) 2.37ms
+/home/kjablonk/anaconda3/envs/timeseries2/lib/python3.8/json/encoder.py:257: UserWarning: date_default is deprecated since jupyter_client 7.0.0. Use jupyter_client.jsonutil.json_default.
+  return _iterencode(o, 0)
+[W 2021-12-20 13:42:13.300 LabApp] Could not determine jupyterlab build status without nodejs
+[W 2021-12-20 13:42:14.510 ServerApp] Notebook 20211220_build_transformer_model.ipynb is not trusted
+[I 2021-12-20 13:42:15.549 ServerApp] Kernel started: 60ffd0d6-ba8c-43fd-80fb-1f7b3b3e61d4
+CONDA_PREFIX=/home/kjablonk/anaconda3/envs/timeseries_analysis
+/home/kjablonk/anaconda3/envs/timeseries2/lib/python3.8/json/encoder.py:257: UserWarning: date_default is deprecated since jupyter_client 7.0.0. Use jupyter_client.jsonutil.json_default.
+  return _iterencode(o, 0)
+[I 2021-12-20 13:42:35.960 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 13:45:11.512 ServerApp] Kernel shutdown: 60ffd0d6-ba8c-43fd-80fb-1f7b3b3e61d4
+[I 2021-12-20 13:45:12.779 ServerApp] Kernel started: 5f5effe5-4502-4471-9121-7f8380b602eb
+[I 2021-12-20 13:45:16.023 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 13:45:28.915 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 13:45:31.267 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[W 2021-12-20 13:45:41.209 ServerApp] Notebook validate_model.ipynb is not trusted
+[I 2021-12-20 13:45:44.613 ServerApp] Kernel started: b5f59ac4-b409-436e-903e-cf9d19aae994
+[I 2021-12-20 13:45:52.916 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 13:47:42.372 ServerApp] Saving file at /validate_model.ipynb
+[W 2021-12-20 13:47:42.373 ServerApp] Notebook validate_model.ipynb is not trusted
+[W 2021-12-20 13:49:28.191 LabApp] Config option `kernel_spec_manager_class` not recognized by `LabApp`.
+[W 2021-12-20 13:49:28.193 LabApp] Config option `kernel_spec_manager_class` not recognized by `LabApp`.
+[W 2021-12-20 13:49:28.198 LabApp] Config option `kernel_spec_manager_class` not recognized by `LabApp`.
+[I 2021-12-20 13:49:28.198 ServerApp] jupyterlab | extension was successfully linked.
+[W 2021-12-20 13:49:28.200 NotebookApp] Config option `kernel_spec_manager_class` not recognized by `NotebookApp`.
+[W 2021-12-20 13:49:28.202 NotebookApp] Config option `kernel_spec_manager_class` not recognized by `NotebookApp`.
+[W 2021-12-20 13:49:28.205 NotebookApp] Config option `kernel_spec_manager_class` not recognized by `NotebookApp`.
+[I 2021-12-20 13:49:28.329 ServerApp] nb_conda | extension was found and enabled by nbclassic. Consider moving the extension to Jupyter Server's extension paths.
+[I 2021-12-20 13:49:28.329 ServerApp] nb_conda | extension was successfully linked.
+[I 2021-12-20 13:49:28.329 ServerApp] nbclassic | extension was successfully linked.
+[I 2021-12-20 13:49:28.823 ServerApp] [nb_conda_kernels] enabled, 13 kernels found
+[I 2021-12-20 13:49:28.874 LabApp] JupyterLab extension loaded from /home/kjablonk/anaconda3/envs/timeseries_analysis/lib/python3.8/site-packages/jupyterlab
+[I 2021-12-20 13:49:28.874 LabApp] JupyterLab application directory is /home/kjablonk/anaconda3/envs/timeseries_analysis/share/jupyter/lab
+[I 2021-12-20 13:49:28.877 ServerApp] jupyterlab | extension was successfully loaded.
+[I 2021-12-20 13:49:28.878 ServerApp] [nb_conda] enabled
+[I 2021-12-20 13:49:28.878 ServerApp] nb_conda | extension was successfully loaded.
+[I 2021-12-20 13:49:28.880 ServerApp] nbclassic | extension was successfully loaded.
+[I 2021-12-20 13:49:28.880 ServerApp] Serving notebooks from local directory: /home/kjablonk/documents/timeseries_analysis/pyprocessta/examples
+[I 2021-12-20 13:49:28.880 ServerApp] Jupyter Server 1.4.1 is running at:
+[I 2021-12-20 13:49:28.880 ServerApp] http://lsmopc4:7777/lab?token=ec22704c5b1252996b8c3e8641022f51b123ef207c46c63b
+[I 2021-12-20 13:49:28.880 ServerApp]  or http://127.0.0.1:7777/lab?token=ec22704c5b1252996b8c3e8641022f51b123ef207c46c63b
+[I 2021-12-20 13:49:28.880 ServerApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 2021-12-20 13:49:28.883 ServerApp] 
+    
+    To access the server, open this file in a browser:
+        file:///home/kjablonk/.local/share/jupyter/runtime/jpserver-62531-open.html
+    Or copy and paste one of these URLs:
+        http://lsmopc4:7777/lab?token=ec22704c5b1252996b8c3e8641022f51b123ef207c46c63b
+     or http://127.0.0.1:7777/lab?token=ec22704c5b1252996b8c3e8641022f51b123ef207c46c63b
+[I 2021-12-20 13:49:46.390 ServerApp] 302 GET / (127.0.0.1) 1.12ms
+[I 2021-12-20 13:49:46.420 LabApp] 302 GET /lab? (127.0.0.1) 1.47ms
+[I 2021-12-20 13:49:59.321 ServerApp] 302 POST /login?next=%2Flab%3F (127.0.0.1) 2.47ms
+[W 2021-12-20 13:50:05.129 LabApp] Could not determine jupyterlab build status without nodejs
+[W 2021-12-20 13:50:06.242 ServerApp] Notebook 20211220_build_transformer_model.ipynb is not trusted
+[W 2021-12-20 13:50:06.262 ServerApp] Notebook validate_model.ipynb is not trusted
+[I 2021-12-20 13:50:08.209 ServerApp] Kernel started: fa49ec4f-cbc8-4232-b2a5-eca434c3ad17
+[I 2021-12-20 13:50:08.221 ServerApp] Kernel started: f045b085-97b9-4104-a8de-06158f3ebde5
+CONDA_PREFIX=/home/kjablonk/anaconda3/envs/timeseries2
+[I 2021-12-20 13:50:34.452 ServerApp] Kernel interrupted: f045b085-97b9-4104-a8de-06158f3ebde5
+2021-12-20 13:50:54.769302: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcudart.so.11.0
+[I 2021-12-20 13:51:20.952 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 13:51:37.137 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 13:51:57.232 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 13:52:07.659 ServerApp] Saving file at /validate_model.ipynb
+[W 2021-12-20 13:52:07.661 ServerApp] Notebook validate_model.ipynb is not trusted
+[I 2021-12-20 13:52:30.766 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 13:53:12.209 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 13:53:13.211 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 13:53:15.945 ServerApp] Starting buffering for fa49ec4f-cbc8-4232-b2a5-eca434c3ad17:1c1e733f-23f4-4ad9-9f7c-1223c01814bf
+[I 2021-12-20 13:53:19.089 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 13:53:31.488 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 13:53:37.344 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 13:53:53.831 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 14:15:28.149 ServerApp] Saving file at /validate_model.ipynb
+[W 2021-12-20 14:15:28.150 ServerApp] Notebook validate_model.ipynb is not trusted
+[I 2021-12-20 14:32:16.393 ServerApp] Saving file at /validate_model.ipynb
+[W 2021-12-20 14:32:16.395 ServerApp] Notebook validate_model.ipynb is not trusted
+[I 2021-12-20 14:36:18.584 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 14:37:10.139 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 14:38:44.227 ServerApp] Saving file at /validate_model.ipynb
+[W 2021-12-20 14:38:44.228 ServerApp] Notebook validate_model.ipynb is not trusted
+[I 2021-12-20 14:39:11.413 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 14:40:30.887 ServerApp] Saving file at /validate_model.ipynb
+[W 2021-12-20 14:40:30.889 ServerApp] Notebook validate_model.ipynb is not trusted
+[I 2021-12-20 14:40:32.130 ServerApp] Saving file at /validate_model.ipynb
+[W 2021-12-20 14:40:32.131 ServerApp] Notebook validate_model.ipynb is not trusted
+[I 2021-12-20 14:41:12.081 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 14:43:13.052 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 15:01:04.732 ServerApp] Saving file at /validate_model.ipynb
+[W 2021-12-20 15:01:04.733 ServerApp] Notebook validate_model.ipynb is not trusted
+[I 2021-12-20 15:01:27.173 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 15:03:05.194 ServerApp] Saving file at /validate_model.ipynb
+[W 2021-12-20 15:03:05.196 ServerApp] Notebook validate_model.ipynb is not trusted
+[I 2021-12-20 15:03:28.378 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 15:07:06.326 ServerApp] Saving file at /validate_model.ipynb
+[W 2021-12-20 15:07:06.327 ServerApp] Notebook validate_model.ipynb is not trusted
+[I 2021-12-20 15:22:27.523 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 15:24:07.515 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 15:24:57.866 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 15:25:59.929 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 15:26:57.524 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 15:27:11.190 ServerApp] Saving file at /validate_model.ipynb
+[W 2021-12-20 15:27:11.191 ServerApp] Notebook validate_model.ipynb is not trusted
+[I 2021-12-20 15:29:12.326 ServerApp] Saving file at /validate_model.ipynb
+[W 2021-12-20 15:29:12.328 ServerApp] Notebook validate_model.ipynb is not trusted
+[I 2021-12-20 15:29:22.752 ServerApp] Saving file at /validate_model.ipynb
+[W 2021-12-20 15:29:22.754 ServerApp] Notebook validate_model.ipynb is not trusted
+[I 2021-12-20 15:42:28.476 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[IPKernelApp] ERROR | Exception in message handler:
+Traceback (most recent call last):
+  File "/home/kjablonk/anaconda3/envs/timeseries_analysis/lib/python3.8/site-packages/jedi/cache.py", line 109, in wrapper
+    return dct[key]
+KeyError: ((), frozenset())
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/kjablonk/anaconda3/envs/timeseries_analysis/lib/python3.8/site-packages/ipykernel/kernelbase.py", line 268, in dispatch_shell
+    yield gen.maybe_future(handler(stream, idents, msg))
+  File "/home/kjablonk/anaconda3/envs/timeseries_analysis/lib/python3.8/site-packages/tornado/gen.py", line 762, in run
+    value = future.result()
+  File "/home/kjablonk/anaconda3/envs/timeseries_analysis/lib/python3.8/site-packages/tornado/gen.py", line 234, in wrapper
+    yielded = ctx_run(next, result)
+  File "/home/kjablonk/anaconda3/envs/timeseries_analysis/lib/python3.8/site-packages/ipykernel/kernelbase.py", line 583, in complete_request
+    matches = yield gen.maybe_future(self.do_complete(code, cursor_pos))
+  File "/home/kjablonk/anaconda3/envs/timeseries_analysis/lib/python3.8/site-packages/ipykernel/ipkernel.py", line 360, in do_complete
+    return self._experimental_do_complete(code, cursor_pos)
+  File "/home/kjablonk/anaconda3/envs/timeseries_analysis/lib/python3.8/site-packages/ipykernel/ipkernel.py", line 385, in _experimental_do_complete
+    completions = list(_rectify_completions(code, raw_completions))
+  File "/home/kjablonk/anaconda3/envs/timeseries_analysis/lib/python3.8/site-packages/IPython/core/completer.py", line 492, in rectify_completions
+    completions = list(completions)
+  File "/home/kjablonk/anaconda3/envs/timeseries_analysis/lib/python3.8/site-packages/IPython/core/completer.py", line 1837, in completions
+    for c in self._completions(text, offset, _timeout=self.jedi_compute_type_timeout/1000):
+  File "/home/kjablonk/anaconda3/envs/timeseries_analysis/lib/python3.8/site-packages/IPython/core/completer.py", line 1894, in _completions
+    signature = _make_signature(jm)
+  File "/home/kjablonk/anaconda3/envs/timeseries_analysis/lib/python3.8/site-packages/IPython/core/completer.py", line 1001, in _make_signature
+    signatures = completion.get_signatures()
+  File "/home/kjablonk/anaconda3/envs/timeseries_analysis/lib/python3.8/site-packages/jedi/api/classes.py", line 572, in get_signatures
+    for s in self._get_signatures()
+  File "/home/kjablonk/anaconda3/envs/timeseries_analysis/lib/python3.8/site-packages/jedi/api/classes.py", line 561, in _get_signatures
+    return [sig for name in names for sig in name.infer().get_signatures()]
+  File "/home/kjablonk/anaconda3/envs/timeseries_analysis/lib/python3.8/site-packages/jedi/api/classes.py", line 561, in <listcomp>
+    return [sig for name in names for sig in name.infer().get_signatures()]
+  File "/home/kjablonk/anaconda3/envs/timeseries_analysis/lib/python3.8/site-packages/jedi/cache.py", line 111, in wrapper
+    result = method(self, *args, **kwargs)
+  File "/home/kjablonk/anaconda3/envs/timeseries_analysis/lib/python3.8/site-packages/jedi/inference/compiled/mixed.py", line 129, in infer
+    return _create(self._inference_state, compiled_value, module_context)
+  File "/home/kjablonk/anaconda3/envs/timeseries_analysis/lib/python3.8/site-packages/jedi/inference/cache.py", line 43, in wrapper
+    rv = function(obj, *args, **kwargs)
+  File "/home/kjablonk/anaconda3/envs/timeseries_analysis/lib/python3.8/site-packages/jedi/inference/compiled/mixed.py", line 257, in _create
+    result = _find_syntax_node_name(inference_state, python_object)
+  File "/home/kjablonk/anaconda3/envs/timeseries_analysis/lib/python3.8/site-packages/jedi/inference/compiled/mixed.py", line 237, in _find_syntax_node_name
+    code_lines = get_cached_code_lines(inference_state.grammar, path)
+  File "/home/kjablonk/anaconda3/envs/timeseries_analysis/lib/python3.8/site-packages/jedi/parser_utils.py", line 280, in get_cached_code_lines
+    return parser_cache[grammar._hashed][path].lines
+KeyError: '/home/kjablonk/documents/timeseries_analysis/pyprocessta/src/pyprocessta/model/tcn.py'
+[I 2021-12-20 16:30:57.665 ServerApp] Saving file at /validate_model.ipynb
+[W 2021-12-20 16:30:57.666 ServerApp] Notebook validate_model.ipynb is not trusted
+[I 2021-12-20 17:00:27.816 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 17:02:29.686 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 17:06:31.251 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 17:08:32.238 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 17:12:32.443 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 17:14:32.586 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 17:18:33.246 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 17:22:35.297 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 17:24:35.685 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 17:28:36.692 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 17:30:37.517 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 17:34:39.763 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 17:38:41.242 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 17:40:50.229 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 17:44:50.603 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 17:46:51.642 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 17:50:53.374 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 17:52:54.770 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 17:56:56.318 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 18:00:58.291 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 18:02:59.546 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 18:07:03.367 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 18:09:04.309 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 18:13:06.331 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 18:17:08.348 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 18:19:09.671 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 18:23:11.686 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 18:27:13.422 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 18:29:14.519 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 18:33:16.380 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 18:35:26.488 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 18:39:29.494 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 18:41:30.461 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 18:45:37.531 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 18:49:43.974 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 18:51:44.373 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 18:55:46.401 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 18:57:51.435 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 19:01:57.420 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 19:03:59.159 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 19:08:00.428 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 19:12:19.455 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 19:14:20.388 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 19:18:22.431 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 19:20:23.555 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 19:24:26.247 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 19:28:30.071 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 19:30:34.446 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 19:34:38.843 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 19:36:40.142 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 19:40:43.206 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 19:44:49.961 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 19:46:50.851 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 19:50:52.885 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 19:54:54.922 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 19:58:57.772 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 20:00:59.090 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 20:05:02.259 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 20:09:04.803 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 20:11:05.740 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 20:15:07.750 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 20:19:09.799 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 20:21:10.588 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 20:25:13.532 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 20:29:20.920 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 20:31:21.931 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 20:35:25.094 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 20:39:27.001 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 20:41:28.670 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 20:45:31.580 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 20:49:35.754 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 20:51:36.897 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 20:55:39.200 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 20:59:42.533 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 21:01:43.568 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 21:05:45.536 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 21:07:47.331 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 21:11:49.641 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 21:15:51.586 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 21:16:09.647 ServerApp] Starting buffering for 5f5effe5-4502-4471-9121-7f8380b602eb:20c080b0-a828-471e-8a02-6bccb7993371
+[I 2021-12-20 21:16:09.861 ServerApp] Restoring connection for 5f5effe5-4502-4471-9121-7f8380b602eb:20c080b0-a828-471e-8a02-6bccb7993371
+[I 2021-12-20 21:18:28.924 ServerApp] Saving file at /validate_model.ipynb
+[W 2021-12-20 21:18:28.925 ServerApp] Notebook validate_model.ipynb is not trusted
+[I 2021-12-20 21:19:53.637 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 21:21:54.636 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 21:25:57.221 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 21:30:00.493 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 21:34:02.860 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 21:38:06.109 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 21:39:27.221 ServerApp] Saving file at /validate_model.ipynb
+[W 2021-12-20 21:39:27.223 ServerApp] Notebook validate_model.ipynb is not trusted
+[I 2021-12-20 21:40:07.525 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 21:44:10.517 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 21:48:14.608 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 21:50:20.921 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-20 21:54:23.432 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[W 2021-12-20 21:58:38.769 ServerApp] WebSocket ping timeout after 119943 ms.
+[W 2021-12-20 21:58:39.216 ServerApp] WebSocket ping timeout after 119953 ms.
+[W 2021-12-20 21:58:39.862 ServerApp] WebSocket ping timeout after 119916 ms.
+[I 2021-12-20 21:58:44.218 ServerApp] Starting buffering for f045b085-97b9-4104-a8de-06158f3ebde5:543cc8b2-0062-4eb5-afe1-98ad46d20e9d
+[I 2021-12-20 21:58:44.865 ServerApp] Starting buffering for 5f5effe5-4502-4471-9121-7f8380b602eb:20c080b0-a828-471e-8a02-6bccb7993371
+[W 2021-12-20 21:58:45.230 ServerApp] WebSocket ping timeout after 119919 ms.
+[I 2021-12-20 21:58:50.238 ServerApp] Starting buffering for b5f59ac4-b409-436e-903e-cf9d19aae994:f1d80e1b-9131-4565-a66e-eef0f0352fec
+[I 2021-12-21 12:40:13.320 ServerApp] Restoring connection for 5f5effe5-4502-4471-9121-7f8380b602eb:20c080b0-a828-471e-8a02-6bccb7993371
+[I 2021-12-21 12:40:13.321 ServerApp] Replaying 450 buffered messages
+[I 2021-12-21 12:40:22.748 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-21 12:42:23.974 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-21 12:46:25.993 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-21 12:50:27.529 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-21 12:56:31.407 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-21 13:00:34.610 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-21 13:04:37.570 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-21 13:10:40.840 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-21 13:14:46.004 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-21 13:18:57.745 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-21 13:25:02.562 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-21 13:29:04.647 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-21 13:33:06.688 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-21 13:39:09.641 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-21 13:43:11.680 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-21 13:47:28.981 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-21 13:51:31.724 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-21 13:57:44.855 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-21 14:01:49.677 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-21 14:05:55.214 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-21 14:12:01.691 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-21 14:16:08.073 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-21 14:20:14.137 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-21 14:26:17.949 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-21 14:30:24.037 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-21 14:36:26.746 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-21 14:40:29.233 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-21 14:44:31.208 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-21 14:49:59.249 ServerApp] Kernel interrupted: 5f5effe5-4502-4471-9121-7f8380b602eb
+[I 2021-12-21 14:50:33.240 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-21 14:54:34.654 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-21 14:54:44.326 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-21 14:54:47.223 ServerApp] Kernel interrupted: 5f5effe5-4502-4471-9121-7f8380b602eb
+[I 2021-12-21 14:56:45.235 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-21 16:16:28.099 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-21 16:23:59.886 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-21 16:26:01.216 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-21 16:27:03.402 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-21 16:28:40.248 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+/tmp/build/80754af9/python-split_1634043551344/work/Modules/gcmodule.c:1945: PyObject_GC_Track: Assertion failed: object already tracked by the garbage collector
+Enable tracemalloc to get the memory block allocation traceback
+
+object address  : 0x7feccb6d38b0
+object refcount : 1
+object type     : 0x7fec2f0b55a0
+object type name: pandas._libs.index.DatetimeEngine
+object repr     : <pandas._libs.index.DatetimeEngine object at 0x7feccb6d38b0>
+
+Fatal Python error: _PyObject_AssertFailed
+Python runtime state: initialized
+
+Thread 0x00007fecbc7f8700 (most recent call first):
+<no Python frame>
+
+Thread 0x00007fecbeff9700 (most recent call first):
+<no Python frame>
+
+Thread 0x00007fec607c4700 (most recent call first):
+  File "/home/kjablonk/anaconda3/envs/timeseries2/lib/python3.8/site-packages/zmq/utils/garbage.py", line 49 in run
+  File "/home/kjablonk/anaconda3/envs/timeseries2/lib/python3.8/threading.py", line 932 in _bootstrap_inner
+  File "/home/kjablonk/anaconda3/envs/timeseries2/lib/python3.8/threading.py", line 890 in _bootstrap
+
+Thread 0x00007fece27fc700 (most recent call first):
+  File "/home/kjablonk/anaconda3/envs/timeseries2/lib/python3.8/site-packages/ipykernel/parentpoller.py", line 36 in run
+  File "/home/kjablonk/anaconda3/envs/timeseries2/lib/python3.8/threading.py", line 932 in _bootstrap_inner
+  File "/home/kjablonk/anaconda3/envs/timeseries2/lib/python3.8/threading.py", line 890 in _bootstrap
+
+Thread 0x00007fece2ffd700 (most recent call first):
+  File "/home/kjablonk/anaconda3/envs/timeseries2/lib/python3.8/site-packages/IPython/core/history.py", line 763 in _writeout_input_cache
+  File "/home/kjablonk/anaconda3/envs/timeseries2/lib/python3.8/site-packages/IPython/core/history.py", line 780 in writeout_cache
+  File "/home/kjablonk/anaconda3/envs/timeseries2/lib/python3.8/site-packages/IPython/core/history.py", line 58 in needs_sqlite
+  File "/home/kjablonk/anaconda3/envs/timeseries2/lib/python3.8/site-packages/decorator.py", line 232 in fun
+  File "/home/kjablonk/anaconda3/envs/timeseries2/lib/python3.8/site-packages/IPython/core/history.py", line 834 in run
+  File "/home/kjablonk/anaconda3/envs/timeseries2/lib/python3.8/site-packages/IPython/core/history.py", line 58 in needs_sqlite
+  File "/home/kjablonk/anaconda3/envs/timeseries2/lib/python3.8/site-packages/decorator.py", line 232 in fun
+  File "/home/kjablonk/anaconda3/envs/timeseries2/lib/python3.8/threading.py", line 932 in _bootstrap_inner
+  File "/home/kjablonk/anaconda3/envs/timeseries2/lib/python3.8/threading.py", line 890 in _bootstrap
+
+Thread 0x00007fece37fe700 (most recent call first):
+  File "/home/kjablonk/anaconda3/envs/timeseries2/lib/python3.8/asyncio/selector_events.py", line 120 in _read_from_self
+  File "/home/kjablonk/anaconda3/envs/timeseries2/lib/python3.8/asyncio/events.py", line 81 in _run
+  File "/home/kjablonk/anaconda3/envs/timeseries2/lib/python3.8/asyncio/base_events.py", line 1859 in _run_once
+  File "/home/kjablonk/anaconda3/envs/timeseries2/lib/python3.8/asyncio/base_events.py", line 570 in run_forever
+  File "/home/kjablonk/anaconda3/envs/timeseries2/lib/python3.8/site-packages/tornado/platform/asyncio.py", line 199 in start
+  File "/home/kjablonk/anaconda3/envs/timeseries2/lib/python3.8/site-packages/ipykernel/control.py", line 21 in run
+  File "/home/kjablonk/anaconda3/envs/timeseries2/lib/python3.8/threading.py", line 932 in _bootstrap_inner
+  File "/home/kjablonk/anaconda3/envs/timeseries2/lib/python3.8/threading.py", line 890 in _bootstrap
+
+Thread 0x00007fece3fff700 (most recent call first):
+  File "/home/kjablonk/anaconda3/envs/timeseries2/lib/python3.8/site-packages/ipykernel/iostream.py", line 324 in _watch_pipe_fd
+  File "/home/kjablonk/anaconda3/envs/timeseries2/lib/python3.8/threading.py", line 870 in run
+  File "/home/kjablonk/anaconda3/envs/timeseries2/lib/python3.8/threading.py", line 932 in _bootstrap_inner
+  File "/home/kjablonk/anaconda3/envs/timeseries2/lib/python3.8/threading.py", line 890 in _bootstrap
+
+Thread 0x00007fecf8e7b700 (most recent call first):
+  File "/home/kjablonk/anaconda3/envs/timeseries2/lib/python3.8/site-packages/ipykernel/iostream.py", line 324 in _watch_pipe_fd
+  File "/home/kjablonk/anaconda3/envs/timeseries2/lib/python3.8/threading.py", line 870 in run
+  File "/home/kjablonk/anaconda3/envs/timeseries2/lib/python3.8/threading.py", line 932 in _bootstrap_inner
+  File "/home/kjablonk/anaconda3/envs/timeseries2/lib/python3.8/threading.py", line 890 in _bootstrap
+
+Thread 0x00007fecfa67e700 (most recent call first):
+  File "/home/kjablonk/anaconda3/envs/timeseries2/lib/python3.8/site-packages/ipykernel/heartbeat.py", line 102 in run
+  File "/home/kjablonk/anaconda3/envs/timeseries2/lib/python3.8/threading.py", line 932 in _bootstrap_inner
+  File "/home/kjablonk/anaconda3/envs/timeseries2/lib/python3.8/threading.py", line 890 in _bootstrap
+
+Thread 0x00007fecfae7f700 (most recent call first):
+  File "/home/kjablonk/anaconda3/envs/timeseries2/lib/python3.8/site-packages/zmq/sugar/socket.py", line 547 in send
+  File "/home/kjablonk/anaconda3/envs/timeseries2/lib/python3.8/site-packages/zmq/sugar/socket.py", line 595 in send_multipart
+  File "/home/kjablonk/anaconda3/envs/timeseries2/lib/python3.8/site-packages/ipykernel/iostream.py", line 231 in _really_send
+  File "/home/kjablonk/anaconda3/envs/timeseries2/lib/python3.8/site-packages/ipykernel/iostream.py", line 223 in <lambda>
+  File "/home/kjablonk/anaconda3/envs/timeseries2/lib/python3.8/site-packages/ipykernel/iostream.py", line 126 in _handle_event
+  File "/home/kjablonk/anaconda3/envs/timeseries2/lib/python3.8/site-packages/zmq/eventloop/zmqstream.py", line 431 in _run_callback
+  File "/home/kjablonk/anaconda3/envs/timeseries2/lib/python3.8/site-packages/zmq/eventloop/zmqstream.py", line 481 in _handle_recv
+  File "/home/kjablonk/anaconda3/envs/timeseries2/lib/python3.8/site-packages/zmq/eventloop/zmqstream.py", line 452 in _handle_events
+  File "/home/kjablonk/anaconda3/envs/timeseries2/lib/python3.8/site-packages/tornado/platform/asyncio.py", line 189 in _handle_events
+  File "/home/kjablonk/anaconda3/envs/timeseries2/lib/python3.8/asyncio/events.py", line 81 in _run
+  File "/home/kjablonk/anaconda3/envs/timeseries2/lib/python3.8/asyncio/base_events.py", line 1859 in _run_once
+  File "/home/kjablonk/anaconda3/envs/timeseries2/lib/python3.8/asyncio/base_events.py", line 570 in run_forever
+  File "/home/kjablonk/anaconda3/envs/timeseries2/lib/python3.8/site-packages/tornado/platform/asyncio.py", line 199 in start
+  File "/home/kjablonk/anaconda3/envs/timeseries2/lib/python3.8/site-packages/ipykernel/iostream.py", line 81 in _thread_main
+  File "/home/kjablonk/anaconda3/envs/timeseries2/lib/python3.8/threading.py", line 870 in run
+  File "/home/kjablonk/anaconda3/envs/timeseries2/lib/python3.8/threading.py", line 932 in _bootstrap_inner
+  File "/home/kjablonk/anaconda3/envs/timeseries2/lib/python3.8/threading.py", line 890 in _bootstrap
+
+Current thread 0x00007fecffbf9240 (most recent call first):
+  File "/home/kjablonk/anaconda3/envs/timeseries2/lib/python3.8/site-packages/pandas/core/indexes/base.py", line 774 in _engine
+  File "/home/kjablonk/anaconda3/envs/timeseries2/lib/python3.8/site-packages/pandas/core/indexes/base.py", line 1963 in is_monotonic_increasing
+  File "/home/kjablonk/anaconda3/envs/timeseries2/lib/python3.8/site-packages/pandas/tseries/frequencies.py", line 222 in __init__
+  File "/home/kjablonk/anaconda3/envs/timeseries2/lib/python3.8/site-packages/pandas/tseries/frequencies.py", line 195 in infer_freq
+  File "/home/kjablonk/anaconda3/envs/timeseries2/lib/python3.8/site-packages/pandas/core/arrays/datetimelike.py", line 917 in inferred_freq
+  File "/home/kjablonk/anaconda3/envs/timeseries2/lib/python3.8/site-packages/pandas/core/indexes/extension.py", line 72 in cached
+  File "/home/kjablonk/anaconda3/envs/timeseries2/lib/python3.8/site-packages/darts/timeseries.py", line 2410 in _set_freq_in_xa
+  File "/home/kjablonk/anaconda3/envs/timeseries2/lib/python3.8/site-packages/darts/timeseries.py", line 2437 in __getitem__
+  File "/home/kjablonk/anaconda3/envs/timeseries2/lib/python3.8/site-packages/darts/timeseries.py", line 1181 in _split_at
+  File "/home/kjablonk/anaconda3/envs/timeseries2/lib/python3.8/site-packages/darts/timeseries.py", line 1223 in split_before
+  File "/home/kjablonk/anaconda3/envs/timeseries2/lib/python3.8/site-packages/darts/timeseries.py", line 1240 in drop_after
+  File "/home/kjablonk/anaconda3/envs/timeseries2/lib/python3.8/site-packages/darts/models/forecasting/forecasting_model.py", line 335 in historical_forecasts
+  File "/home/kjablonk/anaconda3/envs/timeseries2/lib/python3.8/site-packages/darts/utils/utils.py", line 153 in sanitized_[I 2021-12-21 17:43:51.784 ServerApp] AsyncIOLoopKernelRestarter: restarting kernel (1/5), keep random ports
+kernel 5f5effe5-4502-4471-9121-7f8380b602eb restarted
+[I 2021-12-21 17:43:51.931 ServerApp] Starting buffering for 5f5effe5-4502-4471-9121-7f8380b602eb:20c080b0-a828-471e-8a02-6bccb7993371
+[I 2021-12-21 17:43:52.353 ServerApp] Restoring connection for 5f5effe5-4502-4471-9121-7f8380b602eb:20c080b0-a828-471e-8a02-6bccb7993371
+[I 2021-12-21 17:44:03.918 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-21 17:44:09.110 ServerApp] Saving file at /validate_model.ipynb
+[W 2021-12-21 17:44:09.111 ServerApp] Notebook validate_model.ipynb is not trusted
+[I 2021-12-21 17:46:05.199 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-21 17:46:09.914 ServerApp] Saving file at /validate_model.ipynb
+[W 2021-12-21 17:46:09.915 ServerApp] Notebook validate_model.ipynb is not trusted
+[W 2021-12-21 17:46:13.288 ServerApp] Notebook train_model_on_all_data_to_prepare_causalimpact_analysis.ipynb is not trusted
+[I 2021-12-21 17:46:16.610 ServerApp] Kernel started: f3d197fa-030b-4871-a8f7-b387ed974b14
+[W 2021-12-21 17:46:27.680 ServerApp] Notebook time_series_model.ipynb is not trusted
+[I 2021-12-21 17:46:32.128 ServerApp] Kernel started: 7092bd1a-274d-4abb-8ed2-d9dce5aae656
+[W 2021-12-21 17:52:33.142 ServerApp] Notebook trying_to_merge_all_baseline_operations.ipynb is not trusted
+[I 2021-12-21 17:52:34.636 ServerApp] Kernel started: 25e1b44a-7935-4243-98d9-651052640605
+[I 2021-12-21 17:52:47.650 ServerApp] Kernel started: 01a6f875-62c3-4ad0-a39f-6f8fcae47699
+[W 2021-12-21 17:53:44.433 ServerApp] Notebook 20210812_plotting.ipynb is not trusted
+[I 2021-12-21 17:53:46.813 ServerApp] Kernel started: f5800e1d-ce51-461a-95e9-378ecb64701f
+[I 2021-12-21 17:53:49.724 ServerApp] Starting buffering for f5800e1d-ce51-461a-95e9-378ecb64701f:db18e9cc-4cf9-45d8-83c7-05e9bec7f07e
+[W 2021-12-21 17:53:51.837 ServerApp] Notebook 20211220_build_transformer_model.ipynb is not trusted
+[I 2021-12-21 17:54:01.167 ServerApp] Kernel started: 41889544-779c-40e7-9bb3-3fd86970d945
+[W 2021-12-21 17:54:19.148 ServerApp] Notebook 20210811_test_forecasting.ipynb is not trusted
+[I 2021-12-21 17:54:20.825 ServerApp] Kernel started: 1f3953d5-a6ab-478c-a984-bf1502b806e5
+[I 2021-12-21 17:54:22.714 ServerApp] Starting buffering for 1f3953d5-a6ab-478c-a984-bf1502b806e5:b8da37d9-7bad-4ba5-ae46-b5b0f92442eb
+[I 2021-12-21 17:54:27.923 ServerApp] Kernel shutdown: 1f3953d5-a6ab-478c-a984-bf1502b806e5
+[W 2021-12-21 17:54:28.329 ServerApp] delete /20210811_test_forecasting.ipynb
+[W 2021-12-21 17:54:39.476 ServerApp] Notebook plot_metrics.ipynb is not trusted
+[I 2021-12-21 17:54:41.983 ServerApp] Kernel started: aeeaafc3-b6df-43cc-963f-8120701cc52c
+[I 2021-12-21 17:54:59.594 ServerApp] Starting buffering for aeeaafc3-b6df-43cc-963f-8120701cc52c:09c8044f-c5a2-45e1-b4d2-882e48f27368
+[I 2021-12-21 17:55:01.591 ServerApp] Starting buffering for 41889544-779c-40e7-9bb3-3fd86970d945:910f807a-c496-497f-87b5-fa47f4f244d5
+[I 2021-12-21 17:55:53.503 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[W 2021-12-21 17:55:53.504 ServerApp] Notebook 20211220_build_transformer_model.ipynb is not trusted
+2021-12-21 17:55:59.267246: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcudart.so.11.0
+[I 2021-12-21 17:56:15.139 ServerApp] Saving file at /train_model_on_all_data_to_prepare_causalimpact_analysis.ipynb
+[W 2021-12-21 17:56:15.140 ServerApp] Notebook train_model_on_all_data_to_prepare_causalimpact_analysis.ipynb is not trusted
+[I 2021-12-21 18:00:46.137 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-21 18:00:47.356 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-21 18:00:56.451 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-21 18:03:35.052 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-21 18:03:54.983 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-21 18:04:27.388 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-21 18:04:49.634 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-21 18:05:06.757 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-21 18:11:23.347 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-21 18:15:25.436 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-21 18:22:57.526 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-21 18:26:31.782 ServerApp] Saving file at /train_model_on_all_data_to_prepare_causalimpact_analysis.ipynb
+[W 2021-12-21 18:26:31.783 ServerApp] Notebook train_model_on_all_data_to_prepare_causalimpact_analysis.ipynb is not trusted
+[I 2021-12-21 18:26:48.880 ServerApp] Saving file at /train_model_on_all_data_to_prepare_causalimpact_analysis.ipynb
+[W 2021-12-21 18:26:48.881 ServerApp] Notebook train_model_on_all_data_to_prepare_causalimpact_analysis.ipynb is not trusted
+[I 2021-12-21 18:37:15.627 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-21 18:45:18.051 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-21 18:45:21.044 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-21 18:57:12.033 ServerApp] Saving file at /train_model_on_all_data_to_prepare_causalimpact_analysis.ipynb
+[W 2021-12-21 18:57:12.034 ServerApp] Notebook train_model_on_all_data_to_prepare_causalimpact_analysis.ipynb is not trusted
+[I 2021-12-21 19:01:13.016 ServerApp] Saving file at /train_model_on_all_data_to_prepare_causalimpact_analysis.ipynb
+[W 2021-12-21 19:01:13.017 ServerApp] Notebook train_model_on_all_data_to_prepare_causalimpact_analysis.ipynb is not trusted
+[I 2021-12-21 19:05:15.118 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-21 19:07:15.348 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2021-12-21 19:21:15.560 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[W 2021-12-21 20:44:52.356 ServerApp] WebSocket ping timeout after 119986 ms.
+[I 2021-12-21 20:44:57.362 ServerApp] Starting buffering for 5f5effe5-4502-4471-9121-7f8380b602eb:20c080b0-a828-471e-8a02-6bccb7993371
+[I 2021-12-21 20:45:09.554 ServerApp] Restoring connection for 5f5effe5-4502-4471-9121-7f8380b602eb:20c080b0-a828-471e-8a02-6bccb7993371
+[W 2021-12-21 21:58:09.559 ServerApp] WebSocket ping timeout after 119986 ms.
+[I 2021-12-21 21:58:14.570 ServerApp] Starting buffering for 5f5effe5-4502-4471-9121-7f8380b602eb:20c080b0-a828-471e-8a02-6bccb7993371
+[W 2021-12-21 21:58:16.941 ServerApp] WebSocket ping timeout after 119958 ms.
+[W 2021-12-21 21:58:17.977 ServerApp] WebSocket ping timeout after 119874 ms.
+[I 2021-12-21 21:58:21.948 ServerApp] Starting buffering for f3d197fa-030b-4871-a8f7-b387ed974b14:f5fd1871-4aa8-49d4-8ce2-ebf39d48d4f9
+[I 2021-12-21 21:58:22.979 ServerApp] Starting buffering for 01a6f875-62c3-4ad0-a39f-6f8fcae47699:7b2d521b-73ef-4aa7-9893-c7e9f97c5170
+[W 2021-12-21 21:58:23.646 ServerApp] WebSocket ping timeout after 119977 ms.
+[W 2021-12-21 21:58:25.519 ServerApp] WebSocket ping timeout after 119933 ms.
+[I 2021-12-21 21:58:28.648 ServerApp] Starting buffering for fa49ec4f-cbc8-4232-b2a5-eca434c3ad17:16c4df0d-4fc8-4e1b-9fa9-87a60ed3152b
+[I 2021-12-21 21:58:30.523 ServerApp] Starting buffering for f045b085-97b9-4104-a8de-06158f3ebde5:dfa68bee-92cc-41bd-814f-47052f0276af
+[W 2021-12-21 21:58:32.503 ServerApp] WebSocket ping timeout after 119983 ms.
+[W 2021-12-21 21:58:35.102 ServerApp] WebSocket ping timeout after 119887 ms.
+[I 2021-12-21 21:58:37.506 ServerApp] Starting buffering for 7092bd1a-274d-4abb-8ed2-d9dce5aae656:e6b5daa3-1388-4c7a-86c8-6ef86bf27eb9
+[I 2021-12-21 21:58:40.110 ServerApp] Starting buffering for 25e1b44a-7935-4243-98d9-651052640605:4b6337ae-20a3-473f-8cd2-524e831d35af
+[W 2021-12-26 10:41:10.940 LabApp] Could not determine jupyterlab build status without nodejs
+[W 2021-12-26 10:41:13.265 ServerApp] Notebook validate_model.ipynb is not trusted
+[W 2021-12-26 10:41:13.922 ServerApp] Notebook train_model_on_all_data_to_prepare_causalimpact_analysis.ipynb is not trusted
+[W 2021-12-26 10:41:16.254 ServerApp] Notebook time_series_model.ipynb is not trusted
+[W 2021-12-26 10:41:16.273 ServerApp] Notebook trying_to_merge_all_baseline_operations.ipynb is not trusted
+[W 2021-12-26 10:41:16.305 ServerApp] Notebook 20211220_build_transformer_model.ipynb is not trusted
+[I 2021-12-26 10:43:20.894 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[W 2021-12-26 10:43:20.895 ServerApp] Notebook 20211220_build_transformer_model.ipynb is not trusted
+[W 2021-12-26 10:45:37.439 LabApp] Could not determine jupyterlab build status without nodejs
+[W 2021-12-26 10:45:40.907 ServerApp] Notebook validate_model.ipynb is not trusted
+[W 2021-12-26 10:45:41.081 ServerApp] Notebook train_model_on_all_data_to_prepare_causalimpact_analysis.ipynb is not trusted
+[W 2021-12-26 10:45:41.789 ServerApp] Notebook trying_to_merge_all_baseline_operations.ipynb is not trusted
+[W 2021-12-26 10:45:41.821 ServerApp] Notebook time_series_model.ipynb is not trusted
+[W 2021-12-26 10:45:41.864 ServerApp] Notebook 20211220_build_transformer_model.ipynb is not trusted
+[I 2021-12-26 10:45:45.385 ServerApp] Kernel started: 002e06dc-2b23-4f32-9cc3-1d7dc11dba24
+[I 2021-12-26 10:45:45.406 ServerApp] Kernel started: a7ed76a1-ce36-4f3e-9cb9-291a6bc0e4d3
+[I 2021-12-26 10:45:45.487 ServerApp] Kernel started: 1c7ac354-6cbf-4105-92b0-aae7754827c8
+[I 2021-12-26 10:45:45.543 ServerApp] Kernel started: 752b3fdc-0ab3-442b-9082-34c190f27631
+[I 2021-12-26 10:47:49.893 ServerApp] Saving file at /validate_model.ipynb
+[W 2021-12-26 10:47:49.895 ServerApp] Notebook validate_model.ipynb is not trusted
+[I 2021-12-26 10:47:51.159 ServerApp] Saving file at /trying_to_merge_all_baseline_operations.ipynb
+[I 2021-12-26 10:47:51.790 ServerApp] Saving file at /train_model_on_all_data_to_prepare_causalimpact_analysis.ipynb
+[W 2021-12-26 10:47:51.791 ServerApp] Notebook train_model_on_all_data_to_prepare_causalimpact_analysis.ipynb is not trusted
+[I 2021-12-26 10:47:55.714 ServerApp] Saving file at /export_models.ipynb
+[I 2021-12-26 10:48:01.339 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[W 2021-12-26 10:48:01.340 ServerApp] Notebook 20211220_build_transformer_model.ipynb is not trusted
+[I 2021-12-26 10:48:03.003 ServerApp] Saving file at /time_series_model.ipynb
+[W 2021-12-26 10:48:03.004 ServerApp] Notebook time_series_model.ipynb is not trusted
+[I 2021-12-26 11:49:54.917 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[W 2021-12-26 11:49:54.918 ServerApp] Notebook 20211220_build_transformer_model.ipynb is not trusted
+[I 2021-12-26 11:51:27.355 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[W 2021-12-26 11:51:27.356 ServerApp] Notebook 20211220_build_transformer_model.ipynb is not trusted
+[I 2021-12-26 11:51:47.400 ServerApp] Saving file at /train_model_on_all_data_to_prepare_causalimpact_analysis.ipynb
+[W 2021-12-26 11:51:47.402 ServerApp] Notebook train_model_on_all_data_to_prepare_causalimpact_analysis.ipynb is not trusted
+[W 2021-12-26 11:53:45.623 ServerApp] WebSocket ping timeout after 119967 ms.
+[W 2021-12-26 11:53:45.822 ServerApp] WebSocket ping timeout after 119882 ms.
+[W 2021-12-26 11:53:46.989 ServerApp] WebSocket ping timeout after 119877 ms.
+[W 2021-12-26 11:53:47.098 ServerApp] WebSocket ping timeout after 119881 ms.
+[W 2021-12-26 11:53:47.152 ServerApp] WebSocket ping timeout after 119833 ms.
+[W 2021-12-26 11:53:47.244 ServerApp] WebSocket ping timeout after 119821 ms.
+[I 2021-12-26 11:53:50.625 ServerApp] Starting buffering for b5f59ac4-b409-436e-903e-cf9d19aae994:38788a0d-1f1d-4496-a9c0-dac3e7029533
+[I 2021-12-26 11:53:50.825 ServerApp] Starting buffering for 5f5effe5-4502-4471-9121-7f8380b602eb:96bfeb12-a2b9-4eeb-8160-daea65b140d8
+[I 2021-12-26 11:53:51.992 ServerApp] Starting buffering for 002e06dc-2b23-4f32-9cc3-1d7dc11dba24:19615ee8-79e4-42de-a034-f99aacb8d305
+[I 2021-12-26 11:53:52.100 ServerApp] Starting buffering for a7ed76a1-ce36-4f3e-9cb9-291a6bc0e4d3:f2370890-3c55-40ce-9639-7460970b78c7
+[I 2021-12-26 11:53:52.154 ServerApp] Starting buffering for 1c7ac354-6cbf-4105-92b0-aae7754827c8:a3d14f60-7b28-40b9-b20d-454a6d6fa934
+[I 2021-12-26 11:53:52.245 ServerApp] Starting buffering for 752b3fdc-0ab3-442b-9082-34c190f27631:a90ef381-4fb2-4765-be5e-73100be13b43
+[W 2021-12-26 11:53:53.221 ServerApp] WebSocket ping timeout after 119964 ms.
+[W 2021-12-26 11:53:53.752 ServerApp] WebSocket ping timeout after 119958 ms.
+[W 2021-12-26 11:53:55.196 ServerApp] WebSocket ping timeout after 119965 ms.
+[W 2021-12-26 11:53:55.624 ServerApp] WebSocket ping timeout after 119966 ms.
+[W 2021-12-26 11:53:55.665 ServerApp] WebSocket ping timeout after 119968 ms.
+[W 2021-12-26 11:53:55.787 ServerApp] WebSocket ping timeout after 119967 ms.
+[I 2021-12-26 11:53:58.223 ServerApp] Starting buffering for f045b085-97b9-4104-a8de-06158f3ebde5:5ac425d2-da0e-4248-b5a6-45c5f1db5f31
+[I 2021-12-26 11:53:58.755 ServerApp] Starting buffering for f3d197fa-030b-4871-a8f7-b387ed974b14:937dc8ff-3f4e-4b1c-a385-17727201cc48
+[I 2021-12-26 11:54:00.198 ServerApp] Starting buffering for 7092bd1a-274d-4abb-8ed2-d9dce5aae656:033f3fcc-6f88-4779-a154-4ce7b8ccc89a
+[I 2021-12-26 11:54:00.628 ServerApp] Starting buffering for 25e1b44a-7935-4243-98d9-651052640605:3617ede7-f3c6-49dc-8eeb-bf0b8d4bc5f4
+[I 2021-12-26 11:54:00.667 ServerApp] Starting buffering for 01a6f875-62c3-4ad0-a39f-6f8fcae47699:5e38919b-4563-4066-8b82-f5da0966108c
+[I 2021-12-26 11:54:00.789 ServerApp] Starting buffering for fa49ec4f-cbc8-4232-b2a5-eca434c3ad17:999b4b78-b5fc-4a59-99ce-98b45f85efe8
+[W 2021-12-26 13:00:52.405 LabApp] Could not determine jupyterlab build status without nodejs
+[W 2021-12-26 13:04:05.025 ServerApp] Notebook validate_model.ipynb is not trusted
+[W 2021-12-26 13:04:06.067 ServerApp] Notebook train_model_on_all_data_to_prepare_causalimpact_analysis.ipynb is not trusted
+[W 2021-12-26 13:04:06.096 ServerApp] Notebook time_series_model.ipynb is not trusted
+[W 2021-12-26 13:04:06.119 ServerApp] Notebook export_models.ipynb is not trusted
+[W 2021-12-26 13:04:06.130 ServerApp] Notebook trying_to_merge_all_baseline_operations.ipynb is not trusted
+[W 2021-12-26 13:04:06.168 ServerApp] Notebook 20211220_build_transformer_model.ipynb is not trusted
+[I 2021-12-26 13:04:08.111 ServerApp] Starting buffering for aeeaafc3-b6df-43cc-963f-8120701cc52c:77375dd4-da84-4d2e-8560-6f8b48222d9c
+[I 2021-12-26 13:06:36.815 ServerApp] Discarding 2 buffered messages for f3d197fa-030b-4871-a8f7-b387ed974b14:937dc8ff-3f4e-4b1c-a385-17727201cc48
+[I 2021-12-26 13:06:49.409 ServerApp] Starting buffering for f3d197fa-030b-4871-a8f7-b387ed974b14:d6848f1f-505b-46f6-a5e5-4fe11d0b651e
+[I 2021-12-26 13:06:49.624 ServerApp] Restoring connection for f3d197fa-030b-4871-a8f7-b387ed974b14:d6848f1f-505b-46f6-a5e5-4fe11d0b651e
+[I 2021-12-26 13:08:16.015 ServerApp] Saving file at /train_model_on_all_data_to_prepare_causalimpact_analysis.ipynb
+[W 2021-12-26 13:08:16.016 ServerApp] Notebook train_model_on_all_data_to_prepare_causalimpact_analysis.ipynb is not trusted
+[I 2021-12-26 13:08:18.609 ServerApp] Saving file at /export_models.ipynb
+[W 2021-12-26 13:08:18.610 ServerApp] Notebook export_models.ipynb is not trusted
+[I 2021-12-26 13:08:19.409 ServerApp] Saving file at /trying_to_merge_all_baseline_operations.ipynb
+[I 2021-12-26 13:08:20.612 ServerApp] Saving file at /validate_model.ipynb
+[W 2021-12-26 13:08:20.614 ServerApp] Notebook validate_model.ipynb is not trusted
+[I 2021-12-26 13:08:23.669 ServerApp] Saving file at /time_series_model.ipynb
+[W 2021-12-26 13:08:23.670 ServerApp] Notebook time_series_model.ipynb is not trusted
+[I 2021-12-26 13:08:23.901 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[W 2021-12-26 13:08:23.902 ServerApp] Notebook 20211220_build_transformer_model.ipynb is not trusted
+[I 2021-12-26 13:49:58.036 ServerApp] Starting buffering for 25e1b44a-7935-4243-98d9-651052640605:ffb9d6f2-fdc1-47c7-9980-492d2a9e8e8b
+[I 2021-12-26 13:49:58.037 ServerApp] Starting buffering for 7092bd1a-274d-4abb-8ed2-d9dce5aae656:4e733918-a5b7-4e0e-b46d-2cb179d149c7
+[I 2021-12-26 13:49:58.038 ServerApp] Starting buffering for fa49ec4f-cbc8-4232-b2a5-eca434c3ad17:ff123ff4-5bf3-4e6e-81b4-94df5c49f429
+[I 2021-12-26 13:49:58.041 ServerApp] Starting buffering for f045b085-97b9-4104-a8de-06158f3ebde5:04ebd33c-340b-4659-9499-8a3e770791e8
+[I 2021-12-26 13:49:58.041 ServerApp] Starting buffering for f3d197fa-030b-4871-a8f7-b387ed974b14:d6848f1f-505b-46f6-a5e5-4fe11d0b651e
+[I 2021-12-26 13:49:58.042 ServerApp] Starting buffering for 01a6f875-62c3-4ad0-a39f-6f8fcae47699:49eb677b-26f0-4fb7-a5e4-461aba1a60c8
+[W 2021-12-26 13:50:03.241 LabApp] Could not determine jupyterlab build status without nodejs
+[W 2021-12-26 13:50:44.560 ServerApp] Notebook train_model_on_all_data_to_prepare_causalimpact_analysis.ipynb is not trusted
+[W 2021-12-26 13:50:44.591 ServerApp] Notebook validate_model.ipynb is not trusted
+[W 2021-12-26 13:50:44.614 ServerApp] Notebook trying_to_merge_all_baseline_operations.ipynb is not trusted
+[W 2021-12-26 13:50:44.696 ServerApp] Notebook time_series_model.ipynb is not trusted
+[W 2021-12-26 13:50:44.853 ServerApp] Notebook 20211220_build_transformer_model.ipynb is not trusted
+[I 2021-12-26 13:50:46.409 ServerApp] Starting buffering for aeeaafc3-b6df-43cc-963f-8120701cc52c:973519d2-ab6e-43a4-8db9-77c8eade3919
+[I 2021-12-26 13:52:46.960 ServerApp] Saving file at /train_model_on_all_data_to_prepare_causalimpact_analysis.ipynb
+[W 2021-12-26 13:52:46.961 ServerApp] Notebook train_model_on_all_data_to_prepare_causalimpact_analysis.ipynb is not trusted
+[I 2021-12-26 13:54:49.504 ServerApp] Saving file at /train_model_on_all_data_to_prepare_causalimpact_analysis.ipynb
+[W 2021-12-26 13:54:49.506 ServerApp] Notebook train_model_on_all_data_to_prepare_causalimpact_analysis.ipynb is not trusted
+[I 2021-12-26 17:09:54.278 ServerApp] Saving file at /train_model_on_all_data_to_prepare_causalimpact_analysis.ipynb
+[W 2021-12-26 17:09:54.280 ServerApp] Notebook train_model_on_all_data_to_prepare_causalimpact_analysis.ipynb is not trusted
+[W 2021-12-27 08:55:48.040 ServerApp] WebSocket ping timeout after 119971 ms.
+[W 2021-12-27 08:55:48.264 ServerApp] WebSocket ping timeout after 119961 ms.
+[W 2021-12-27 08:55:48.470 ServerApp] WebSocket ping timeout after 119972 ms.
+[W 2021-12-27 08:55:48.631 ServerApp] WebSocket ping timeout after 119968 ms.
+[W 2021-12-27 08:55:48.669 ServerApp] WebSocket ping timeout after 119964 ms.
+[W 2021-12-27 08:55:48.749 ServerApp] WebSocket ping timeout after 119966 ms.
+[I 2021-12-27 08:55:53.044 ServerApp] Starting buffering for f3d197fa-030b-4871-a8f7-b387ed974b14:16608527-399a-41d4-b8a0-748d58960674
+[I 2021-12-27 08:55:53.267 ServerApp] Starting buffering for f045b085-97b9-4104-a8de-06158f3ebde5:f0ea7c5d-be50-4fbd-8af5-f23ad15db524
+[I 2021-12-27 08:55:53.473 ServerApp] Starting buffering for 25e1b44a-7935-4243-98d9-651052640605:c20895ca-cf24-4939-9719-45fcd22f4401
+[I 2021-12-27 08:55:53.633 ServerApp] Starting buffering for 7092bd1a-274d-4abb-8ed2-d9dce5aae656:2ede50b6-3803-494d-96d7-573cf6211f35
+[I 2021-12-27 08:55:53.670 ServerApp] Starting buffering for fa49ec4f-cbc8-4232-b2a5-eca434c3ad17:da481c1d-7973-414e-9d17-2f6ca5a0b419
+[I 2021-12-27 08:55:53.750 ServerApp] Starting buffering for 01a6f875-62c3-4ad0-a39f-6f8fcae47699:717d355c-9ea9-4908-ad9a-cd2e12251bbe
+[W 2021-12-28 17:03:29.454 LabApp] Could not determine jupyterlab build status without nodejs
+[W 2021-12-28 17:03:41.818 LabApp] Could not determine jupyterlab build status without nodejs
+[W 2021-12-28 17:04:47.033 ServerApp] Notebook validate_model.ipynb is not trusted
+[W 2021-12-28 17:04:47.052 ServerApp] Notebook trying_to_merge_all_baseline_operations.ipynb is not trusted
+[W 2021-12-28 17:04:47.170 ServerApp] Notebook time_series_model.ipynb is not trusted
+[W 2021-12-28 17:04:47.705 ServerApp] Notebook 20211220_build_transformer_model.ipynb is not trusted
+[W 2021-12-28 17:05:03.530 ServerApp] Notebook validate_model.ipynb is not trusted
+[W 2021-12-28 17:05:03.564 ServerApp] Notebook time_series_model.ipynb is not trusted
+[W 2021-12-28 17:05:04.666 ServerApp] Notebook trying_to_merge_all_baseline_operations.ipynb is not trusted
+[W 2021-12-28 17:05:04.817 ServerApp] Notebook 20211220_build_transformer_model.ipynb is not trusted
+[I 2021-12-28 17:05:06.432 ServerApp] Starting buffering for aeeaafc3-b6df-43cc-963f-8120701cc52c:f65f8298-ec9c-4e5d-9157-14d79f175cdc
+[I 2021-12-28 17:05:36.674 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[W 2021-12-28 17:05:36.675 ServerApp] Notebook 20211220_build_transformer_model.ipynb is not trusted
+[I 2021-12-28 17:05:40.769 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[W 2021-12-28 17:05:40.770 ServerApp] Notebook 20211220_build_transformer_model.ipynb is not trusted
+[W 2021-12-28 17:06:55.114 ServerApp] Notebook train_model_on_all_data_to_prepare_causalimpact_analysis.ipynb is not trusted
+[I 2021-12-28 17:06:58.155 ServerApp] Saving file at /trying_to_merge_all_baseline_operations.ipynb
+[I 2021-12-28 17:07:02.578 ServerApp] Saving file at /export_models.ipynb
+[I 2021-12-28 17:07:04.535 ServerApp] Saving file at /validate_model.ipynb
+[W 2021-12-28 17:07:04.537 ServerApp] Notebook validate_model.ipynb is not trusted
+[I 2021-12-28 17:07:13.230 ServerApp] Saving file at /time_series_model.ipynb
+[W 2021-12-28 17:07:13.231 ServerApp] Notebook time_series_model.ipynb is not trusted
+[I 2021-12-28 17:07:44.512 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[W 2021-12-28 17:07:44.514 ServerApp] Notebook 20211220_build_transformer_model.ipynb is not trusted
+[I 2021-12-28 17:08:52.976 ServerApp] Starting buffering for b5f59ac4-b409-436e-903e-cf9d19aae994:c90bfb54-1ef0-4654-832a-990ce768c1cf
+[I 2021-12-28 17:08:52.977 ServerApp] Starting buffering for a7ed76a1-ce36-4f3e-9cb9-291a6bc0e4d3:028d00a6-2a3e-4de3-943c-2c24df45617e
+[I 2021-12-28 17:08:52.978 ServerApp] Starting buffering for 752b3fdc-0ab3-442b-9082-34c190f27631:6d5138d1-f544-4766-acbd-9f6bede94df4
+[I 2021-12-28 17:08:52.979 ServerApp] Starting buffering for 1c7ac354-6cbf-4105-92b0-aae7754827c8:15f99f5d-4104-4e5d-8f05-b992a5176985
+[I 2021-12-28 17:08:52.979 ServerApp] Starting buffering for 5f5effe5-4502-4471-9121-7f8380b602eb:dd7c55dc-efd3-4396-b23c-ebb4f634760a
+[I 2021-12-28 17:08:58.192 ServerApp] Saving file at /train_model_on_all_data_to_prepare_causalimpact_analysis.ipynb
+[W 2021-12-28 17:08:58.193 ServerApp] Notebook train_model_on_all_data_to_prepare_causalimpact_analysis.ipynb is not trusted
+[I 2021-12-28 17:38:42.199 ServerApp] Saving file at /train_model_on_all_data_to_prepare_causalimpact_analysis.ipynb
+[W 2021-12-28 17:38:42.201 ServerApp] Notebook train_model_on_all_data_to_prepare_causalimpact_analysis.ipynb is not trusted
+[I 2021-12-28 17:40:45.382 ServerApp] Saving file at /train_model_on_all_data_to_prepare_causalimpact_analysis.ipynb
+[W 2021-12-28 17:40:45.383 ServerApp] Notebook train_model_on_all_data_to_prepare_causalimpact_analysis.ipynb is not trusted
+[I 2021-12-28 17:41:44.408 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[W 2021-12-28 17:41:44.409 ServerApp] Notebook 20211220_build_transformer_model.ipynb is not trusted
+[W 2021-12-28 21:46:08.278 ServerApp] WebSocket ping timeout after 119967 ms.
+[W 2021-12-28 21:46:08.321 ServerApp] WebSocket ping timeout after 119971 ms.
+[W 2021-12-28 21:46:08.391 ServerApp] WebSocket ping timeout after 119972 ms.
+[I 2021-12-28 21:46:13.281 ServerApp] Starting buffering for 01a6f875-62c3-4ad0-a39f-6f8fcae47699:6dd062d6-ea12-44ff-ae63-d3933ba2ad12
+[I 2021-12-28 21:46:13.323 ServerApp] Starting buffering for 25e1b44a-7935-4243-98d9-651052640605:c039046b-410a-46e2-9f40-7fdd1e55374f
+[I 2021-12-28 21:46:13.392 ServerApp] Starting buffering for fa49ec4f-cbc8-4232-b2a5-eca434c3ad17:189d7848-2d99-41ad-bf2c-d27d74bb60d8
+[W 2021-12-28 21:46:32.730 ServerApp] WebSocket ping timeout after 119969 ms.
+[W 2021-12-28 21:46:37.599 ServerApp] WebSocket ping timeout after 119889 ms.
+[W 2021-12-28 21:46:37.724 ServerApp] WebSocket ping timeout after 119970 ms.
+[I 2021-12-28 21:46:37.732 ServerApp] Starting buffering for f3d197fa-030b-4871-a8f7-b387ed974b14:555e6181-e583-4d69-8048-b03e09da0b65
+[I 2021-12-28 21:46:42.603 ServerApp] Starting buffering for 7092bd1a-274d-4abb-8ed2-d9dce5aae656:5fbd836b-1717-4766-8aa6-bd7c205a0279
+[I 2021-12-28 21:46:42.726 ServerApp] Starting buffering for f045b085-97b9-4104-a8de-06158f3ebde5:4f9d8023-465c-432f-88d1-d319f3a16790
+[W 2021-12-29 17:02:18.169 LabApp] Could not determine jupyterlab build status without nodejs
+[W 2021-12-29 17:02:23.579 ServerApp] Notebook validate_model.ipynb is not trusted
+[W 2021-12-29 17:02:23.848 ServerApp] Notebook time_series_model.ipynb is not trusted
+[W 2021-12-29 17:02:24.122 ServerApp] Notebook export_models.ipynb is not trusted
+[W 2021-12-29 17:02:26.242 ServerApp] Notebook trying_to_merge_all_baseline_operations.ipynb is not trusted
+[W 2021-12-29 17:02:26.448 ServerApp] Notebook 20211220_build_transformer_model.ipynb is not trusted
+[W 2021-12-29 17:02:27.120 ServerApp] Notebook train_model_on_all_data_to_prepare_causalimpact_analysis.ipynb is not trusted
+[W 2021-12-29 17:46:25.463 LabApp] Could not determine jupyterlab build status without nodejs
+[W 2021-12-29 17:46:36.643 ServerApp] Notebook validate_model.ipynb is not trusted
+[W 2021-12-29 17:46:37.032 ServerApp] Notebook export_models.ipynb is not trusted
+[W 2021-12-29 17:46:37.060 ServerApp] Notebook time_series_model.ipynb is not trusted
+[W 2021-12-29 17:46:37.153 ServerApp] Notebook trying_to_merge_all_baseline_operations.ipynb is not trusted
+[W 2021-12-29 17:46:38.715 ServerApp] Notebook 20211220_build_transformer_model.ipynb is not trusted
+[W 2021-12-29 17:46:40.021 ServerApp] Notebook train_model_on_all_data_to_prepare_causalimpact_analysis.ipynb is not trusted
+[I 2021-12-29 17:46:40.822 ServerApp] Starting buffering for aeeaafc3-b6df-43cc-963f-8120701cc52c:26e7c771-afe4-4380-acd1-ba47c539e1df
+[I 2021-12-29 17:48:40.792 ServerApp] Saving file at /trying_to_merge_all_baseline_operations.ipynb
+[I 2021-12-29 17:48:42.199 ServerApp] Saving file at /export_models.ipynb
+[W 2021-12-29 17:48:42.200 ServerApp] Notebook export_models.ipynb is not trusted
+[I 2021-12-29 17:48:53.730 ServerApp] Saving file at /time_series_model.ipynb
+[W 2021-12-29 17:48:53.731 ServerApp] Notebook time_series_model.ipynb is not trusted
+[I 2021-12-29 17:49:10.298 ServerApp] Saving file at /validate_model.ipynb
+[W 2021-12-29 17:49:10.300 ServerApp] Notebook validate_model.ipynb is not trusted
+[I 2021-12-29 18:05:18.299 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[W 2021-12-29 18:05:18.299 ServerApp] Notebook 20211220_build_transformer_model.ipynb is not trusted
+[I 2021-12-29 18:07:55.868 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[W 2021-12-29 18:07:55.868 ServerApp] Notebook 20211220_build_transformer_model.ipynb is not trusted
+[I 2021-12-29 18:16:23.372 ServerApp] Kernel restarted: f3d197fa-030b-4871-a8f7-b387ed974b14
+[I 2021-12-29 18:16:23.808 ServerApp] Starting buffering for f3d197fa-030b-4871-a8f7-b387ed974b14:1b385a75-c167-4efe-b4b3-87fd6b10b4e6
+[I 2021-12-29 18:16:24.054 ServerApp] Restoring connection for f3d197fa-030b-4871-a8f7-b387ed974b14:1b385a75-c167-4efe-b4b3-87fd6b10b4e6
+[I 2021-12-29 18:16:24.062 ServerApp] Replaying 4 buffered messages
+2021-12-29 18:16:33.821439: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcudart.so.11.0
+[I 2021-12-29 18:17:09.563 ServerApp] Saving file at /train_model_on_all_data_to_prepare_causalimpact_analysis.ipynb
+[W 2021-12-29 18:17:09.564 ServerApp] Notebook train_model_on_all_data_to_prepare_causalimpact_analysis.ipynb is not trusted
+[I 2021-12-29 18:17:23.645 ServerApp] Saving file at /train_model_on_all_data_to_prepare_causalimpact_analysis.ipynb
+[W 2021-12-29 18:17:23.646 ServerApp] Notebook train_model_on_all_data_to_prepare_causalimpact_analysis.ipynb is not trusted
+[I 2021-12-29 18:18:43.151 ServerApp] Saving file at /train_model_on_all_data_to_prepare_causalimpact_analysis.ipynb
+[W 2021-12-29 18:18:43.152 ServerApp] Notebook train_model_on_all_data_to_prepare_causalimpact_analysis.ipynb is not trusted
+[I 2021-12-29 18:19:21.051 ServerApp] Starting buffering for f3d197fa-030b-4871-a8f7-b387ed974b14:1b385a75-c167-4efe-b4b3-87fd6b10b4e6
+[I 2021-12-29 18:19:21.052 ServerApp] Starting buffering for 25e1b44a-7935-4243-98d9-651052640605:6ee799cf-52e3-4129-98c2-f524e6a0a6db
+[I 2021-12-29 18:19:21.053 ServerApp] Starting buffering for 7092bd1a-274d-4abb-8ed2-d9dce5aae656:d6d1b3d6-b387-4d15-91f6-7f116e1b4752
+[I 2021-12-29 18:19:21.053 ServerApp] Starting buffering for fa49ec4f-cbc8-4232-b2a5-eca434c3ad17:7b242973-ae74-428e-95dc-8fbf5c12d686
+[I 2021-12-29 18:19:21.054 ServerApp] Starting buffering for f045b085-97b9-4104-a8de-06158f3ebde5:87554918-f328-45b6-9a5e-d4e70d1c43ff
+[I 2021-12-29 18:19:21.054 ServerApp] Starting buffering for 01a6f875-62c3-4ad0-a39f-6f8fcae47699:19518265-01b4-4c6c-8b43-0b44c6aa5895
+[I 2021-12-29 18:25:15.629 ServerApp] Restoring connection for f3d197fa-030b-4871-a8f7-b387ed974b14:1b385a75-c167-4efe-b4b3-87fd6b10b4e6
+[I 2021-12-29 18:25:18.541 ServerApp] Starting buffering for f3d197fa-030b-4871-a8f7-b387ed974b14:1b385a75-c167-4efe-b4b3-87fd6b10b4e6
+[I 2021-12-29 18:25:21.307 ServerApp] Restoring connection for f3d197fa-030b-4871-a8f7-b387ed974b14:1b385a75-c167-4efe-b4b3-87fd6b10b4e6
+[I 2021-12-29 18:26:45.784 ServerApp] Saving file at /train_model_on_all_data_to_prepare_causalimpact_analysis.ipynb
+[I 2021-12-29 18:47:10.855 ServerApp] Saving file at /train_model_on_all_data_to_prepare_causalimpact_analysis.ipynb
+[I 2021-12-29 18:49:15.331 ServerApp] Saving file at /train_model_on_all_data_to_prepare_causalimpact_analysis.ipynb
+[I 2021-12-29 18:51:34.889 ServerApp] Saving file at /train_model_on_all_data_to_prepare_causalimpact_analysis.ipynb
+[W 2021-12-29 19:23:21.310 ServerApp] WebSocket ping timeout after 119893 ms.
+[I 2021-12-29 19:23:26.313 ServerApp] Starting buffering for f3d197fa-030b-4871-a8f7-b387ed974b14:1b385a75-c167-4efe-b4b3-87fd6b10b4e6
+[I 2021-12-29 20:03:44.258 ServerApp] Restoring connection for f3d197fa-030b-4871-a8f7-b387ed974b14:1b385a75-c167-4efe-b4b3-87fd6b10b4e6
+[I 2021-12-29 20:05:46.456 ServerApp] Saving file at /train_model_on_all_data_to_prepare_causalimpact_analysis.ipynb
+[I 2021-12-29 20:34:56.214 ServerApp] Saving file at /train_model_on_all_data_to_prepare_causalimpact_analysis.ipynb
+[I 2021-12-29 20:37:02.044 ServerApp] Saving file at /train_model_on_all_data_to_prepare_causalimpact_analysis.ipynb
+[I 2021-12-29 20:43:13.123 ServerApp] Saving file at /train_model_on_all_data_to_prepare_causalimpact_analysis.ipynb
+[I 2021-12-29 20:43:21.460 ServerApp] Saving file at /train_model_on_all_data_to_prepare_causalimpact_analysis.ipynb
+[I 2021-12-29 20:43:43.902 ServerApp] Saving file at /train_model_on_all_data_to_prepare_causalimpact_analysis.ipynb
+[I 2021-12-29 21:17:35.338 ServerApp] Saving file at /train_model_on_all_data_to_prepare_causalimpact_analysis.ipynb
+[I 2021-12-29 21:19:48.802 ServerApp] Saving file at /train_model_on_all_data_to_prepare_causalimpact_analysis.ipynb
+[I 2021-12-29 21:21:52.545 ServerApp] Saving file at /train_model_on_all_data_to_prepare_causalimpact_analysis.ipynb
+[I 2021-12-29 21:22:20.251 ServerApp] Saving file at /train_model_on_all_data_to_prepare_causalimpact_analysis.ipynb
+[I 2021-12-29 22:02:41.477 ServerApp] Saving file at /train_model_on_all_data_to_prepare_causalimpact_analysis.ipynb
+[I 2021-12-29 22:59:46.393 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[W 2021-12-29 22:59:46.394 ServerApp] Notebook 20211220_build_transformer_model.ipynb is not trusted
+[I 2021-12-30 00:06:08.261 ServerApp] Saving file at /export_models.ipynb
+[W 2021-12-30 00:06:08.262 ServerApp] Notebook export_models.ipynb is not trusted
+[I 2021-12-30 00:06:32.096 ServerApp] Saving file at /export_models.ipynb
+[W 2021-12-30 00:06:32.097 ServerApp] Notebook export_models.ipynb is not trusted
+[I 2021-12-30 00:06:32.498 ServerApp] Restoring connection for 01a6f875-62c3-4ad0-a39f-6f8fcae47699:19518265-01b4-4c6c-8b43-0b44c6aa5895
+[I 2021-12-30 00:08:37.099 ServerApp] Saving file at /export_models.ipynb
+[W 2021-12-30 00:08:37.100 ServerApp] Notebook export_models.ipynb is not trusted
+[I 2021-12-30 00:25:43.318 ServerApp] Saving file at /export_models.ipynb
+[W 2021-12-30 00:25:43.319 ServerApp] Notebook export_models.ipynb is not trusted
+[W 2021-12-30 07:47:14.259 ServerApp] WebSocket ping timeout after 96987 ms.
+[I 2021-12-30 07:47:19.261 ServerApp] Starting buffering for f3d197fa-030b-4871-a8f7-b387ed974b14:1b385a75-c167-4efe-b4b3-87fd6b10b4e6
+[W 2021-12-30 07:47:32.499 ServerApp] WebSocket ping timeout after 114763 ms.
+[I 2021-12-30 07:47:37.502 ServerApp] Starting buffering for 01a6f875-62c3-4ad0-a39f-6f8fcae47699:19518265-01b4-4c6c-8b43-0b44c6aa5895
+[I 2021-12-30 07:48:31.258 ServerApp] Restoring connection for f3d197fa-030b-4871-a8f7-b387ed974b14:1b385a75-c167-4efe-b4b3-87fd6b10b4e6
+[I 2021-12-30 07:48:31.559 ServerApp] Restoring connection for 01a6f875-62c3-4ad0-a39f-6f8fcae47699:19518265-01b4-4c6c-8b43-0b44c6aa5895
+[W 2021-12-30 09:32:01.260 ServerApp] WebSocket ping timeout after 119749 ms.
+[W 2021-12-30 09:32:01.561 ServerApp] WebSocket ping timeout after 119636 ms.
+[I 2021-12-30 09:32:06.263 ServerApp] Starting buffering for f3d197fa-030b-4871-a8f7-b387ed974b14:1b385a75-c167-4efe-b4b3-87fd6b10b4e6
+[I 2021-12-30 09:32:06.564 ServerApp] Starting buffering for 01a6f875-62c3-4ad0-a39f-6f8fcae47699:19518265-01b4-4c6c-8b43-0b44c6aa5895
+[I 2021-12-30 09:43:48.279 ServerApp] Restoring connection for 01a6f875-62c3-4ad0-a39f-6f8fcae47699:19518265-01b4-4c6c-8b43-0b44c6aa5895
+[I 2021-12-30 09:45:06.003 ServerApp] Saving file at /export_models.ipynb
+[W 2021-12-30 09:45:06.004 ServerApp] Notebook export_models.ipynb is not trusted
+[I 2021-12-30 09:45:23.207 ServerApp] Saving file at /export_models.ipynb
+[W 2021-12-30 09:45:23.208 ServerApp] Notebook export_models.ipynb is not trusted
+[I 2021-12-30 09:47:48.442 ServerApp] Saving file at /export_models.ipynb
+[W 2021-12-30 09:47:48.443 ServerApp] Notebook export_models.ipynb is not trusted
+[I 2021-12-30 09:49:48.184 ServerApp] Restoring connection for fa49ec4f-cbc8-4232-b2a5-eca434c3ad17:7b242973-ae74-428e-95dc-8fbf5c12d686
+[I 2021-12-30 09:51:03.691 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[W 2021-12-30 09:51:03.692 ServerApp] Notebook 20211220_build_transformer_model.ipynb is not trusted
+[I 2021-12-30 09:51:23.073 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[W 2021-12-30 09:51:23.074 ServerApp] Notebook 20211220_build_transformer_model.ipynb is not trusted
+[I 2021-12-30 09:51:33.088 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[W 2021-12-30 09:51:33.089 ServerApp] Notebook 20211220_build_transformer_model.ipynb is not trusted
+[I 2021-12-30 10:12:41.306 ServerApp] Saving file at /export_models.ipynb
+[W 2021-12-30 10:12:41.307 ServerApp] Notebook export_models.ipynb is not trusted
+[I 2021-12-30 10:23:48.439 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[W 2021-12-30 10:23:48.440 ServerApp] Notebook 20211220_build_transformer_model.ipynb is not trusted
+[W 2021-12-30 10:31:18.185 ServerApp] WebSocket ping timeout after 117187 ms.
+[W 2021-12-30 10:31:18.279 ServerApp] WebSocket ping timeout after 117281 ms.
+[I 2021-12-30 10:31:19.001 ServerApp] Starting buffering for fa49ec4f-cbc8-4232-b2a5-eca434c3ad17:7b242973-ae74-428e-95dc-8fbf5c12d686
+[I 2021-12-30 10:31:19.020 ServerApp] Starting buffering for 01a6f875-62c3-4ad0-a39f-6f8fcae47699:19518265-01b4-4c6c-8b43-0b44c6aa5895
+[I 2021-12-30 10:31:21.034 ServerApp] Restoring connection for fa49ec4f-cbc8-4232-b2a5-eca434c3ad17:7b242973-ae74-428e-95dc-8fbf5c12d686
+[I 2021-12-30 10:31:21.487 ServerApp] Restoring connection for 01a6f875-62c3-4ad0-a39f-6f8fcae47699:19518265-01b4-4c6c-8b43-0b44c6aa5895
+[W 2021-12-30 13:47:21.036 ServerApp] WebSocket ping timeout after 119857 ms.
+[W 2021-12-30 13:47:21.490 ServerApp] WebSocket ping timeout after 119483 ms.
+[I 2021-12-30 13:47:26.039 ServerApp] Starting buffering for fa49ec4f-cbc8-4232-b2a5-eca434c3ad17:7b242973-ae74-428e-95dc-8fbf5c12d686
+[I 2021-12-30 13:47:26.493 ServerApp] Starting buffering for 01a6f875-62c3-4ad0-a39f-6f8fcae47699:19518265-01b4-4c6c-8b43-0b44c6aa5895
+[W 2022-01-03 08:33:39.291 LabApp] Could not determine jupyterlab build status without nodejs
+[W 2022-01-03 08:35:45.543 ServerApp] Notebook validate_model.ipynb is not trusted
+[W 2022-01-03 08:35:45.577 ServerApp] Notebook time_series_model.ipynb is not trusted
+[W 2022-01-03 08:35:45.594 ServerApp] Notebook trying_to_merge_all_baseline_operations.ipynb is not trusted
+[W 2022-01-03 08:35:45.605 ServerApp] Notebook export_models.ipynb is not trusted
+[W 2022-01-03 08:35:45.624 ServerApp] Notebook train_model_on_all_data_to_prepare_causalimpact_analysis.ipynb is not trusted
+[W 2022-01-03 08:35:45.639 ServerApp] Notebook 20211220_build_transformer_model.ipynb is not trusted
+[I 2022-01-03 08:35:50.640 ServerApp] Starting buffering for aeeaafc3-b6df-43cc-963f-8120701cc52c:d13e35f9-e330-4160-94b6-aa5a236bf5c7
+[I 2022-01-03 08:36:45.968 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[W 2022-01-03 08:36:45.969 ServerApp] Notebook 20211220_build_transformer_model.ipynb is not trusted
+[I 2022-01-03 08:38:39.051 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[W 2022-01-03 08:38:39.052 ServerApp] Notebook 20211220_build_transformer_model.ipynb is not trusted
+[I 2022-01-03 08:38:39.194 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[W 2022-01-03 08:38:39.194 ServerApp] Notebook 20211220_build_transformer_model.ipynb is not trusted
+[I 2022-01-03 09:07:23.509 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[W 2022-01-03 09:07:23.511 ServerApp] Notebook 20211220_build_transformer_model.ipynb is not trusted
+[I 2022-01-03 09:15:26.539 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[W 2022-01-03 09:15:26.540 ServerApp] Notebook 20211220_build_transformer_model.ipynb is not trusted
+[I 2022-01-03 09:16:11.841 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[W 2022-01-03 09:16:11.842 ServerApp] Notebook 20211220_build_transformer_model.ipynb is not trusted
+[I 2022-01-03 09:18:12.104 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[W 2022-01-03 09:18:12.106 ServerApp] Notebook 20211220_build_transformer_model.ipynb is not trusted
+[I 2022-01-03 09:18:17.913 ServerApp] Kernel interrupted: f3d197fa-030b-4871-a8f7-b387ed974b14
+[I 2022-01-03 09:18:24.210 ServerApp] Saving file at /train_model_on_all_data_to_prepare_causalimpact_analysis.ipynb
+[W 2022-01-03 09:18:24.210 ServerApp] Notebook train_model_on_all_data_to_prepare_causalimpact_analysis.ipynb is not trusted
+[I 2022-01-03 09:51:17.549 ServerApp] Saving file at /train_model_on_all_data_to_prepare_causalimpact_analysis.ipynb
+[W 2022-01-03 09:51:17.550 ServerApp] Notebook train_model_on_all_data_to_prepare_causalimpact_analysis.ipynb is not trusted
+[I 2022-01-03 09:53:18.690 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[W 2022-01-03 09:53:18.691 ServerApp] Notebook 20211220_build_transformer_model.ipynb is not trusted
+[I 2022-01-03 09:55:19.752 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[W 2022-01-03 09:55:19.753 ServerApp] Notebook 20211220_build_transformer_model.ipynb is not trusted
+[W 2022-01-03 10:01:51.046 ServerApp] WebSocket ping timeout after 119974 ms.
+[W 2022-01-03 10:01:51.162 ServerApp] WebSocket ping timeout after 119988 ms.
+[W 2022-01-03 10:01:51.202 ServerApp] WebSocket ping timeout after 119986 ms.
+[W 2022-01-03 10:01:51.244 ServerApp] WebSocket ping timeout after 119983 ms.
+[W 2022-01-03 10:01:51.285 ServerApp] WebSocket ping timeout after 119983 ms.
+[W 2022-01-03 10:01:51.330 ServerApp] WebSocket ping timeout after 119986 ms.
+[I 2022-01-03 10:01:56.048 ServerApp] Starting buffering for f045b085-97b9-4104-a8de-06158f3ebde5:cbdc5e72-067d-4cdc-8ce2-6d0dcf048fc7
+[I 2022-01-03 10:01:56.163 ServerApp] Starting buffering for 7092bd1a-274d-4abb-8ed2-d9dce5aae656:9c5f74c3-2f3f-44f9-aa7f-0315fc455582
+[I 2022-01-03 10:01:56.203 ServerApp] Starting buffering for 01a6f875-62c3-4ad0-a39f-6f8fcae47699:2b5ca36a-d03c-4a92-a5c8-5adf03ee1081
+[I 2022-01-03 10:01:56.245 ServerApp] Starting buffering for 25e1b44a-7935-4243-98d9-651052640605:633e999e-b631-4167-b007-7ff5a04558bd
+[I 2022-01-03 10:01:56.286 ServerApp] Starting buffering for f3d197fa-030b-4871-a8f7-b387ed974b14:fe84a932-e499-4c1c-9dc8-27ce36e86b43
+[I 2022-01-03 10:01:56.332 ServerApp] Starting buffering for fa49ec4f-cbc8-4232-b2a5-eca434c3ad17:abc34177-f4ca-4684-8a3b-35cba93f34e7
+[I 2022-01-03 12:13:35.477 ServerApp] Restoring connection for f3d197fa-030b-4871-a8f7-b387ed974b14:fe84a932-e499-4c1c-9dc8-27ce36e86b43
+[I 2022-01-03 12:15:16.645 ServerApp] Saving file at /train_model_on_all_data_to_prepare_causalimpact_analysis.ipynb
+[W 2022-01-03 12:15:16.646 ServerApp] Notebook train_model_on_all_data_to_prepare_causalimpact_analysis.ipynb is not trusted
+[I 2022-01-03 12:20:30.454 ServerApp] Saving file at /train_model_on_all_data_to_prepare_causalimpact_analysis.ipynb
+[W 2022-01-03 12:20:30.455 ServerApp] Notebook train_model_on_all_data_to_prepare_causalimpact_analysis.ipynb is not trusted
+[I 2022-01-03 12:22:31.169 ServerApp] Saving file at /train_model_on_all_data_to_prepare_causalimpact_analysis.ipynb
+[W 2022-01-03 12:22:31.170 ServerApp] Notebook train_model_on_all_data_to_prepare_causalimpact_analysis.ipynb is not trusted
+[I 2022-01-03 14:03:17.770 ServerApp] Saving file at /train_model_on_all_data_to_prepare_causalimpact_analysis.ipynb
+[W 2022-01-03 14:03:17.771 ServerApp] Notebook train_model_on_all_data_to_prepare_causalimpact_analysis.ipynb is not trusted
+[I 2022-01-03 14:04:45.703 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[W 2022-01-03 14:04:45.704 ServerApp] Notebook 20211220_build_transformer_model.ipynb is not trusted
+[I 2022-01-03 14:34:32.013 ServerApp] Saving file at /train_model_on_all_data_to_prepare_causalimpact_analysis.ipynb
+[W 2022-01-03 14:34:32.014 ServerApp] Notebook train_model_on_all_data_to_prepare_causalimpact_analysis.ipynb is not trusted
+[I 2022-01-03 15:23:18.083 ServerApp] Saving file at /train_model_on_all_data_to_prepare_causalimpact_analysis.ipynb
+[W 2022-01-03 15:23:18.084 ServerApp] Notebook train_model_on_all_data_to_prepare_causalimpact_analysis.ipynb is not trusted
+[I 2022-01-03 15:25:18.221 ServerApp] Saving file at /train_model_on_all_data_to_prepare_causalimpact_analysis.ipynb
+[W 2022-01-03 15:25:18.222 ServerApp] Notebook train_model_on_all_data_to_prepare_causalimpact_analysis.ipynb is not trusted
+[I 2022-01-03 15:33:20.963 ServerApp] Saving file at /train_model_on_all_data_to_prepare_causalimpact_analysis.ipynb
+[W 2022-01-03 15:33:20.964 ServerApp] Notebook train_model_on_all_data_to_prepare_causalimpact_analysis.ipynb is not trusted
+[I 2022-01-03 16:05:17.922 ServerApp] Saving file at /train_model_on_all_data_to_prepare_causalimpact_analysis.ipynb
+[W 2022-01-03 16:05:17.923 ServerApp] Notebook train_model_on_all_data_to_prepare_causalimpact_analysis.ipynb is not trusted
+[I 2022-01-03 17:24:18.020 ServerApp] Saving file at /train_model_on_all_data_to_prepare_causalimpact_analysis.ipynb
+[W 2022-01-03 17:24:18.021 ServerApp] Notebook train_model_on_all_data_to_prepare_causalimpact_analysis.ipynb is not trusted
+[I 2022-01-03 17:24:18.100 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[W 2022-01-03 17:24:18.101 ServerApp] Notebook 20211220_build_transformer_model.ipynb is not trusted
+[I 2022-01-03 17:30:21.011 ServerApp] Saving file at /train_model_on_all_data_to_prepare_causalimpact_analysis.ipynb
+[W 2022-01-03 17:30:21.012 ServerApp] Notebook train_model_on_all_data_to_prepare_causalimpact_analysis.ipynb is not trusted
+[I 2022-01-03 18:15:33.503 ServerApp] Saving file at /train_model_on_all_data_to_prepare_causalimpact_analysis.ipynb
+[W 2022-01-03 18:15:33.503 ServerApp] Notebook train_model_on_all_data_to_prepare_causalimpact_analysis.ipynb is not trusted
+[I 2022-01-03 18:48:18.116 ServerApp] Saving file at /train_model_on_all_data_to_prepare_causalimpact_analysis.ipynb
+[W 2022-01-03 18:48:18.117 ServerApp] Notebook train_model_on_all_data_to_prepare_causalimpact_analysis.ipynb is not trusted
+[W 2022-01-03 21:32:35.478 ServerApp] WebSocket ping timeout after 119966 ms.
+[I 2022-01-03 21:32:40.482 ServerApp] Starting buffering for f3d197fa-030b-4871-a8f7-b387ed974b14:fe84a932-e499-4c1c-9dc8-27ce36e86b43
+[W 2022-01-04 09:33:09.889 LabApp] Could not determine jupyterlab build status without nodejs
+[W 2022-01-04 09:34:44.991 ServerApp] Notebook validate_model.ipynb is not trusted
+[W 2022-01-04 09:34:45.025 ServerApp] Notebook time_series_model.ipynb is not trusted
+[W 2022-01-04 09:34:45.050 ServerApp] Notebook export_models.ipynb is not trusted
+[W 2022-01-04 09:34:45.061 ServerApp] Notebook trying_to_merge_all_baseline_operations.ipynb is not trusted
+[W 2022-01-04 09:34:45.073 ServerApp] Notebook train_model_on_all_data_to_prepare_causalimpact_analysis.ipynb is not trusted
+[W 2022-01-04 09:34:45.088 ServerApp] Notebook 20211220_build_transformer_model.ipynb is not trusted
+[I 2022-01-04 09:34:47.358 ServerApp] Starting buffering for aeeaafc3-b6df-43cc-963f-8120701cc52c:ded9da71-6cbd-43bb-9d16-eb31b4bf8cc0
+[I 2022-01-04 09:36:11.152 ServerApp] Saving file at /train_model_on_all_data_to_prepare_causalimpact_analysis.ipynb
+[W 2022-01-04 09:36:11.153 ServerApp] Notebook train_model_on_all_data_to_prepare_causalimpact_analysis.ipynb is not trusted
+[I 2022-01-04 09:36:46.927 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[W 2022-01-04 09:36:46.928 ServerApp] Notebook 20211220_build_transformer_model.ipynb is not trusted
+[I 2022-01-04 09:44:11.541 ServerApp] Saving file at /train_model_on_all_data_to_prepare_causalimpact_analysis.ipynb
+[W 2022-01-04 09:44:11.542 ServerApp] Notebook train_model_on_all_data_to_prepare_causalimpact_analysis.ipynb is not trusted
+[I 2022-01-04 09:44:53.703 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[W 2022-01-04 09:44:53.704 ServerApp] Notebook 20211220_build_transformer_model.ipynb is not trusted
+[I 2022-01-04 09:46:12.422 ServerApp] Saving file at /train_model_on_all_data_to_prepare_causalimpact_analysis.ipynb
+[W 2022-01-04 09:46:12.424 ServerApp] Notebook train_model_on_all_data_to_prepare_causalimpact_analysis.ipynb is not trusted
+[I 2022-01-04 09:54:17.473 ServerApp] Saving file at /train_model_on_all_data_to_prepare_causalimpact_analysis.ipynb
+[W 2022-01-04 09:54:17.474 ServerApp] Notebook train_model_on_all_data_to_prepare_causalimpact_analysis.ipynb is not trusted
+[I 2022-01-04 10:13:14.699 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[W 2022-01-04 10:13:14.699 ServerApp] Notebook 20211220_build_transformer_model.ipynb is not trusted
+[I 2022-01-04 10:15:15.503 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[W 2022-01-04 10:15:15.504 ServerApp] Notebook 20211220_build_transformer_model.ipynb is not trusted
+[I 2022-01-04 11:57:42.732 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[W 2022-01-04 11:57:42.733 ServerApp] Notebook 20211220_build_transformer_model.ipynb is not trusted
+[I 2022-01-04 11:57:42.771 ServerApp] Saving file at /train_model_on_all_data_to_prepare_causalimpact_analysis.ipynb
+[W 2022-01-04 11:57:42.771 ServerApp] Notebook train_model_on_all_data_to_prepare_causalimpact_analysis.ipynb is not trusted
+[I 2022-01-04 12:02:36.647 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[W 2022-01-04 12:02:36.648 ServerApp] Notebook 20211220_build_transformer_model.ipynb is not trusted
+[I 2022-01-04 12:04:37.625 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[W 2022-01-04 12:04:37.626 ServerApp] Notebook 20211220_build_transformer_model.ipynb is not trusted
+[W 2022-01-04 12:20:47.638 ServerApp] WebSocket ping timeout after 119985 ms.
+[W 2022-01-04 12:20:47.686 ServerApp] WebSocket ping timeout after 119980 ms.
+[W 2022-01-04 12:20:47.703 ServerApp] WebSocket ping timeout after 119982 ms.
+[W 2022-01-04 12:20:47.778 ServerApp] WebSocket ping timeout after 119939 ms.
+[W 2022-01-04 12:20:47.778 ServerApp] WebSocket ping timeout after 119920 ms.
+[W 2022-01-04 12:20:47.890 ServerApp] WebSocket ping timeout after 119970 ms.
+[I 2022-01-04 12:20:52.640 ServerApp] Starting buffering for f045b085-97b9-4104-a8de-06158f3ebde5:368b4bdb-db8a-452a-aba8-87d753383283
+[I 2022-01-04 12:20:52.688 ServerApp] Starting buffering for fa49ec4f-cbc8-4232-b2a5-eca434c3ad17:88206d22-2335-42a2-916c-aadb4d7146e6
+[I 2022-01-04 12:20:52.704 ServerApp] Starting buffering for 7092bd1a-274d-4abb-8ed2-d9dce5aae656:526e110b-c7d8-48ab-81b1-d1c5617f77ba
+[I 2022-01-04 12:20:52.779 ServerApp] Starting buffering for 25e1b44a-7935-4243-98d9-651052640605:0396474b-e07c-4810-874f-cdc127727f1f
+[I 2022-01-04 12:20:52.779 ServerApp] Starting buffering for 01a6f875-62c3-4ad0-a39f-6f8fcae47699:08e2d2fc-3b94-4626-b88b-032a737dcf13
+[I 2022-01-04 12:20:52.892 ServerApp] Starting buffering for f3d197fa-030b-4871-a8f7-b387ed974b14:de054fa8-dbe7-443d-9734-5af2322daf9c
+[I 2022-01-04 14:04:04.193 ServerApp] Restoring connection for 7092bd1a-274d-4abb-8ed2-d9dce5aae656:526e110b-c7d8-48ab-81b1-d1c5617f77ba
+[I 2022-01-04 14:04:04.576 ServerApp] Restoring connection for f3d197fa-030b-4871-a8f7-b387ed974b14:de054fa8-dbe7-443d-9734-5af2322daf9c
+[I 2022-01-04 14:04:04.584 ServerApp] Replaying 31 buffered messages
+[I 2022-01-04 14:04:09.537 ServerApp] Restoring connection for 01a6f875-62c3-4ad0-a39f-6f8fcae47699:08e2d2fc-3b94-4626-b88b-032a737dcf13
+[I 2022-01-04 14:04:13.146 ServerApp] Restoring connection for f045b085-97b9-4104-a8de-06158f3ebde5:368b4bdb-db8a-452a-aba8-87d753383283
+[I 2022-01-04 14:04:14.109 ServerApp] Restoring connection for fa49ec4f-cbc8-4232-b2a5-eca434c3ad17:88206d22-2335-42a2-916c-aadb4d7146e6
+[I 2022-01-04 14:04:14.118 ServerApp] Replaying 15 buffered messages
+[I 2022-01-04 14:04:27.579 ServerApp] Restoring connection for 25e1b44a-7935-4243-98d9-651052640605:0396474b-e07c-4810-874f-cdc127727f1f
+[I 2022-01-04 14:04:42.818 ServerApp] Saving file at /train_model_on_all_data_to_prepare_causalimpact_analysis.ipynb
+[W 2022-01-04 14:04:42.819 ServerApp] Notebook train_model_on_all_data_to_prepare_causalimpact_analysis.ipynb is not trusted
+[I 2022-01-04 14:05:42.747 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[W 2022-01-04 14:05:42.748 ServerApp] Notebook 20211220_build_transformer_model.ipynb is not trusted
+[I 2022-01-04 14:05:49.303 ServerApp] Creating new notebook in 
+[I 2022-01-04 14:05:51.133 ServerApp] Kernel started: 9176949b-f87d-478b-be04-3d2592a4ab6e
+[I 2022-01-04 14:06:09.548 ServerApp] Saving file at /20220104_predictive_performance_horizon.ipynb
+[I 2022-01-04 14:06:50.323 ServerApp] Saving file at /20220104_predictive_performance_horizon.ipynb
+[I 2022-01-04 14:08:50.414 ServerApp] Saving file at /20220104_predictive_performance_horizon.ipynb
+[I 2022-01-04 14:10:06.396 ServerApp] Saving file at /20220104_predictive_performance_horizon.ipynb
+[I 2022-01-04 14:11:29.574 ServerApp] Saving file at /20220104_predictive_performance_horizon.ipynb
+[I 2022-01-04 14:11:30.188 ServerApp] Saving file at /20220104_predictive_performance_horizon.ipynb
+[I 2022-01-04 14:11:44.482 ServerApp] Saving file at /20220104_predictive_performance_horizon.ipynb
+[I 2022-01-04 14:11:48.914 ServerApp] Saving file at /20220104_predictive_performance_horizon.ipynb
+[I 2022-01-04 14:11:54.114 ServerApp] Saving file at /20220104_predictive_performance_horizon.ipynb
+[I 2022-01-04 14:12:10.204 ServerApp] Saving file at /20220104_predictive_performance_horizon.ipynb
+[I 2022-01-04 14:13:09.178 ServerApp] Saving file at /20220104_predictive_performance_horizon.ipynb
+[I 2022-01-04 14:13:23.759 ServerApp] Saving file at /20220104_predictive_performance_horizon.ipynb
+[I 2022-01-04 14:14:04.332 ServerApp] Saving file at /20220104_predictive_performance_horizon.ipynb
+[I 2022-01-04 14:14:06.531 ServerApp] Saving file at /20220104_predictive_performance_horizon.ipynb
+[I 2022-01-04 14:14:17.119 ServerApp] Saving file at /20220104_predictive_performance_horizon.ipynb
+[I 2022-01-04 14:14:19.988 ServerApp] Saving file at /20220104_predictive_performance_horizon.ipynb
+[I 2022-01-04 14:14:47.376 ServerApp] Saving file at /20220104_predictive_performance_horizon.ipynb
+2022-01-04 14:14:49.234958: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcudart.so.11.0
+[I 2022-01-04 14:57:44.099 ServerApp] Saving file at /20220104_predictive_performance_horizon.ipynb
+[W 2022-01-04 15:24:13.154 ServerApp] WebSocket ping timeout after 119959 ms.
+[W 2022-01-04 15:24:14.112 ServerApp] WebSocket ping timeout after 119982 ms.
+[I 2022-01-04 15:24:18.156 ServerApp] Starting buffering for f045b085-97b9-4104-a8de-06158f3ebde5:368b4bdb-db8a-452a-aba8-87d753383283
+[I 2022-01-04 15:24:19.116 ServerApp] Starting buffering for fa49ec4f-cbc8-4232-b2a5-eca434c3ad17:88206d22-2335-42a2-916c-aadb4d7146e6
+[W 2022-01-04 15:24:21.519 ServerApp] WebSocket ping timeout after 119856 ms.
+[I 2022-01-04 15:24:26.522 ServerApp] Starting buffering for 9176949b-f87d-478b-be04-3d2592a4ab6e:895cceaa-5ad4-4c2a-b18d-5b07be7e5adb
+[W 2022-01-04 15:24:27.580 ServerApp] WebSocket ping timeout after 119951 ms.
+[I 2022-01-04 15:24:32.583 ServerApp] Starting buffering for 25e1b44a-7935-4243-98d9-651052640605:0396474b-e07c-4810-874f-cdc127727f1f
+[W 2022-01-04 15:24:34.194 ServerApp] WebSocket ping timeout after 119174 ms.
+[W 2022-01-04 15:24:34.578 ServerApp] WebSocket ping timeout after 119559 ms.
+[I 2022-01-04 15:24:39.196 ServerApp] Starting buffering for 7092bd1a-274d-4abb-8ed2-d9dce5aae656:526e110b-c7d8-48ab-81b1-d1c5617f77ba
+[W 2022-01-04 15:24:39.539 ServerApp] WebSocket ping timeout after 118469 ms.
+[I 2022-01-04 15:24:39.580 ServerApp] Starting buffering for f3d197fa-030b-4871-a8f7-b387ed974b14:de054fa8-dbe7-443d-9734-5af2322daf9c
+[I 2022-01-04 15:24:44.541 ServerApp] Starting buffering for 01a6f875-62c3-4ad0-a39f-6f8fcae47699:08e2d2fc-3b94-4626-b88b-032a737dcf13
+[I 2022-01-04 15:25:58.725 ServerApp] Restoring connection for fa49ec4f-cbc8-4232-b2a5-eca434c3ad17:88206d22-2335-42a2-916c-aadb4d7146e6
+[I 2022-01-04 15:25:58.727 ServerApp] Restoring connection for 9176949b-f87d-478b-be04-3d2592a4ab6e:895cceaa-5ad4-4c2a-b18d-5b07be7e5adb
+[I 2022-01-04 15:25:58.782 ServerApp] Restoring connection for 7092bd1a-274d-4abb-8ed2-d9dce5aae656:526e110b-c7d8-48ab-81b1-d1c5617f77ba
+[I 2022-01-04 15:25:58.835 ServerApp] Restoring connection for f3d197fa-030b-4871-a8f7-b387ed974b14:de054fa8-dbe7-443d-9734-5af2322daf9c
+[I 2022-01-04 15:25:58.885 ServerApp] Restoring connection for 01a6f875-62c3-4ad0-a39f-6f8fcae47699:08e2d2fc-3b94-4626-b88b-032a737dcf13
+[I 2022-01-04 15:25:58.901 ServerApp] Restoring connection for f045b085-97b9-4104-a8de-06158f3ebde5:368b4bdb-db8a-452a-aba8-87d753383283
+[I 2022-01-04 15:25:58.937 ServerApp] Restoring connection for 25e1b44a-7935-4243-98d9-651052640605:0396474b-e07c-4810-874f-cdc127727f1f
+[I 2022-01-04 15:39:45.447 ServerApp] Saving file at /20220104_predictive_performance_horizon.ipynb
+[I 2022-01-04 16:24:42.899 ServerApp] Saving file at /20220104_predictive_performance_horizon.ipynb
+[I 2022-01-04 17:05:42.979 ServerApp] Saving file at /20220104_predictive_performance_horizon.ipynb
+[W 2022-01-04 17:35:58.727 ServerApp] WebSocket ping timeout after 119889 ms.
+[W 2022-01-04 17:35:58.728 ServerApp] WebSocket ping timeout after 119878 ms.
+[W 2022-01-04 17:35:58.783 ServerApp] WebSocket ping timeout after 119932 ms.
+[W 2022-01-04 17:35:58.836 ServerApp] WebSocket ping timeout after 119986 ms.
+[W 2022-01-04 17:35:58.887 ServerApp] WebSocket ping timeout after 119982 ms.
+[W 2022-01-04 17:35:58.902 ServerApp] WebSocket ping timeout after 119981 ms.
+[W 2022-01-04 17:35:58.938 ServerApp] WebSocket ping timeout after 119982 ms.
+[I 2022-01-04 17:36:03.732 ServerApp] Starting buffering for fa49ec4f-cbc8-4232-b2a5-eca434c3ad17:88206d22-2335-42a2-916c-aadb4d7146e6
+[I 2022-01-04 17:36:03.733 ServerApp] Starting buffering for 9176949b-f87d-478b-be04-3d2592a4ab6e:895cceaa-5ad4-4c2a-b18d-5b07be7e5adb
+[I 2022-01-04 17:36:03.785 ServerApp] Starting buffering for 7092bd1a-274d-4abb-8ed2-d9dce5aae656:526e110b-c7d8-48ab-81b1-d1c5617f77ba
+[I 2022-01-04 17:36:03.839 ServerApp] Starting buffering for f3d197fa-030b-4871-a8f7-b387ed974b14:de054fa8-dbe7-443d-9734-5af2322daf9c
+[I 2022-01-04 17:36:03.888 ServerApp] Starting buffering for 01a6f875-62c3-4ad0-a39f-6f8fcae47699:08e2d2fc-3b94-4626-b88b-032a737dcf13
+[I 2022-01-04 17:36:03.904 ServerApp] Starting buffering for f045b085-97b9-4104-a8de-06158f3ebde5:368b4bdb-db8a-452a-aba8-87d753383283
+[I 2022-01-04 17:36:03.940 ServerApp] Starting buffering for 25e1b44a-7935-4243-98d9-651052640605:0396474b-e07c-4810-874f-cdc127727f1f
+[I 2022-01-04 17:44:27.922 ServerApp] Restoring connection for f045b085-97b9-4104-a8de-06158f3ebde5:368b4bdb-db8a-452a-aba8-87d753383283
+[I 2022-01-04 17:44:27.998 ServerApp] Restoring connection for 01a6f875-62c3-4ad0-a39f-6f8fcae47699:08e2d2fc-3b94-4626-b88b-032a737dcf13
+[I 2022-01-04 17:44:28.722 ServerApp] Restoring connection for 7092bd1a-274d-4abb-8ed2-d9dce5aae656:526e110b-c7d8-48ab-81b1-d1c5617f77ba
+[I 2022-01-04 17:44:30.044 ServerApp] Restoring connection for 9176949b-f87d-478b-be04-3d2592a4ab6e:895cceaa-5ad4-4c2a-b18d-5b07be7e5adb
+[I 2022-01-04 17:44:31.594 ServerApp] Restoring connection for fa49ec4f-cbc8-4232-b2a5-eca434c3ad17:88206d22-2335-42a2-916c-aadb4d7146e6
+[I 2022-01-04 17:44:33.995 ServerApp] Restoring connection for f3d197fa-030b-4871-a8f7-b387ed974b14:de054fa8-dbe7-443d-9734-5af2322daf9c
+[I 2022-01-04 17:44:37.977 ServerApp] Restoring connection for 25e1b44a-7935-4243-98d9-651052640605:0396474b-e07c-4810-874f-cdc127727f1f
+[I 2022-01-04 17:48:43.357 ServerApp] Saving file at /20220104_predictive_performance_horizon.ipynb
+[I 2022-01-04 17:54:43.381 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[W 2022-01-04 17:54:43.382 ServerApp] Notebook 20211220_build_transformer_model.ipynb is not trusted
+[I 2022-01-04 18:04:45.357 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[W 2022-01-04 18:04:45.359 ServerApp] Notebook 20211220_build_transformer_model.ipynb is not trusted
+[I 2022-01-04 18:04:49.978 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[W 2022-01-04 18:04:49.979 ServerApp] Notebook 20211220_build_transformer_model.ipynb is not trusted
+[W 2022-01-04 18:06:27.926 ServerApp] WebSocket ping timeout after 119982 ms.
+[W 2022-01-04 18:06:28.000 ServerApp] WebSocket ping timeout after 119985 ms.
+[W 2022-01-04 18:06:28.723 ServerApp] WebSocket ping timeout after 119983 ms.
+[W 2022-01-04 18:06:30.045 ServerApp] WebSocket ping timeout after 119974 ms.
+[W 2022-01-04 18:06:31.597 ServerApp] WebSocket ping timeout after 119960 ms.
+[I 2022-01-04 18:06:32.929 ServerApp] Starting buffering for f045b085-97b9-4104-a8de-06158f3ebde5:368b4bdb-db8a-452a-aba8-87d753383283
+[I 2022-01-04 18:06:33.001 ServerApp] Starting buffering for 01a6f875-62c3-4ad0-a39f-6f8fcae47699:08e2d2fc-3b94-4626-b88b-032a737dcf13
+[I 2022-01-04 18:06:33.724 ServerApp] Starting buffering for 7092bd1a-274d-4abb-8ed2-d9dce5aae656:526e110b-c7d8-48ab-81b1-d1c5617f77ba
+[W 2022-01-04 18:06:33.997 ServerApp] WebSocket ping timeout after 119980 ms.
+[I 2022-01-04 18:06:35.047 ServerApp] Starting buffering for 9176949b-f87d-478b-be04-3d2592a4ab6e:895cceaa-5ad4-4c2a-b18d-5b07be7e5adb
+[I 2022-01-04 18:06:36.600 ServerApp] Starting buffering for fa49ec4f-cbc8-4232-b2a5-eca434c3ad17:88206d22-2335-42a2-916c-aadb4d7146e6
+[W 2022-01-04 18:06:37.978 ServerApp] WebSocket ping timeout after 119985 ms.
+[I 2022-01-04 18:06:38.999 ServerApp] Starting buffering for f3d197fa-030b-4871-a8f7-b387ed974b14:de054fa8-dbe7-443d-9734-5af2322daf9c
+[I 2022-01-04 18:06:42.984 ServerApp] Starting buffering for 25e1b44a-7935-4243-98d9-651052640605:0396474b-e07c-4810-874f-cdc127727f1f
+[I 2022-01-04 18:09:20.172 ServerApp] Restoring connection for fa49ec4f-cbc8-4232-b2a5-eca434c3ad17:88206d22-2335-42a2-916c-aadb4d7146e6
+[I 2022-01-04 18:09:44.702 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[W 2022-01-04 18:09:44.703 ServerApp] Notebook 20211220_build_transformer_model.ipynb is not trusted
+[I 2022-01-04 18:10:29.860 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[W 2022-01-04 18:10:29.861 ServerApp] Notebook 20211220_build_transformer_model.ipynb is not trusted
+[I 2022-01-04 18:11:00.993 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2022-01-04 18:11:02.848 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2022-01-04 18:13:04.596 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2022-01-04 18:17:46.880 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2022-01-04 18:19:48.031 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2022-01-04 18:23:49.467 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2022-01-04 18:46:15.326 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2022-01-04 19:23:30.133 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2022-01-04 19:25:34.420 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[W 2022-01-04 21:11:50.174 ServerApp] WebSocket ping timeout after 119924 ms.
+[I 2022-01-04 21:11:55.176 ServerApp] Starting buffering for fa49ec4f-cbc8-4232-b2a5-eca434c3ad17:88206d22-2335-42a2-916c-aadb4d7146e6
+[I 2022-01-05 08:59:35.687 ServerApp] Saving file at /20220104_predictive_performance_horizon.ipynb
+[I 2022-01-05 08:59:44.378 ServerApp] Saving file at /20220104_predictive_performance_horizon.ipynb
+[I 2022-01-05 09:05:18.573 ServerApp] Restoring connection for 9176949b-f87d-478b-be04-3d2592a4ab6e:895cceaa-5ad4-4c2a-b18d-5b07be7e5adb
+[I 2022-01-05 09:05:18.582 ServerApp] Replaying 47 buffered messages
+[I 2022-01-05 09:05:44.512 ServerApp] Saving file at /20220104_predictive_performance_horizon.ipynb
+[I 2022-01-05 09:48:20.378 ServerApp] Saving file at /20220104_predictive_performance_horizon.ipynb
+[I 2022-01-05 10:21:27.623 ServerApp] Starting buffering for 9176949b-f87d-478b-be04-3d2592a4ab6e:895cceaa-5ad4-4c2a-b18d-5b07be7e5adb
+[W 2022-01-05 10:43:45.513 LabApp] Could not determine jupyterlab build status without nodejs
+[W 2022-01-05 10:43:49.903 ServerApp] Notebook validate_model.ipynb is not trusted
+[W 2022-01-05 10:43:49.973 ServerApp] Notebook time_series_model.ipynb is not trusted
+[W 2022-01-05 10:43:50.199 ServerApp] Notebook export_models.ipynb is not trusted
+[W 2022-01-05 10:43:50.215 ServerApp] Notebook trying_to_merge_all_baseline_operations.ipynb is not trusted
+[W 2022-01-05 10:43:50.471 ServerApp] Notebook train_model_on_all_data_to_prepare_causalimpact_analysis.ipynb is not trusted
+[W 2022-01-05 10:43:50.489 ServerApp] Notebook 20211220_build_transformer_model.ipynb is not trusted
+[W 2022-01-05 10:43:50.498 ServerApp] Notebook 20220104_predictive_performance_horizon.ipynb is not trusted
+[W 2022-01-06 08:57:17.916 LabApp] Could not determine jupyterlab build status without nodejs
+[W 2022-01-06 08:57:30.018 ServerApp] Notebook validate_model.ipynb is not trusted
+[W 2022-01-06 08:57:30.052 ServerApp] Notebook time_series_model.ipynb is not trusted
+[W 2022-01-06 08:57:30.117 ServerApp] Notebook export_models.ipynb is not trusted
+[W 2022-01-06 08:57:30.131 ServerApp] Notebook trying_to_merge_all_baseline_operations.ipynb is not trusted
+[W 2022-01-06 08:57:30.417 ServerApp] Notebook 20211220_build_transformer_model.ipynb is not trusted
+[W 2022-01-06 08:57:30.503 ServerApp] Notebook train_model_on_all_data_to_prepare_causalimpact_analysis.ipynb is not trusted
+[W 2022-01-06 08:57:30.519 ServerApp] Notebook 20220104_predictive_performance_horizon.ipynb is not trusted
+[I 2022-01-06 08:57:35.295 ServerApp] Discarding 34 buffered messages for 9176949b-f87d-478b-be04-3d2592a4ab6e:895cceaa-5ad4-4c2a-b18d-5b07be7e5adb
+[I 2022-01-06 09:53:11.890 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2022-01-06 09:53:14.900 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2022-01-06 09:55:17.128 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2022-01-06 10:03:20.634 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2022-01-06 10:07:21.481 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[I 2022-01-06 10:30:11.152 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
+[W 2022-01-06 12:35:34.914 ServerApp] WebSocket ping timeout after 119987 ms.
+[W 2022-01-06 12:35:34.993 ServerApp] WebSocket ping timeout after 119930 ms.
+[W 2022-01-06 12:35:35.180 ServerApp] WebSocket ping timeout after 119985 ms.
+[W 2022-01-06 12:35:35.219 ServerApp] WebSocket ping timeout after 119980 ms.
+[W 2022-01-06 12:35:35.227 ServerApp] WebSocket ping timeout after 119977 ms.
+[W 2022-01-06 12:35:35.281 ServerApp] WebSocket ping timeout after 119985 ms.
+[W 2022-01-06 12:35:35.296 ServerApp] WebSocket ping timeout after 119936 ms.
+[I 2022-01-06 12:35:39.921 ServerApp] Starting buffering for 25e1b44a-7935-4243-98d9-651052640605:8c1e9e0a-45e8-4628-899f-c9bf151aa1b0
+[I 2022-01-06 12:35:39.996 ServerApp] Starting buffering for 01a6f875-62c3-4ad0-a39f-6f8fcae47699:9bfceb59-b761-442a-b804-d8b3319e3f5a
+[I 2022-01-06 12:35:40.182 ServerApp] Starting buffering for 7092bd1a-274d-4abb-8ed2-d9dce5aae656:ff94ad84-033b-43a7-a257-e43fca404303
+[I 2022-01-06 12:35:40.220 ServerApp] Starting buffering for fa49ec4f-cbc8-4232-b2a5-eca434c3ad17:c36c15c5-5345-4491-b646-3b338ed7b4eb
+[I 2022-01-06 12:35:40.229 ServerApp] Starting buffering for f045b085-97b9-4104-a8de-06158f3ebde5:a7dcbfce-3f50-4f5b-8500-c6584e0ffa14
+[I 2022-01-06 12:35:40.284 ServerApp] Starting buffering for f3d197fa-030b-4871-a8f7-b387ed974b14:cfe25590-0d15-4123-8dbe-a85b5e30a64e
+[I 2022-01-06 12:35:40.299 ServerApp] Starting buffering for 9176949b-f87d-478b-be04-3d2592a4ab6e:5545c028-9b12-4c48-a3c3-bc5d5fe78eb2
