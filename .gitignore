@@ -214,4 +214,3 @@ dev_notebooks
 out
 examples
 src/pyprocessta/model/wandb/
-.pkl
