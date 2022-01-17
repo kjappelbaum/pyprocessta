@@ -62,7 +62,7 @@ def summarize_results(results):
 def _run_backtest(rep, model, x_test, y_test, start=0.3, stride=1, horizon=4):
     backtest = model.historical_forecasts(
         y_test,
-        covariates=x_test,
+        past_covariates=x_test,
         start=start,
         forecast_horizon=horizon,
         stride=stride,
@@ -92,7 +92,7 @@ def parallelized_inference(model, x, y, repeats=100, start=0.3, stride=1, horizo
 
 
 def get_data(
-    df: pd.Dataframe, targets: List[str] = TARGETS, features: List[str] = MEAS_COLUMNS
+    df: pd.DataFrame, targets: List[str] = TARGETS, features: List[str] = MEAS_COLUMNS
 ) -> tuple:
     """Build x (covariates) and y (targets) time series from dataframe
 
@@ -162,8 +162,6 @@ def get_train_test_data(
     return (x_train, y_train), (x_test, y_test)
 
 
-
-
 class TCNModelDropout(TCNModel):
     def predict_with_dropout(
         self,
@@ -190,35 +188,35 @@ class TCNModelDropout(TCNModel):
         )
 
 
-
 def run_model(
-    train_tuple: tuple, input_chunk_length: int = 60, output_chunk_length: int = 10
+    train_tuple: tuple,
+    input_chunk_length: int = 60,
+    output_chunk_length: int = 30,
+    num_layers: int = 16,
+    num_filters: int = 8,
+    kernel_size: int = 4,
+    dropout: float = 0.5627,
+    weight_norm: bool = True,
+    batch_size: int = 128,
+    n_epochs: int = 200,
+    lr: float = 0.02382,
 ) -> TCNModelDropout:
-    """Train a TCN model
 
-    Args:
-        train_tuple (tuple): x, y darts timeseries
-        input_chunk_length (int, optional): Input sequence length. Defaults to 60.
-        output_chunk_length (int, optional): Output sequence length. Defaults to 10.
-
-    Returns:
-        TCNModelDropout: Trained TCN model
-    """
     x_train, y_train = train_tuple
     model_cov = TCNModelDropout(
         input_chunk_length=input_chunk_length,
         output_chunk_length=output_chunk_length,
-        num_layers=8,
-        num_filters=32,
-        kernel_size=4,
-        dropout=0.3,
-        weight_norm=True,
-        batch_size=32,
-        n_epochs=300,
+        num_layers=num_layers,
+        num_filters=num_filters,
+        kernel_size=kernel_size,
+        dropout=dropout,
+        weight_norm=weight_norm,
+        batch_size=batch_size,
+        n_epochs=n_epochs,
         log_tensorboard=True,
-        optimizer_kwargs={"lr": 1e-5},
+        optimizer_kwargs={"lr": lr},
     )
 
-    model_cov.fit(series=y_train, covariates=x_train, verbose=False)
+    model_cov.fit(series=y_train, past_covariates=x_train, verbose=False)
 
     return model_cov
