@@ -220,3 +220,29 @@ def run_model(
     model_cov.fit(series=y_train, past_covariates=x_train, verbose=False)
 
     return model_cov
+
+
+class TCNModelDropout(TCNModel):
+    def predict_with_dropout(
+        self,
+        n: int,
+        input_series_dataset: InferenceDataset,
+        batch_size: Optional[int] = None,
+        verbose: bool = False,
+        n_jobs: int = 1,
+        roll_size: Optional[int] = None,
+        num_samples: int = 1,
+        num_loader_workers: int = 0,
+    ):
+        self.model.eval()
+        enable_dropout(self)
+        return self.predict_from_dataset(
+            n,
+            input_series_dataset,
+            batch_size,
+            verbose,
+            n_jobs,
+            roll_size,
+            num_samples,
+            num_loader_workers,
+        )
