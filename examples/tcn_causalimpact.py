@@ -57,15 +57,16 @@ with open("step_times.pkl", "rb") as handle:
 
 
 def get_causalimpact_splits(x, y, day, times, df):
-    if day>0:
-        a0, b0 = get_timestep_tuples(df, times, day-1)
-        a, b = get_timestep_tuples(df, times, day)
-        a[0] = b0[0]
-    else: 
-        a, b =  get_timestep_tuples(df, times, day)
+    # if day>0:
+    #     a0, b0 = get_timestep_tuples(df, times, day-1)
+    #     a, b = get_timestep_tuples(df, times, day)
+    #     a[0] = b0[0]
+    # else:
 
-    x_way_before, x_after = x.split_before(b[1])
-    y_way_before, y_after = y.split_before(pd.Timestamp(b[1]))
+    a, b = get_timestep_tuples(df, times, day)
+    a[0] = df.index[1]
+    x_way_before, x_way_after = x.split_before(b[1])
+    y_way_before, y_way_after = y.split_before(pd.Timestamp(b[1]))
 
     _, x_before_ = x_way_before.split_before(a[0])
     _, y_before_ = y_way_before.split_before(a[0])
@@ -76,7 +77,12 @@ def get_causalimpact_splits(x, y, day, times, df):
     x_during, x_test = x_after.split_before(b[0])
     y_during, y_test = y_after.split_before(b[0])
 
-    return (x_before, y_before), (x_during, y_during), (x_test, y_test)
+    return (
+        (x_before, y_before),
+        (x_during, y_during),
+        (x_test, y_test),
+        (x_way_after, y_way_after),
+    )
 
 
 # The experiments with the faster response on emissions are:
@@ -135,39 +141,6 @@ def run_model(x_trains, y_trains, input_chunk_length, output_chunk_length):
     return model_cov
 
 
-def transform_data_new(train_tuple, test_tuples, all_tuple):
-    x_train, y_train = train_tuple
-
-    transformer = Scaler()
-
-    x_train = transformer.fit_transform(x_train)
-
-    # with open("x_scaler.pkl", "wb") as handle:
-    #     pickle.dump(transformer, handle)
-
-    y_transformer = Scaler(name="YScaler")
-    y_train = y_transformer.fit_transform(y_train)
-
-    transformed_test_tuples = []
-    for x_test, y_test in test_tuples:
-        print(x_test.pd_dataframe().shape, y_test.pd_dataframe().shape)
-        x_test = transformer.transform(x_test)
-        y_test = y_transformer.transform(y_test)
-        transformed_test_tuples.append((x_test, y_test))
-
-    # with open("y_scaler.pkl", "wb") as handle:
-    #     pickle.dump(y_transformer, handle)
-
-    x_all = transformer.transform(all_tuple[0])
-    y_all = transformer.transform(all_tuple[1])
-    return (
-        (x_train, y_train),
-        transformed_test_tuples,
-        (transformer, y_transformer),
-        (x_all, y_all),
-    )
-
-
 if __name__ == "__main__":
     TARGETS = ["2-Amino-2-methylpropanol C4H11NO", "Piperazine C4H10N2"]
     # TARGETS = ["Carbon dioxide CO2", "Ammonia NH3"]
@@ -181,9 +154,6 @@ if __name__ == "__main__":
                     y = TimeSeries.from_dataframe(df[TARGETS])
                     x = TimeSeries.from_dataframe(df[cols])
 
-                    x = Scaler().fit_transform(x)
-                    y = Scaler().fit_transform(y)
-
                     x_trains = []
                     y_trains = []
 
@@ -195,12 +165,37 @@ if __name__ == "__main__":
                     #     x_trains.append(before[0])
                     #     y_trains.append(before[1])
 
-                    before, during, after = get_causalimpact_splits(
+                    before, during, after, way_after = get_causalimpact_splits(
                         x, y, day, times, df
                     )
 
-                    x_trains.append(before[0])
-                    y_trains.append(before[1])
+                    x = Scaler().fit_transform(x)
+                    y = Scaler().fit_transform(y)
+
+                    if len(before[0]) > len(way_after[0]):
+                        x_trains.append(before[0])
+                        y_trains.append(before[1])
+                    else:
+                        x_trains.append(way_after[0])
+                        y_trains.append(way_after[1])
+
+                    xscaler = Scaler()
+                    yscaler = Scaler()
+
+                    xscaler.fit(x_trains[0])
+                    yscaler.fit(y_trains[0])
+
+                    before = (
+                        xscaler.transform(before[0]),
+                        yscaler.transform(before[1]),
+                    )
+
+                    during = (
+                        xscaler.transform(during[0]),
+                        yscaler.transform(during[1]),
+                    )
+
+                    after = (xscaler.transform(after[0]), yscaler.transform(after[1]))
 
                     before_x_df, before_y_df = (
                         before[0].pd_dataframe(),
@@ -221,7 +216,7 @@ if __name__ == "__main__":
                     day_y_df = pd.concat([before_y_df, during_y_df, after_y_df], axis=0)
                     day_y_ts = TimeSeries.from_dataframe(day_y_df)
 
-                    chunk_length = math.floor(len(during[0])/2)
+                    chunk_length = math.floor(len(during[0]) / 2)
                     model = run_model(
                         x_trains,
                         y_trains,
