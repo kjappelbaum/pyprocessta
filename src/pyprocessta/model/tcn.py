@@ -74,6 +74,8 @@ def _run_backtest(rep, model, x_test, y_test, start=0.3, stride=1, horizon=4):
 
 def parallelized_inference(model, x, y, repeats=100, start=0.3, stride=1, horizon=6):
     results = []
+    model.model.eval()
+    enable_dropout(model.model)
 
     backtest_partial = partial(
         _run_backtest,
@@ -163,7 +165,7 @@ def get_train_test_data(
 
 
 class TCNModelDropout(TCNModel):
-    def predict_with_dropout(
+    def predict_from_dataset(
         self,
         n: int,
         input_series_dataset: InferenceDataset,
@@ -174,8 +176,6 @@ class TCNModelDropout(TCNModel):
         num_samples: int = 1,
         num_loader_workers: int = 0,
     ):
-        self.model.eval()
-        enable_dropout(self)
         return self.predict_from_dataset(
             n,
             input_series_dataset,
@@ -246,3 +246,154 @@ class TCNModelDropout(TCNModel):
             num_samples,
             num_loader_workers,
         )
+
+    def predict_from_dataset(
+        self,
+        n: int,
+        input_series_dataset: InferenceDataset,
+        batch_size: Optional[int] = None,
+        verbose: bool = False,
+        n_jobs: int = 1,
+        roll_size: Optional[int] = None,
+        num_samples: int = 1,
+        num_loader_workers: int = 0,
+    ) -> Sequence[TimeSeries]:
+
+        """
+        This method allows for predicting with a specific :class:`darts.utils.data.InferenceDataset` instance.
+        These datasets implement a PyTorch `Dataset`, and specify how the target and covariates are sliced
+        for inference. In most cases, you'll rather want to call :func:`predict()` instead, which will create an
+        appropriate :class:`InferenceDataset` for you.
+        Parameters
+        ----------
+        n
+            The number of time steps after the end of the training time series for which to produce predictions
+        input_series_dataset
+            Optionally, a series or sequence of series, representing the history of the target series' whose
+            future is to be predicted. If specified, the method returns the forecasts of these
+            series. Otherwise, the method returns the forecast of the (single) training series.
+        batch_size
+            Size of batches during prediction. Defaults to the models `batch_size` value.
+        verbose
+            Shows the progress bar for batch predicition. Off by default.
+        n_jobs
+            The number of jobs to run in parallel. `-1` means using all processors. Defaults to `1`.
+        roll_size
+            For self-consuming predictions, i.e. `n > output_chunk_length`, determines how many
+            outputs of the model are fed back into it at every iteration of feeding the predicted target
+            (and optionally future covariates) back into the model. If this parameter is not provided,
+            it will be set `output_chunk_length` by default.
+        num_samples
+            Number of times a prediction is sampled from a probabilistic model. Should be left set to 1
+            for deterministic models.
+        num_loader_workers
+            Optionally, an integer specifying the `num_workers` to use in PyTorch ``DataLoader`` instances,
+            for the inference/prediction dataset loaders (if any).
+            A larger number of workers can sometimes increase performance, but can also incur extra overheads
+            and increase memory usage, as more batches are loaded in parallel.
+        Returns
+        -------
+        Sequence[TimeSeries]
+            Returns one or more forecasts for time series.
+        """
+        self._verify_inference_dataset_type(input_series_dataset)
+
+        # check that covariates and dimensions are matching what we had during training
+        self._verify_predict_sample(input_series_dataset[0])
+
+        if roll_size is None:
+            roll_size = self.output_chunk_length
+        else:
+            raise_if_not(
+                0 < roll_size <= self.output_chunk_length,
+                "`roll_size` must be an integer between 1 and `self.output_chunk_length`.",
+            )
+
+        # check that `num_samples` is a positive integer
+        raise_if_not(num_samples > 0, "`num_samples` must be a positive integer.")
+
+        # iterate through batches to produce predictions
+        batch_size = batch_size or self.batch_size
+
+        pred_loader = DataLoader(
+            input_series_dataset,
+            batch_size=batch_size,
+            shuffle=False,
+            num_workers=num_loader_workers,
+            pin_memory=True,
+            drop_last=False,
+            collate_fn=self._batch_collate_fn,
+        )
+        predictions = []
+        iterator = _build_tqdm_iterator(pred_loader, verbose=verbose)
+
+        #self.model.eval()
+        with torch.no_grad():
+            for batch_tuple in iterator:
+                batch_tuple = self._batch_to_device(batch_tuple)
+                input_data_tuple, batch_input_series = batch_tuple[:-1], batch_tuple[-1]
+
+                # number of individual series to be predicted in current batch
+                num_series = input_data_tuple[0].shape[0]
+
+                # number of of times the input tensor should be tiled to produce predictions for multiple samples
+                # this variable is larger than 1 only if the batch_size is at least twice as large as the number
+                # of individual time series being predicted in current batch (`num_series`)
+                batch_sample_size = min(max(batch_size // num_series, 1), num_samples)
+
+                # counts number of produced prediction samples for every series to be predicted in current batch
+                sample_count = 0
+
+                # repeat prediction procedure for every needed sample
+                batch_predictions = []
+                while sample_count < num_samples:
+
+                    # make sure we don't produce too many samples
+                    if sample_count + batch_sample_size > num_samples:
+                        batch_sample_size = num_samples - sample_count
+
+                    # stack multiple copies of the tensors to produce probabilistic forecasts
+                    input_data_tuple_samples = self._sample_tiling(
+                        input_data_tuple, batch_sample_size
+                    )
+
+                    # get predictions for 1 whole batch (can include predictions of multiple series
+                    # and for multiple samples if a probabilistic forecast is produced)
+                    batch_prediction = self._get_batch_prediction(
+                        n, input_data_tuple_samples, roll_size
+                    )
+
+                    # reshape from 3d tensor (num_series x batch_sample_size, ...)
+                    # into 4d tensor (batch_sample_size, num_series, ...), where dim 0 represents the samples
+                    out_shape = batch_prediction.shape
+                    batch_prediction = batch_prediction.reshape(
+                        (
+                            batch_sample_size,
+                            num_series,
+                        )
+                        + out_shape[1:]
+                    )
+
+                    # save all predictions and update the `sample_count` variable
+                    batch_predictions.append(batch_prediction)
+                    sample_count += batch_sample_size
+
+                # concatenate the batch of samples, to form num_samples samples
+                batch_predictions = torch.cat(batch_predictions, dim=0)
+                batch_predictions = batch_predictions.cpu().detach().numpy()
+
+                # create `TimeSeries` objects from prediction tensors
+                ts_forecasts = Parallel(n_jobs=n_jobs)(
+                    delayed(self._build_forecast_series)(
+                        [
+                            batch_prediction[batch_idx]
+                            for batch_prediction in batch_predictions
+                        ],
+                        input_series,
+                    )
+                    for batch_idx, input_series in enumerate(batch_input_series)
+                )
+
+                predictions.extend(ts_forecasts)
+
+        return predictions

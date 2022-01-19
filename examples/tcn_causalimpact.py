@@ -1,4 +1,7 @@
 import sys
+import math
+import traceback
+
 sys.path.append("../src")
 from parse_cesar1 import get_timestep_tuples
 import pickle
@@ -21,7 +24,7 @@ MEAS_COLUMNS = [
     #     "TI-33",
     #     "FI-2",
     #     "FI-151",
-    #     "TI-8",
+    #     "TI-8",u
     #     "FI-241",
     #  "valve-position-12",  # dry-bed
     #     "FI-38",  # strippera
@@ -45,7 +48,7 @@ MEAS_COLUMNS = [
     "TI-35",
     "delta_t_2",
 ]
-HORIZON = 2
+HORIZON = 30
 
 df = pd.read_pickle("20210508_df_for_causalimpact.pkl")
 
@@ -54,7 +57,12 @@ with open("step_times.pkl", "rb") as handle:
 
 
 def get_causalimpact_splits(x, y, day, times, df):
-    a, b = get_timestep_tuples(df, times, day)
+    if day>0:
+        a0, b0 = get_timestep_tuples(df, times, day-1)
+        a, b = get_timestep_tuples(df, times, day)
+        a[0] = b0[0]
+    else: 
+        a, b =  get_timestep_tuples(df, times, day)
 
     x_way_before, x_after = x.split_before(b[1])
     y_way_before, y_after = y.split_before(pd.Timestamp(b[1]))
@@ -103,26 +111,26 @@ step_changes = [
 causalimpact_models = {}
 
 
-def run_model(x_trains, y_trains):
+def run_model(x_trains, y_trains, input_chunk_length, output_chunk_length):
 
     # run = wandb.init(project='process_ml', reinit=True, sync_tensorboard=True)
     # with run:
 
     model_cov = TCNModelDropout(
-        input_chunk_length=30,
-        output_chunk_length=HORIZON,
-        num_layers=4,
-        num_filters=128,
-        kernel_size=3,
-        dropout=0.3,
+        input_chunk_length=input_chunk_length,
+        output_chunk_length=output_chunk_length,
+        num_layers=16,
+        num_filters=8,
+        kernel_size=4,
+        dropout=0.5627,
         weight_norm=True,
-        batch_size=32,
+        batch_size=128,
         n_epochs=200,
-        log_tensorboard=True,
-        #optimizer_kwargs={"lr": 5e-6},
+        log_tensorboard=False,
+        optimizer_kwargs={"lr": 0.02382},
     )
 
-    model_cov.fit(series=y_trains, covariates=x_trains, verbose=False)
+    model_cov.fit(series=y_trains, past_covariates=x_trains, verbose=False)
 
     return model_cov
 
@@ -162,13 +170,13 @@ def transform_data_new(train_tuple, test_tuples, all_tuple):
 
 if __name__ == "__main__":
     TARGETS = ["2-Amino-2-methylpropanol C4H11NO", "Piperazine C4H10N2"]
-    #TARGETS = ["Carbon dioxide CO2", "Ammonia NH3"]
+    # TARGETS = ["Carbon dioxide CO2", "Ammonia NH3"]
     for day in range(len(step_changes)):
         cols = deepcopy(MEAS_COLUMNS)
         if step_changes[day][0] in MEAS_COLUMNS:
             for var in step_changes[day]:
                 try:
-                    cols = _select_unrelated_x(df, cols, var, 0.01) 
+                    cols = _select_unrelated_x(df, cols, var, 0.01)
                     print(TARGETS, day, var, cols)
                     y = TimeSeries.from_dataframe(df[TARGETS])
                     x = TimeSeries.from_dataframe(df[cols])
@@ -176,7 +184,7 @@ if __name__ == "__main__":
                     x = Scaler().fit_transform(x)
                     y = Scaler().fit_transform(y)
 
-                    x_trains = [] 
+                    x_trains = []
                     y_trains = []
 
                     # for day_ in range(len(step_changes)):
@@ -213,7 +221,13 @@ if __name__ == "__main__":
                     day_y_df = pd.concat([before_y_df, during_y_df, after_y_df], axis=0)
                     day_y_ts = TimeSeries.from_dataframe(day_y_df)
 
-                    model = run_model(x_trains, y_trains)
+                    chunk_length = math.floor(len(during[0])/2)
+                    model = run_model(
+                        x_trains,
+                        y_trains,
+                        input_chunk_length=chunk_length + 1,
+                        output_chunk_length=chunk_length,
+                    )
 
                     causalimpact_models[day] = {
                         "before": before,
@@ -223,8 +237,11 @@ if __name__ == "__main__":
                         "x_all": day_x_ts,
                         "y_all": day_y_ts,
                         "cols": cols,
+                        "output_chunk_length": chunk_length,
                     }
+
                 except Exception as e:
+                    print(traceback.format_exc())
                     print(e)
                     pass
 
@@ -239,7 +256,7 @@ if __name__ == "__main__":
                     start=(len(values["before"][0]) - 0.4 * len(values["before"][0]))
                     / len(values["y_all"]),
                     repeats=10,
-                    horizon=HORIZON,
+                    horizon=values["output_chunk_length"],
                 )
 
                 causalimpact_models[day]["predictions"] = predictions
