@@ -1,3 +1,5 @@
+‼️ The project has been refactored and moved to https://github.com/kjappelbaum/aeml ‼️
+
 # pyprocessta
 
 > Making the analysis of data from chemical engineering processes boring again!
