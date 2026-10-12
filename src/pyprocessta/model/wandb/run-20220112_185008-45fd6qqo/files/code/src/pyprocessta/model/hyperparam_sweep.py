@@ -146,4 +146,4 @@ def train_test():
 
 
 if __name__ == "__main__":
-    wandb.agent('kf2cj83k', train_test, project="pyprocessta")
+    wandb.agent("kf2cj83k", train_test, project="pyprocessta")
