@@ -2,8 +2,7 @@
 import numpy as np
 import pandas as pd
 
-from pyprocessta.causalimpact import (_select_unrelated_x,
-                                      run_causal_impact_analysis)
+from pyprocessta.causalimpact import _select_unrelated_x, run_causal_impact_analysis
 
 
 def test_remove_unrelated_columns():
