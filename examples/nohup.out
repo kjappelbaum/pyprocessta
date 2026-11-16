@@ -20,8 +20,8 @@
 [I 2021-12-20 13:41:39.842 ServerApp] http://lsmopc4:7666/lab?token=f2f10edf3b8113af3934cdfa5d6cfe75f7662edbd216075f
 [I 2021-12-20 13:41:39.842 ServerApp]  or http://127.0.0.1:7666/lab?token=f2f10edf3b8113af3934cdfa5d6cfe75f7662edbd216075f
 [I 2021-12-20 13:41:39.842 ServerApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
-[C 2021-12-20 13:41:39.844 ServerApp] 
-    
+[C 2021-12-20 13:41:39.844 ServerApp]
+
     To access the server, open this file in a browser:
         file:///home/kjablonk/.local/share/jupyter/runtime/jpserver-61913-open.html
     Or copy and paste one of these URLs:
@@ -71,8 +71,8 @@ CONDA_PREFIX=/home/kjablonk/anaconda3/envs/timeseries_analysis
 [I 2021-12-20 13:49:28.880 ServerApp] http://lsmopc4:7777/lab?token=ec22704c5b1252996b8c3e8641022f51b123ef207c46c63b
 [I 2021-12-20 13:49:28.880 ServerApp]  or http://127.0.0.1:7777/lab?token=ec22704c5b1252996b8c3e8641022f51b123ef207c46c63b
 [I 2021-12-20 13:49:28.880 ServerApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
-[C 2021-12-20 13:49:28.883 ServerApp] 
-    
+[C 2021-12-20 13:49:28.883 ServerApp]
+
     To access the server, open this file in a browser:
         file:///home/kjablonk/.local/share/jupyter/runtime/jpserver-62531-open.html
     Or copy and paste one of these URLs:
@@ -912,7 +912,7 @@ kernel 5f5effe5-4502-4471-9121-7f8380b602eb restarted
 [W 2022-01-04 14:04:42.819 ServerApp] Notebook train_model_on_all_data_to_prepare_causalimpact_analysis.ipynb is not trusted
 [I 2022-01-04 14:05:42.747 ServerApp] Saving file at /20211220_build_transformer_model.ipynb
 [W 2022-01-04 14:05:42.748 ServerApp] Notebook 20211220_build_transformer_model.ipynb is not trusted
-[I 2022-01-04 14:05:49.303 ServerApp] Creating new notebook in 
+[I 2022-01-04 14:05:49.303 ServerApp] Creating new notebook in
 [I 2022-01-04 14:05:51.133 ServerApp] Kernel started: 9176949b-f87d-478b-be04-3d2592a4ab6e
 [I 2022-01-04 14:06:09.548 ServerApp] Saving file at /20220104_predictive_performance_horizon.ipynb
 [I 2022-01-04 14:06:50.323 ServerApp] Saving file at /20220104_predictive_performance_horizon.ipynb

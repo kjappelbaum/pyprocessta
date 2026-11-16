@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 """Testing the resample module"""
+
 import pandas as pd
 
 from pyprocessta.preprocess.resample import resample_regular
