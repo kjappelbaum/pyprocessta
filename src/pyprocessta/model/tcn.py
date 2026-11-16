@@ -258,7 +258,6 @@ class TCNModelDropout(TCNModel):
         num_samples: int = 1,
         num_loader_workers: int = 0,
     ) -> Sequence[TimeSeries]:
-
         """
         This method allows for predicting with a specific :class:`darts.utils.data.InferenceDataset` instance.
         These datasets implement a PyTorch `Dataset`, and specify how the target and covariates are sliced
@@ -327,7 +326,7 @@ class TCNModelDropout(TCNModel):
         predictions = []
         iterator = _build_tqdm_iterator(pred_loader, verbose=verbose)
 
-        #self.model.eval()
+        # self.model.eval()
         with torch.no_grad():
             for batch_tuple in iterator:
                 batch_tuple = self._batch_to_device(batch_tuple)
